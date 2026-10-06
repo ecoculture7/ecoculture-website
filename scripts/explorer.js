@@ -102,9 +102,10 @@
     right.appendChild(bar);
     right.appendChild(legend);
 
-    var cta = el('a', 'btn btn--primary', 'Change this basket');
+    var cta = el('a', 'btn btn--primary', 'Edit this basket in the builder');
     cta.href = '/build.html#' + t;
     right.appendChild(cta);
+    right.appendChild(el('p', 'small muted', 'This is a preview. Add, remove or change any line in the builder.'));
 
     panel.appendChild(left);
     panel.appendChild(right);
