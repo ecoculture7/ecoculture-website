@@ -26,6 +26,7 @@ styles/site.css       everything else. Mobile first, breakpoints 768 and 1100.
 data/prices.js        EVERY price on the site. Nothing else holds a rupee figure.
 scripts/fill.js       fills <span data-eco="DELIVERY.freeFrom"> style figures into copy
 assets/               logo and images
+backend/reserve/      the reserve form: Lambda + DynamoDB + SES (see its README)
 _redirects            Netlify redirects, including the old site's URLs
 ```
 
@@ -67,20 +68,15 @@ you add a script, add the file — do not inline it, and do not loosen the polic
 **Delete `CNAME` when the move happens.** It is a GitHub Pages file and does
 nothing on Amplify except confuse whoever reads the repo next.
 
-### The form needs a decision
+### The reserve form
 
-Amplify Hosting serves static files. It does not receive form posts. The
-reservation form currently posts nowhere. Pick one before launch:
+Amplify Hosting serves static files, so the form posts to a Lambda Function URL
+that stores the signup in DynamoDB and emails admin@ecoculture.in. The code and
+the deploy steps are in `backend/reserve/`. Until `data-endpoint` on the form is
+set, the form tells visitors it is not connected rather than pretending to send.
 
-- **A form service** (Formspree, Web3Forms). One attribute on the `<form>`,
-  works immediately, free tier around 50 submissions a month.
-- **API Gateway → Lambda → DynamoDB**, with SES emailing admin@ecoculture.in
-  on each submission. Costs effectively nothing against the Activate credit,
-  and is about a day of work.
-
-Whichever you choose, **the form must email you on every submission.** The old
-site may have been silently discarding signups for months; a confirmation you
-can see is what stops that happening twice.
+**The form must email you on every submission.** A confirmation you can see is
+what stops five months of silent signups happening twice.
 
 ## Before this replaces the live site
 

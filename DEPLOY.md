@@ -149,8 +149,9 @@ Amplify Hosting serves files. It does not receive form posts. Pick one:
 on the `<form>` in `index.html`. Working in ten minutes, free up to roughly 50
 submissions a month.
 
-**Option B — API Gateway → Lambda → DynamoDB**, with SES emailing you on each
-submission. Costs nothing against your Activate credit. About a day.
+**Option B — Lambda Function URL → DynamoDB**, with SES emailing you on each
+submission. Costs nothing against your Activate credit. About a day. **This is the
+route chosen.** The code and the step-by-step guide are in `backend/reserve/`.
 
 Either way, **one rule: the form must email admin@ecoculture.in on every
 submission.** A form that shows "Thank you!" and stores nothing looks exactly

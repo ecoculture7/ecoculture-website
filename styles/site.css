@@ -520,3 +520,8 @@ b, strong { font-weight: 600; color: var(--ink); }
 .qa > div p + p { margin-top: 10px; }
 
 .notfound { padding-block: 72px; }
+
+/* ── Form status ─────────────────────────────────────────────────────── */
+.form-status { padding: 10px 12px; border-left: var(--b-marker) solid var(--gold); background: var(--gold-wash); color: var(--gold-ink); }
+.form-status--ok { border-left-color: var(--teal); background: var(--teal-wash); color: var(--teal-deep); }
+.form-status a { color: inherit; }
