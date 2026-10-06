@@ -380,3 +380,107 @@ b, strong { font-weight: 600; color: var(--ink); }
 .muted  { color: var(--ink-muted); }
 .small  { font-size: 13px; line-height: 1.55; }
 .center { text-align: center; }
+
+/* ── Basket builder (build.html, scripts/builder.js) ─────────────────── */
+
+.builder { display: flex; flex-direction: column; gap: 32px; }
+.builder__main { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+@media (min-width: 1100px) {
+  .builder { flex-direction: row; align-items: flex-start; gap: 64px; }
+  .builder__main { flex: 1 1 0; }
+  .builder__side { flex: 0 0 400px; position: sticky; top: 96px; }
+}
+
+.tiers__label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px;
+}
+.tiers__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tier {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  min-height: 64px; padding: 10px 14px; text-align: left; cursor: pointer;
+  font-family: var(--font-body); color: var(--ink);
+  background: var(--paper-3); border: var(--b-hair) solid var(--husk);
+}
+.tier:hover { border-color: var(--ink); }
+.tier[aria-pressed="true"] { border: var(--b-accent) solid var(--teal-deep); padding: 9px 13px; background: var(--teal-wash); }
+.tier__name { font-family: var(--font-display); font-size: 17px; font-weight: 600; }
+.tier__who  { font-size: 12px; color: var(--ink-muted); }
+.tiers__hint { margin-top: 8px; }
+
+.bgroup__head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding-bottom: 9px; border-bottom: var(--b-rule) solid var(--ink);
+}
+.bgroup__title { font-size: var(--t-h3); }
+.bgroup__req { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: var(--teal-deep); }
+.bgroup__req--opt { color: var(--ink-muted); }
+
+.bnote {
+  margin-top: 10px; padding: 10px 12px;
+  background: var(--gold-wash); border-left: var(--b-marker) solid var(--gold);
+  color: var(--gold-ink); font-size: 13px; line-height: 1.5;
+}
+.bnote--ok { background: var(--teal-wash); border-left-color: var(--teal); color: var(--teal-deep); }
+
+.brow {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 12px 0; border-bottom: var(--b-hair) solid var(--husk-soft);
+}
+.brow__info { min-width: 0; flex: 1 1 auto; }
+.brow__name { display: block; font-size: 15px; font-weight: 600; line-height: 1.35; }
+.brow__hi, .brow__note { display: block; font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+.brow__ctl { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.brow__price { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--ink-soft); }
+.brow--on .brow__price { color: var(--ink); }
+
+.stepper { display: flex; align-items: center; border: var(--b-hair) solid var(--husk); background: var(--paper-3); }
+.brow--on .stepper { border-color: var(--ink); }
+.stepper__btn {
+  width: var(--tap); height: var(--tap); padding: 0;
+  font-family: var(--font-body); font-size: 20px; line-height: 1; color: var(--ink);
+  background: none; border: 0; cursor: pointer;
+}
+.stepper__btn:hover:not(:disabled) { background: var(--teal-wash); }
+.stepper__btn:disabled { color: var(--ink-faint); cursor: default; }  /* glyph only; the label is not the only cue */
+.stepper__qty { min-width: 64px; text-align: center; font-size: 14px; font-weight: 600; }
+
+.bsum__totals { margin-top: 12px; padding-top: 10px; border-top: var(--b-rule) solid var(--ink); }
+.bsum__row { display: flex; justify-content: space-between; gap: 14px; padding: 4px 0; font-size: 14px; color: var(--ink-soft); }
+.bsum__row span:last-child { font-weight: 600; color: var(--ink); }
+.bsum__row .bsum__free { color: var(--teal-deep); }
+.bsum__big { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-top: 8px; padding-top: 10px; border-top: var(--b-hair) solid var(--husk-soft); }
+.bsum__bigl { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+.bsum__bigv { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--teal-deep); }
+
+.bprog { margin-top: 14px; padding-top: 12px; border-top: var(--b-hair) solid var(--husk-soft); }
+.bprog__top { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--ink-muted); margin-bottom: 6px; }
+.bprog__state { font-weight: 600; color: var(--ink-soft); }
+.bprog__state--on { color: var(--teal-deep); }
+.bprog__track { height: 6px; background: var(--husk-soft); }
+.bprog__bar { height: 6px; background: var(--teal); transition: width 0.2s ease; }
+
+.prepay { margin: 16px 0 0; padding: 12px 0 0; border: 0; border-top: var(--b-hair) solid var(--husk-soft); }
+.prepay__legend { padding: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+.prepay__opt { display: flex; align-items: center; gap: 10px; min-height: var(--tap); font-size: 14px; cursor: pointer; }
+.prepay__opt input { width: 18px; height: 18px; margin: 0; accent-color: var(--teal-deep); }
+.prepay__t { flex: 1 1 auto; font-weight: 600; }
+.prepay__d { color: var(--ink-muted); font-size: 13px; }
+
+.bstatus { margin-top: 14px; font-size: 13px; line-height: 1.5; color: var(--teal-deep); }
+.bstatus--gap { color: var(--gold-ink); }
+.bsum__cta { width: 100%; margin-top: 14px; }
+.bsum__fine { margin-top: 10px; }
+
+/* Phone-only running total, pinned to the foot of the screen. */
+.buildbar {
+  position: fixed; inset-inline: 0; bottom: 0; z-index: 15;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: var(--tap); padding: 8px var(--gutter);
+  background: var(--ink); color: var(--on-ink); text-decoration: none; font-size: 14px;
+}
+.buildbar:hover { color: var(--on-ink); }
+.buildbar__l { color: var(--on-ink-soft); font-size: 12px; letter-spacing: 0.04em; }
+.buildbar__t { font-weight: 600; }
+@media (max-width: 1099px) { .has-buildbar .footer { padding-bottom: 60px; } }
+@media (min-width: 1100px) { .buildbar { display: none; } }
