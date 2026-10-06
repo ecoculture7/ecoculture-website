@@ -24,7 +24,7 @@
     { k: 'rice',  title: 'Rice',  req: false },
     { k: 'dal',   title: 'Dal',   req: true,  why: 'Every basket needs at least one dal so we can plan the pulse harvest.' },
     { k: 'oil',   title: 'Oil',   req: true,  why: 'Every basket needs the mustard oil so we can plan the press.' },
-    { k: 'spice', title: 'Spices', req: true, why: 'Every basket needs the spice pack so we can plan the grind.' }
+    { k: 'spice', title: 'Spices', req: true, why: 'Every basket needs at least one spice so we can plan the grind.' }
   ];
 
   var state = { tier: 'M', steps: {}, months: 0 };

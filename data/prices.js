@@ -26,7 +26,11 @@ window.ECO.SKUS = [
   { k: 'chana',     name: 'Chana dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 185, step: 0.5,  note: '' },
   { k: 'masoor',    name: 'Masoor dal',              hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 245, step: 0.5,  note: '' },
   { k: 'oil',       name: 'Kachi ghani mustard oil', hi: 'cold-pressed, not refined',  cat: 'oil',   unit: 'L',  price: 345, step: 0.5,  note: '' },
-  { k: 'spice',     name: 'Spice pack',              hi: 'haldi · dhaniya · jeera',    cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'ground the week it ships' }
+  /* PROVISIONAL: haldi and dhaniya were one "spice pack" at 680 a kg. They are now
+     sold separately at that same figure until the per-item prices are set, so no
+     basket total moves. Jeera is out for now. Replace both prices when known. */
+  { k: 'haldi',     name: 'Haldi (turmeric)',        hi: 'sun-dried, ground to order',  cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'ground the week it ships' },
+  { k: 'dhaniya',   name: 'Dhaniya (coriander)',     hi: 'sun-dried, ground to order',  cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'ground the week it ships' }
 ];
 
 /* Printed MRPs, per pack. Required on every pre-packaged food sold in India.
@@ -59,17 +63,18 @@ window.ECO.MRP = {
     { k: 'masoor',    pack: 1,   sells: 245, mrp: 329,  confirmed: false },
     { k: 'oil',       pack: 0.5, sells: 172, mrp: 230,  confirmed: false },
     { k: 'oil',       pack: 1,   sells: 345, mrp: 460,  confirmed: false },
-    { k: 'spice',     pack: 0.1, sells: 68,  mrp: 95,   confirmed: false },
-    { k: 'spice',     pack: 0.3, sells: 204, mrp: 275,  confirmed: false },
-    { k: 'spice',     pack: 0.5, sells: 340, mrp: 455,  confirmed: false }
+    { k: 'haldi',     pack: 0.1, sells: 68,  mrp: 95,   confirmed: false },
+    { k: 'haldi',     pack: 0.5, sells: 340, mrp: 455,  confirmed: false },
+    { k: 'dhaniya',   pack: 0.1, sells: 68,  mrp: 95,   confirmed: false },
+    { k: 'dhaniya',   pack: 0.5, sells: 340, mrp: 455,  confirmed: false }
   ]
 };
 
 /* The three starting points. Every quantity is a legal pack multiple. */
 window.ECO.TIERS = {
-  S: { label: 'Small',  who: '1–2 people', q: { atta: 5,  basmati: 2, kalanamak: 0.5, arhar: 0.5, moong: 0.5, chana: 0.5, masoor: 0.5, oil: 0.5, spice: 0.3 } },
-  M: { label: 'Medium', who: '3–4 people', q: { atta: 8,  basmati: 4, kalanamak: 0.5, arhar: 1,   moong: 1,   chana: 1,   masoor: 0.5, oil: 1.5, spice: 0.5 } },
-  L: { label: 'Large',  who: '5–6 people', q: { atta: 12, basmati: 6, kalanamak: 0.5, arhar: 1.5, moong: 1.5, chana: 1,   masoor: 1,   oil: 2,   spice: 0.8 } }
+  S: { label: 'Small',  who: '1–2 people', q: { atta: 5,  basmati: 2, kalanamak: 0.5, arhar: 0.5, moong: 0.5, chana: 0.5, masoor: 0.5, oil: 0.5, haldi: 0.1, dhaniya: 0.2 } },
+  M: { label: 'Medium', who: '3–4 people', q: { atta: 8,  basmati: 4, kalanamak: 0.5, arhar: 1,   moong: 1,   chana: 1,   masoor: 0.5, oil: 1.5, haldi: 0.2, dhaniya: 0.3 } },
+  L: { label: 'Large',  who: '5–6 people', q: { atta: 12, basmati: 6, kalanamak: 0.5, arhar: 1.5, moong: 1.5, chana: 1,   masoor: 1,   oil: 2,   haldi: 0.4, dhaniya: 0.4 } }
 };
 
 /* Delivery. ONE threshold, read on the LIST price before any prepayment
