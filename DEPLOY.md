@@ -26,10 +26,9 @@ mkdir _old
 git mv index.html about.html farmers.html 404.html favicon.svg robots.txt sitemap.xml _old/
 ```
 
-Do **not** delete `_old/`. `about.html` and `farmers.html` contain Ramkhelawan
-Singh, Sunita Devi and Mahendra Yadav with their land sizes and what changed for
-them — real, already-public content that `/sourcing` and `/farmers` need. We
-mine it in Phase 4.
+Do **not** delete `_old/`. `about.html` and `farmers.html` contain farmer profiles, but
+they are **placeholder data, not real people** — do not copy them into the new site.
+Real details come from PSF; see `FARMER-DETAILS-REQUEST.md`.
 
 Leave `CNAME` where it is for now. It keeps the current site alive on GitHub
 Pages while we build. It gets deleted at cutover, not before.
@@ -177,6 +176,7 @@ Nothing here is optional, and none of it is design.
 - [ ] **The four legal pages written**, not just linked.
 - [ ] **A named arhar source**, or arhar comes off the basket. It is in all
       three pre-filled baskets and the page currently says "source being named".
+- [ ] **Real farmer details from PSF** in `/sourcing` and `/farmers` (every `[ bracket ]` filled, with written consent), per `FARMER-DETAILS-REQUEST.md`.
 - [ ] **The real residue report** replaces the specimen on `/proof`.
 - [ ] **The six unsourced statistics** from the old site do not reappear:
       ₹10,218 farmer income, 30% soil collapse, 40% pesticide residue increase,
