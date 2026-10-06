@@ -644,3 +644,41 @@ b, strong { font-weight: 600; color: var(--ink); }
 .video__empty .icon { width: 44px; height: 44px; color: var(--gold); }
 .video__empty b { color: var(--on-ink); }
 .video figcaption { margin-top: 10px; font-size: 13px; color: var(--ink-muted); }
+
+/* ── Full-bleed hero ─────────────────────────────────────────────────── */
+
+.hero {
+  position: relative; isolation: isolate; color: var(--on-ink);
+  min-height: 80vh;
+  min-height: clamp(560px, calc(100svh - 104px), 960px);
+  display: flex; align-items: center; background: var(--ink);
+}
+.hero__media { position: absolute; inset: 0; z-index: -2; }
+.hero__media img, .hero__media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero__scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(0deg, var(--scrim) 0%, var(--scrim) 100%);
+}
+@media (min-width: 900px) {
+  .hero__scrim { background: linear-gradient(90deg, var(--scrim) 0%, var(--scrim) 48%, var(--scrim-soft) 100%); }
+}
+.hero__tag {
+  position: absolute; inset-inline: 0; top: 0; z-index: 1;
+  background: var(--gold-wash); border-bottom: var(--b-accent) solid var(--gold);
+  color: var(--gold-ink); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; padding: 6px 10px;
+}
+.hero__inner { padding-block: 56px 40px; display: flex; flex-direction: column; gap: 28px; }
+.hero__copy { max-width: 640px; }
+.hero h1 { color: var(--on-ink); }
+.hero em { color: var(--gold); }
+.hero__lead {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.4rem, 1.05rem + 1.5vw, 2.1rem); line-height: 1.28; letter-spacing: -0.015em;
+  color: var(--on-ink);
+}
+.hero mark { background: none; color: var(--gold); font-weight: 700; box-shadow: inset 0 -0.14em 0 var(--gold); }
+.hero .prose { color: var(--on-ink-soft); }
+.hero .small { color: var(--on-ink-soft); }
+.hero .btn--ghost { color: var(--on-ink); border-color: var(--on-ink-muted); }
+.hero .btn--ghost:hover { color: var(--on-ink); border-color: var(--on-ink); }
+.hero__caption { margin: 0; color: var(--on-ink-soft); }

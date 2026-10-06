@@ -25,7 +25,7 @@ placeholder. Overwriting means returning visitors see the old image for up to a 
 
 | Replaces | Where it appears | Ratio | What to shoot |
 |---|---|---|---|
-| `PLACEHOLDER-hero-grain.jpg` | Homepage hero | 3:4 | A named farmer's hands holding the grain at weigh-in, or standing in their field at harvest. The caption names them: `[ farmer ], [ village ], Bundi · [ month ]` |
+| `PLACEHOLDER-hero-grain.jpg` | Homepage hero, **full width behind the headline** | 16:9, **2000 px wide** | A named farmer at harvest or at the weigh-in. **Leave the left half calm and dark-ish** (sky, crop, shadow): the headline sits there. Put the person in the right third. Under 250 KB. The caption names them: `[ farmer ], [ village ], Bundi · [ month ]` |
 | `PLACEHOLDER-bundi-field.jpg` | Homepage and /sourcing, Bundi card | 3:2 | A wide Bundi field with its crop, in daylight, with the village or a landmark recognisable |
 | `PLACEHOLDER-skn-paddy.jpg` | Homepage and /sourcing, Sant Kabir Nagar card | 3:2 | Kalanamak paddy, black husk visible if possible |
 | `PLACEHOLDER-farmers-field.jpg` | /sourcing farmer cards (three) | 3:2 | One portrait-in-the-field per farmer: **three different photos**, not one reused |

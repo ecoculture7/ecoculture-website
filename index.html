@@ -58,22 +58,30 @@
 <main id="main">
 
   <!-- ── Hero ─────────────────────────────────────────────────────────── -->
-  <section class="band">
-    <div class="wrap split">
-      <div class="stack" style="flex: 1 1 460px;">
+  <section class="hero">
+    <div class="hero__media" data-placeholder>
+      <!-- To use a film instead, swap the img for:
+           <video autoplay muted loop playsinline poster="/assets/img/hero-poster.jpg">
+             <source src="/assets/video/hero.mp4" type="video/mp4">
+           </video>
+           Keep it under 4 MB, silent, and 10 to 15 seconds. The page stops it for
+           anyone who has asked their device for reduced motion. -->
+      <img src="/assets/img/PLACEHOLDER-hero-grain.jpg" alt="" width="1080" height="1350" fetchpriority="high">
+    </div>
+    <div class="hero__scrim"></div>
+    <span class="hero__tag">PLACEHOLDER — not a photograph of a real field</span>
+    <div class="wrap hero__inner">
+      <div class="stack hero__copy">
         <h1>You check the vegetables. <em>Nobody checks the atta.</em></h1>
-        <p class="prose">Rice, atta, dal and oil are <b>sixty to seventy per cent of what your family eats every day</b> — and they're the one part of the kitchen nobody thinks to question.</p>
+        <p class="hero__lead">Rice, atta, dal and oil are <mark>sixty to seventy per cent</mark> of what your family eats every day — and they're the one part of the kitchen nobody thinks to question.</p>
         <p class="prose">So we test every lot for residue before it ships — and send you the report, naming the farmer and the field it came from.</p>
         <div class="btn-row" style="margin-top: 6px;">
           <a class="btn btn--primary" href="#reserve">Reserve a December trial pack</a>
           <a class="btn btn--ghost" href="#basket">See what's in it</a>
         </div>
-        <p class="small muted">No payment now. We'll write once, when prices are set.</p>
+        <p class="small">No payment now. We'll write once, when prices are set.</p>
       </div>
-      <figure class="shot shot--hero" data-placeholder style="flex: 0 1 400px; margin: 0;">
-        <img src="/assets/img/PLACEHOLDER-hero-grain.jpg" alt="" width="420" height="525">
-        <figcaption>[ farmer name ], [ village ], Bundi · [ month ] 2026</figcaption>
-      </figure>
+      <p class="hero__caption small">[ farmer name ], [ village ], Bundi · [ month ] 2026</p>
     </div>
   </section>
 
@@ -82,7 +90,7 @@
     <div class="wrap grid-3">
       <div class="figure">
         <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-flask"/></svg></div>
-        <span class="figure__n">Every lot</span>
+        <span class="figure__n">Every harvest</span>
         <p>residue-tested at a NABL laboratory before it ships. The report travels with your order.</p>
       </div>
       <div class="figure">

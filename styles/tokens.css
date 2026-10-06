@@ -40,6 +40,10 @@
   --on-ink-muted:  rgba(242, 237, 225, 0.58);
   --on-ink-rule:   rgba(242, 237, 225, 0.12);
 
+  /* ── Scrim: darkens a photograph so type stays readable on it ──────── */
+  --scrim:         rgba(28, 43, 36, 0.78);
+  --scrim-soft:    rgba(28, 43, 36, 0.40);
+
   /* ── Type ───────────────────────────────────────────────────────────── */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body:    'Karla', system-ui, -apple-system, 'Segoe UI', sans-serif;
