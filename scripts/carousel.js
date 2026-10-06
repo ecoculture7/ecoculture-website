@@ -26,7 +26,7 @@
       b.type = 'button';
       b.className = 'carousel__btn';
       b.setAttribute('aria-label', label);
-      b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#' + icon + '"/></svg>';
+      b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#' + icon + '"/></svg>';
       b.addEventListener('click', function () {
         var card = track.children[0];
         var gap = parseFloat(getComputedStyle(track).columnGap) || 0;

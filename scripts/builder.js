@@ -223,7 +223,7 @@
   doc.appendChild(ui.status);
 
   var cta = el('a', 'btn btn--primary bsum__cta', 'Reserve a December trial pack');
-  cta.href = 'index.html#reserve';
+  cta.href = '/index.html#reserve';
   doc.appendChild(cta);
   doc.appendChild(el('p', 'small muted bsum__fine', 'No payment now. Delivery is read on the list price, before any prepayment discount.'));
 

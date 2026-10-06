@@ -103,7 +103,7 @@
     right.appendChild(legend);
 
     var cta = el('a', 'btn btn--primary', 'Change this basket');
-    cta.href = 'build.html#' + t;
+    cta.href = '/build.html#' + t;
     right.appendChild(cta);
 
     panel.appendChild(left);
