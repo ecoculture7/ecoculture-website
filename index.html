@@ -81,17 +81,31 @@
   <section class="band band--alt">
     <div class="wrap grid-3">
       <div class="figure">
+        <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-flask"/></svg></div>
         <span class="figure__n">Every lot</span>
         <p>residue-tested at a NABL laboratory before it ships. The report travels with your order.</p>
       </div>
       <div class="figure">
+        <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-shield"/></svg></div>
         <span class="figure__n">75%</span>
         <p>of people who already buy organic staples don't believe they're genuinely chemical-free. Those products are certified.</p>
       </div>
       <div class="figure">
+        <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-pin"/></svg></div>
         <span class="figure__n">2</span>
         <p>districts we buy from — which is why a report from us names a field, not a region.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ── Household explorer ───────────────────────────────────────────── -->
+  <section class="band" id="sizes">
+    <div class="wrap stack">
+      <p class="eyebrow">Pick a size</p>
+      <h2>Find your household. <em>See what it costs.</em></h2>
+      <p class="prose">Three starting baskets, sized to how many people you cook for. Every one can be changed line by line.</p>
+      <div id="explorer" class="explorer" style="margin-top: 10px;"></div>
+      <noscript><p class="small">The three starting baskets, with prices, are listed on <a href="basket.html">What you get</a>.</p></noscript>
     </div>
   </section>
 
@@ -221,6 +235,25 @@
         </article>
       </div>
 
+
+      <figure class="infographic" style="margin-top: 6px;">
+        <svg class="chart" viewBox="0 0 600 320" role="img" aria-labelledby="map-t">
+          <title id="map-t">Where the food travels from: Bundi in Rajasthan and Sant Kabir Nagar in Uttar Pradesh, to Delhi NCR.</title>
+          <path class="map__line" d="M87 261 L179 56"/>
+          <path class="map__line" d="M526 174 L179 56"/>
+          <circle class="map__hub" cx="179" cy="56" r="9"/>
+          <circle class="map__node" cx="87" cy="261" r="8"/>
+          <circle class="map__node" cx="526" cy="174" r="8"/>
+          <text class="map__label" x="163" y="52" text-anchor="end">Delhi NCR</text>
+          <text class="map__sub" x="163" y="72" text-anchor="end">where it is delivered</text>
+          <text class="map__label" x="104" y="262">Bundi</text>
+          <text class="map__sub" x="104" y="280">Rajasthan</text>
+          <text class="map__label" x="560" y="212" text-anchor="end">Sant Kabir Nagar</text>
+          <text class="map__sub" x="560" y="232" text-anchor="end">Uttar Pradesh · Kalanamak</text>
+        </svg>
+        <figcaption>A simplified diagram. Positions follow the places' coordinates; there is no map outline and it is not to scale.</figcaption>
+      </figure>
+
       <p style="margin-top: 6px;"><a href="sourcing.html">Every item, and where each one comes from →</a></p>
     </div>
   </section>
@@ -306,6 +339,22 @@
           <p>Trial packs first, then monthly orders. Delhi NCR only, until we can do it well.</p>
         </div>
       </div>
+
+      <figure class="video" style="margin-top: 16px; max-width: 760px;">
+        <div class="video__frame">
+          <!-- When the November film exists, replace .video__empty with:
+               <video controls preload="none" poster="assets/img/weigh-in-poster.jpg">
+                 <source src="assets/video/weigh-in.mp4" type="video/mp4">
+                 <track kind="captions" src="assets/video/weigh-in.en.vtt" srclang="en" label="English" default>
+               </video> -->
+          <div class="video__empty">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-play"/></svg>
+            <b>The November weigh-in, on film</b>
+            <span class="small">The scale, the lots and the payment. We will send it to everyone who has reserved.</span>
+          </div>
+        </div>
+        <figcaption>Coming after the Kharif weigh-in.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -402,7 +451,10 @@
   </div>
 </footer>
 
+<script src="data/prices.js"></script>
 <script src="scripts/site.js" defer></script>
+<script src="scripts/calc.js" defer></script>
+<script src="scripts/explorer.js" defer></script>
 <script src="scripts/reserve.js" defer></script>
 
 </body>

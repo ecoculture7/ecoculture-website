@@ -96,6 +96,24 @@
   <section class="band">
     <div class="wrap stack">
       <h2>The two places.</h2>
+      <figure class="infographic" style="margin-top: 6px;">
+        <svg class="chart" viewBox="0 0 600 320" role="img" aria-labelledby="map-t">
+          <title id="map-t">Where the food travels from: Bundi in Rajasthan and Sant Kabir Nagar in Uttar Pradesh, to Delhi NCR.</title>
+          <path class="map__line" d="M87 261 L179 56"/>
+          <path class="map__line" d="M526 174 L179 56"/>
+          <circle class="map__hub" cx="179" cy="56" r="9"/>
+          <circle class="map__node" cx="87" cy="261" r="8"/>
+          <circle class="map__node" cx="526" cy="174" r="8"/>
+          <text class="map__label" x="163" y="52" text-anchor="end">Delhi NCR</text>
+          <text class="map__sub" x="163" y="72" text-anchor="end">where it is delivered</text>
+          <text class="map__label" x="104" y="262">Bundi</text>
+          <text class="map__sub" x="104" y="280">Rajasthan</text>
+          <text class="map__label" x="560" y="212" text-anchor="end">Sant Kabir Nagar</text>
+          <text class="map__sub" x="560" y="232" text-anchor="end">Uttar Pradesh · Kalanamak</text>
+        </svg>
+        <figcaption>A simplified diagram. Positions follow the places' coordinates; there is no map outline and it is not to scale.</figcaption>
+      </figure>
+
       <div class="grid-2" style="margin-top: 10px;">
         <article class="card">
           <figure class="shot shot--wide" data-placeholder style="margin: 0 0 16px;">
@@ -129,7 +147,8 @@
       <h2>Every face has a name. <em>Every field, a village.</em></h2>
       <p class="prose">These profiles are filled in only with a farmer's own words and written consent. Until they are, the cards below stay empty.</p>
 
-      <div class="grid-3" style="margin-top: 10px;">
+      <div class="carousel" data-carousel aria-label="Farmer profiles" style="margin-top: 10px;">
+        <div class="carousel__track">
         <article class="card">
           <figure class="shot shot--wide" data-placeholder style="margin: 0 0 16px;">
             <img src="assets/img/PLACEHOLDER-farmers-field.jpg" alt="" width="560" height="373">
@@ -160,6 +179,7 @@
           <div class="doc__line"><span>Grows for us</span><span>[ crop ]</span></div>
           <p class="small" style="margin-top: 12px; color: var(--ink-soft);">“[ what changed, in their own words ]”</p>
         </article>
+        </div>
       </div>
     </div>
   </section>
@@ -221,6 +241,7 @@
 </footer>
 
 <script src="scripts/site.js" defer></script>
+<script src="scripts/carousel.js" defer></script>
 
 </body>
 </html>

@@ -14,7 +14,7 @@
 (function () {
   var ECO = window.ECO;
   var root = document.getElementById('builder');
-  if (!ECO || !ECO.SKUS || !root) return;
+  if (!ECO || !ECO.SKUS || !ECO.calc || !root) return;
 
   var D = ECO.DELIVERY;
   var MAX_QTY = 50;   /* kg or L per line: a typo guard, not a business rule */
@@ -42,7 +42,7 @@
   function qtyOf(sku) { return Math.round(state.steps[sku.k] * sku.step * 1000) / 1000; }
   /* Half-up per line, which is how the starting-basket totals on /basket are
      reckoned. The epsilon keeps 149.5 from landing on 149. */
-  function lineOf(sku) { return Math.round(sku.price * qtyOf(sku) + 1e-9); }
+  function lineOf(sku) { return ECO.calc.line(sku, qtyOf(sku)); }
   function maxSteps(sku) { return Math.floor(MAX_QTY / sku.step); }
 
   function fmtQty(sku, q) {
@@ -335,6 +335,8 @@
     if (announce) ui.status.textContent = announce + ' ' + msg;
   }
 
-  loadTier(state.tier);
+  /* build.html#S, #M or #L (from the homepage explorer) starts from that size. */
+  var fromHash = (location.hash || '').replace('#', '');
+  loadTier(ECO.TIERS[fromHash] ? fromHash : state.tier);
   render();
 })();

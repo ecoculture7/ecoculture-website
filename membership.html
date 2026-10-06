@@ -75,13 +75,14 @@
           <div class="ledger__row"><div class="ledger__item"><span class="ledger__name">6 months</span></div><div class="ledger__right" style="width: 140px;"><div class="ledger__price" data-eco="PREPAY.1.discount" data-fmt="pct">a larger discount</div></div></div>
           <div class="ledger__row"><div class="ledger__item"><span class="ledger__name">12 months</span></div><div class="ledger__right" style="width: 140px;"><div class="ledger__price" data-eco="PREPAY.2.discount" data-fmt="pct">the largest discount</div></div></div>
         </div>
+        <div id="ladder-chart" style="margin-top: 16px;"></div>
         <p class="small muted">Try it on your own basket in <a href="build.html">the builder</a>, which shows what you would pay and keep.</p>
       </div>
 
       <div class="stack stack--loose" style="flex: 1 1 400px;">
-        <div class="rule-note"><h3>Your name on the register</h3><p>Sealed lots are recorded against the members whose commitment bought them.</p></div>
-        <div class="rule-note"><h3>Locked pricing</h3><p>The rate holds for the season your membership covers, whatever the mandi does after.</p></div>
-        <div class="rule-note"><h3>First claim</h3><p>When a crop falls short, members are served before anyone else.</p></div>
+        <div class="rule-note"><div class="iconbox"><svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-person"/></svg></div><h3>Your name on the register</h3><p>Sealed lots are recorded against the members whose commitment bought them.</p></div>
+        <div class="rule-note"><div class="iconbox"><svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-shield"/></svg></div><h3>Locked pricing</h3><p>The rate holds for the season your membership covers, whatever the mandi does after.</p></div>
+        <div class="rule-note"><div class="iconbox"><svg class="icon" aria-hidden="true"><use href="assets/icons.v1.svg#i-wheat"/></svg></div><h3>First claim</h3><p>When a crop falls short, members are served before anyone else.</p></div>
       </div>
     </div>
   </section>
@@ -158,6 +159,7 @@
 <script src="data/prices.js"></script>
 <script src="scripts/site.js" defer></script>
 <script src="scripts/fill.js" defer></script>
+<script src="scripts/charts.js" defer></script>
 
 </body>
 </html>
