@@ -24,6 +24,7 @@ terms.html  privacy.html  shipping.html  refunds.html
 styles/tokens.css     colour, type, spacing. The only file with hex values.
 styles/site.css       everything else. Mobile first, breakpoints 768 and 1100.
 data/prices.js        EVERY price on the site. Nothing else holds a rupee figure.
+scripts/fill.js       fills <span data-eco="DELIVERY.freeFrom"> style figures into copy
 assets/               logo and images
 _redirects            Netlify redirects, including the old site's URLs
 ```

@@ -494,3 +494,29 @@ b, strong { font-weight: 600; color: var(--ink); }
 .hi h1, .hi h2, .hi h3 { font-family: var(--font-deva); letter-spacing: 0; line-height: 1.3; }
 .hi h1 { font-size: clamp(2rem, 1.3rem + 3.4vw, 3.25rem); }
 .hi .eyebrow, .hi .step__when { letter-spacing: 0; font-family: var(--font-deva); font-size: 13px; }
+
+/* ── Long-form and legal pages ───────────────────────────────────────── */
+
+.legal { max-width: var(--measure); }
+.legal h2 { font-size: var(--t-h3); margin-top: 34px; }
+.legal h2:first-child { margin-top: 0; }
+.legal p, .legal li { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.legal p { margin-top: 10px; }
+.legal ul { margin: 10px 0 0; padding-left: 20px; }
+.legal li + li { margin-top: 6px; }
+
+/* Faq: a native disclosure, so it works without JavaScript. */
+.qa { border-bottom: var(--b-hair) solid var(--husk-soft); }
+.qa summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  min-height: var(--tap); padding: 14px 0; cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-size: 18px; font-weight: 600;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; font-family: var(--font-body); font-size: 22px; color: var(--teal-deep); }
+.qa[open] summary::after { content: "\2212"; }
+.qa > div { padding: 0 0 18px; max-width: var(--measure); }
+.qa > div p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.qa > div p + p { margin-top: 10px; }
+
+.notfound { padding-block: 72px; }

@@ -173,7 +173,7 @@ Nothing here is optional, and none of it is design.
 - [ ] **FSSAI licence number** in the footer, replacing `[ NUMBER ]`.
 - [ ] **Confirmed per-pack MRPs** in `data/prices.js`. Clear `provisional: true`
       only when the CA has signed them off.
-- [ ] **The four legal pages written**, not just linked.
+- [ ] **The four legal pages written**, not just linked. They are drafts: every `[ bracket ]` filled and the whole set reviewed by the CA and a lawyer. Each page carries a visible "Draft" banner (delete it only after that review).
 - [ ] **A named arhar source**, or arhar comes off the basket. It is in all
       three pre-filled baskets and the page currently says "source being named".
 - [ ] **Real farmer details from PSF** in `/sourcing` and `/farmers` (every `[ bracket ]` filled, with written consent), per `FARMER-DETAILS-REQUEST.md`.

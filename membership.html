@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Membership — Ecoculture</title>
+<meta name="description" content="No membership fee. Prepay for more months and the discount grows. How it works, in full.">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Karla:wght@300;400;500;600&family=Mukta:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+
+<a class="sr-only skip" href="#main">Skip to content</a>
+
+<div class="announce">Launching <b>December 2026</b> · Delhi NCR<span class="announce__extra"> · Reserving now</span></div>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mark.svg" alt="" width="32" height="31">
+      <span class="brand__name">Eco<span>culture</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="basket.html">What you get</a>
+      <a href="build.html">Build a basket</a>
+      <a href="sourcing.html">Where it's from</a>
+      <a href="proof.html">The lab report</a>
+      <a href="membership.html" aria-current="page">Membership</a>
+    </nav>
+    <div class="masthead__actions">
+      <a class="btn btn--primary btn--sm" href="index.html#reserve">Reserve</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="menu" id="menu" data-open="false">
+    <div class="wrap">
+      <a href="basket.html">What you get</a>
+      <a href="build.html">Build a basket</a>
+      <a href="sourcing.html">Where it's from</a>
+      <a href="proof.html">The lab report</a>
+      <a href="membership.html" aria-current="page">Membership</a>
+      <a href="faq.html">Questions</a>
+      <a href="farmers.html" lang="hi">किसान साझेदारी</a>
+    </div>
+  </div>
+</header>
+
+
+<main id="main">
+
+  <section class="band">
+    <div class="wrap stack">
+      <p class="eyebrow">Membership</p>
+      <h1>You're not subscribing to a box. <em>You're joining a harvest.</em></h1>
+      <p class="prose">There is no membership fee. You pay for your food in advance, that money buys the harvest at the weigh-in, and the discount is what we pay you for the use of it. The longer you prepay, the more it is worth, which is why the discount is not flat.</p>
+      <p class="prose">Prefer to pay month by month? That is a perfectly good way to buy. You pay the list price and you are free to stop.</p>
+    </div>
+  </section>
+
+  <section class="band band--alt">
+    <div class="wrap split">
+      <div class="stack" style="flex: 1 1 420px;">
+        <h2>The discount ladder.</h2>
+        <p class="prose">It is the cost of money, not a loyalty tier. Pay for more months at once and the discount grows.</p>
+        <div class="ledger" style="margin-top: 6px;">
+          <div class="ledger__head"><span>Prepaid for</span><span style="width: 140px; text-align: right;">Taken off</span></div>
+          <div class="ledger__row"><div class="ledger__item"><span class="ledger__name">Month by month</span></div><div class="ledger__right" style="width: 140px;"><div class="ledger__price">List price</div></div></div>
+          <div class="ledger__row"><div class="ledger__item"><span class="ledger__name">3 months</span></div><div class="ledger__right" style="width: 140px;"><div class="ledger__price" data-eco="PREPAY.0.discount" data-fmt="pct">a small discount</div></div></div>
+          <div class="ledger__row"><div class="ledger__item"><span class="ledger__name">6 months</span></div><div class="ledger__right" style="width: 140px;"><div class="ledger__price" data-eco="PREPAY.1.discount" data-fmt="pct">a larger discount</div></div></div>
+          <div class="ledger__row"><div class="ledger__item"><span class="ledger__name">12 months</span></div><div class="ledger__right" style="width: 140px;"><div class="ledger__price" data-eco="PREPAY.2.discount" data-fmt="pct">the largest discount</div></div></div>
+        </div>
+        <p class="small muted">Try it on your own basket in <a href="build.html">the builder</a>, which shows what you would pay and keep.</p>
+      </div>
+
+      <div class="stack stack--loose" style="flex: 1 1 400px;">
+        <div class="rule-note"><h3>Your name on the register</h3><p>Sealed lots are recorded against the members whose commitment bought them.</p></div>
+        <div class="rule-note"><h3>Locked pricing</h3><p>The rate holds for the season your membership covers, whatever the mandi does after.</p></div>
+        <div class="rule-note"><h3>First claim</h3><p>When a crop falls short, members are served before anyone else.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div class="stack" style="flex: 1 1 420px;">
+        <h2>How delivery counts toward it.</h2>
+        <p class="prose">Delivery is free above <span data-eco="DELIVERY.freeFrom" data-fmt="inr">a set amount</span> of produce. We read that on the list price, before any prepayment discount. Otherwise the discount would push you further from free delivery, which would be a strange sort of benefit.</p>
+        <p class="prose">Full details are on <a href="shipping.html">Shipping &amp; delivery</a>.</p>
+      </div>
+      <div class="stack" style="flex: 1 1 420px;">
+        <h2>If you need to stop.</h2>
+        <p class="prose">[ To be decided with the CA before launch: how unused months of a prepayment are refunded, and when. This page and the <a href="refunds.html">Refunds &amp; cancellation</a> page will say the same thing. ]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--alt">
+    <div class="wrap stack" style="max-width: 680px;">
+      <h2>Start with a trial pack.</h2>
+      <p class="prose">No payment now. We'll write once when prices are set, and once more when it ships.</p>
+      <div class="btn-row" style="margin-top: 6px;">
+        <a class="btn btn--primary" href="index.html#reserve">Reserve a December trial pack</a>
+        <a class="btn btn--ghost" href="build.html">Build a basket</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="farmers-card" href="farmers.html" lang="hi">
+      <span class="farmers-card__hi">किसान साझेदारी</span>
+      <span class="farmers-card__sub">प्राकृतिक खेती करने वाले किसानों के लिए</span>
+    </a>
+
+    <nav class="footer__cols" aria-label="Footer">
+      <div class="footer__col">
+        <p class="footer__label">The food</p>
+        <a href="basket.html">What you get</a>
+        <a href="build.html">Build a basket</a>
+        <a href="sourcing.html">Where it's from</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">The proof</p>
+        <a href="proof.html">The lab report</a>
+        <a href="faq.html">Questions</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">The company</p>
+        <a href="membership.html">Membership</a>
+        <a href="story.html">Why we started</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">Legal</p>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="shipping.html">Shipping &amp; delivery</a>
+        <a href="refunds.html">Refunds &amp; cancellation</a>
+      </div>
+    </nav>
+
+    <div class="footer__legal">
+      Bodh Organic Ecoculture Pvt Ltd · Delhi NCR · Launching December 2026<br>
+      FSSAI licence [ NUMBER ] · <a href="mailto:admin@ecoculture.in">admin@ecoculture.in</a> · <a href="https://wa.me/918178030060">WhatsApp</a><br>
+      Naturally grown, residue-tested. We hold no certification and claim none.
+    </div>
+  </div>
+</footer>
+
+<script src="data/prices.js"></script>
+<script src="scripts/site.js" defer></script>
+<script src="scripts/fill.js" defer></script>
+
+</body>
+</html>
