@@ -290,6 +290,12 @@ b, strong { font-weight: 600; color: var(--ink); }
 /* ── Images ──────────────────────────────────────────────────────────── */
 
 .shot img { width: 100%; height: auto; object-fit: cover; aspect-ratio: 4 / 5; }
+/* The hero image supports the headline; it must not outrun it. Capped so the
+   argument stays above the fold on a laptop. */
+.shot--hero img { aspect-ratio: 4 / 5; }
+@media (min-width: 1100px) {
+  .shot--hero img { aspect-ratio: 3 / 4; max-height: 520px; }
+}
 .shot figcaption { margin-top: 10px; font-size: 12px; color: var(--ink-muted); }
 .shot--wide img { aspect-ratio: 3 / 2; }
 
@@ -370,6 +376,7 @@ b, strong { font-weight: 600; color: var(--ink); }
 
 /* ── Utilities ───────────────────────────────────────────────────────── */
 
+.h3-size { font-size: var(--t-h3); line-height: 1.2; }
 .muted  { color: var(--ink-muted); }
 .small  { font-size: 13px; line-height: 1.55; }
 .center { text-align: center; }

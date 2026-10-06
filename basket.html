@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What you get — Ecoculture</title>
+<meta name="description" content="Eleven staples, priced per kilo, from named fields in Bundi and Sant Kabir Nagar. One rule: at least one item from each category. Delivery free above ₹2,500.">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Karla:wght@300;400;500;600&family=Mukta:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+
+<a class="sr-only skip" href="#main">Skip to content</a>
+
+<div class="announce">Launching <b>December 2026</b> · Delhi NCR<span class="announce__extra"> · Reserving now</span></div>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mark.svg" alt="" width="32" height="31">
+      <span class="brand__name">Eco<span>culture</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="basket.html" aria-current="page">What you get</a>
+      <a href="build.html">Build a basket</a>
+      <a href="sourcing.html">Where it's from</a>
+      <a href="proof.html">The lab report</a>
+      <a href="membership.html">Membership</a>
+    </nav>
+    <div class="masthead__actions">
+      <a class="btn btn--primary btn--sm" href="index.html#reserve">Reserve</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="menu" id="menu" data-open="false">
+    <div class="wrap">
+      <a href="basket.html">What you get</a>
+      <a href="build.html">Build a basket</a>
+      <a href="sourcing.html">Where it's from</a>
+      <a href="proof.html">The lab report</a>
+      <a href="membership.html">Membership</a>
+      <a href="faq.html">Questions</a>
+      <a href="farmers.html" lang="hi">किसान साझेदारी</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ── Intro ────────────────────────────────────────────────────────── -->
+  <section class="band">
+    <div class="wrap stack">
+      <p class="eyebrow">What you get</p>
+      <h1>Eight staples. <em>You pick which ones.</em></h1>
+      <p class="prose">One delivery a month, on a fixed cycle. Beyond that it's yours to decide — take one dal or all four, skip the rice, double the atta.</p>
+      <p class="prose"><b>The only rule is at least one item from each category</b> — atta, dal, oil, spices. Rice is optional. That rule is what lets us plan a harvest instead of guessing.</p>
+    </div>
+  </section>
+
+  <!-- ── The price list ───────────────────────────────────────────────── -->
+  <section class="band" style="padding-top: 0;">
+    <div class="wrap split">
+
+      <div class="ledger" style="flex: 1 1 540px;">
+        <div class="ledger__head"><span>Item</span><span style="width: 122px; text-align: right;">Price &amp; rule</span></div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Whole wheat atta</span>
+            <span class="ledger__hi">standard, stone-ground</span>
+            <span class="ledger__from">Bundi — milled in NCR the week it ships</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="atta" data-price="78">₹78 / kg</div>
+            <div class="ledger__req">Pick one</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Bansi atta</span>
+            <span class="ledger__hi">durum, coarse grind</span>
+            <span class="ledger__from">Bundi</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="bansi" data-price="138">₹138 / kg</div>
+            <div class="ledger__req ledger__req--opt">or this</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Sona Moti atta</span>
+            <span class="ledger__hi">landrace, low yield</span>
+            <span class="ledger__from">Bundi — small lots only</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="sonamoti" data-price="188">₹188 / kg</div>
+            <div class="ledger__req ledger__req--opt">or this</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Basmati rice</span>
+            <span class="ledger__hi">1509 / 1718, unpolished</span>
+            <span class="ledger__from">Bundi</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="basmati" data-price="158">₹158 / kg</div>
+            <div class="ledger__req ledger__req--opt">Optional</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Kalanamak rice</span>
+            <span class="ledger__hi">GI-tagged, our own farmers</span>
+            <span class="ledger__from">Sant Kabir Nagar — a 500 g pack is in every basket</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="kalanamak" data-price="299">₹299 / kg</div>
+            <div class="ledger__req ledger__req--opt">Optional</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Arhar dal</span>
+            <span class="ledger__hi">unpolished</span>
+            <span class="ledger__from">source being named — see below</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="arhar" data-price="248">₹248 / kg</div>
+            <div class="ledger__req">Pick one or more</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Moong dal</span>
+            <span class="ledger__hi">unpolished</span>
+            <span class="ledger__from">Bundi</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="moong" data-price="230">₹230 / kg</div>
+            <div class="ledger__req">Pick one or more</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Chana dal</span>
+            <span class="ledger__hi">unpolished</span>
+            <span class="ledger__from">Bundi</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="chana" data-price="185">₹185 / kg</div>
+            <div class="ledger__req">Pick one or more</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Masoor dal</span>
+            <span class="ledger__hi">unpolished</span>
+            <span class="ledger__from">Bundi</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="masoor" data-price="245">₹245 / kg</div>
+            <div class="ledger__req">Pick one or more</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Kachi ghani mustard oil</span>
+            <span class="ledger__hi">cold-pressed, not refined</span>
+            <span class="ledger__from">Bundi — pressed at a ghani, not a plant</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="oil" data-price="345">₹345 / L</div>
+            <div class="ledger__req">Pick one</div>
+          </div>
+        </div>
+
+        <div class="ledger__row">
+          <div class="ledger__item">
+            <span class="ledger__name">Spice pack</span>
+            <span class="ledger__hi">haldi · dhaniya · jeera</span>
+            <span class="ledger__from">Bundi — sun-dried, ground the week it ships</span>
+          </div>
+          <div class="ledger__right">
+            <div class="ledger__price" data-sku="spice" data-price="680">₹680 / kg</div>
+            <div class="ledger__req">Pick one</div>
+          </div>
+        </div>
+
+        <div style="border-top: var(--b-rule) solid var(--ink); padding-top: 12px; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Pricing</span>
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-deep);">Set for December</span>
+          </div>
+          <p class="small" style="margin-top: 6px; color: var(--ink-soft);">Farm-gate rates closed with the producer company in October, so these are the December prices, not estimates. They hold for the season your membership covers, and prepaying a year takes 12% off. Kalanamak at ₹299 a kilo is our own crop — a 500 g pack is in every basket at ₹150, and the <span data-mrp>₹399 MRP</span> on the pack is what it would cost through a shop.</p>
+        </div>
+      </div>
+
+      <div class="stack stack--loose" style="flex: 0 1 360px;">
+        <div class="card">
+          <h2 class="h3-size">Pack sizes</h2>
+          <p class="small" style="margin-top: 8px; color: var(--ink-soft);">The first of anything you add is a real pack, not a spoonful. Atta and Basmati come in 1 kg, Kalanamak in 500 g, dals in 500 g, oil in 500 ml, spices in 100 g.</p>
+          <p class="small" style="margin-top: 10px; color: var(--ink-soft);">We dropped the 50 g spice sachet. At ₹34 it costs us more to print the pouch and fill it than it earns, and pretending otherwise would just move the loss somewhere you cannot see it.</p>
+        </div>
+
+        <div class="rule-note">
+          <h2 class="h3-size">Arhar is the one open source</h2>
+          <p>Our Bundi partner does not grow it. We are working a Banda-district track and will name the farmer before it ships — <b>or it will not be in the basket.</b> It is listed here because we expect to have it, not because we do.</p>
+        </div>
+
+        <div class="rule-note">
+          <h2 class="h3-size">Three wheats, three prices</h2>
+          <p>Standard at ₹78, Bansi at ₹138, Sona Moti at ₹188. They are different wheats that cost different amounts to grow, and the pack says which one you have. Most brands sell one thing called "atta".</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Three starting points ────────────────────────────────────────── -->
+  <section class="band band--alt">
+    <div class="wrap stack">
+      <p class="eyebrow">Where to start</p>
+      <h2>Three starting points, all editable.</h2>
+      <p class="prose">Tiers are a suggestion sized to a household, not a fixed box. Every line can be changed, removed or doubled.</p>
+
+      <div class="grid-3" style="margin-top: 10px;">
+        <article class="card">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <h3>Small</h3><span class="small muted">1–2 people</span>
+          </div>
+          <p class="small" style="margin-top: 8px; color: var(--ink-soft);">Atta 5 kg · Basmati 2 kg + Kalanamak 500 g · four dals 500 g · oil 500 ml · spices 300 g. 10.3 kg.</p>
+          <div style="margin-top: 12px; padding-top: 10px; border-top: var(--b-hair) solid var(--husk-soft); display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted);">Monthly</span>
+            <span style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--teal-deep);">₹1,688</span>
+          </div>
+        </article>
+
+        <article class="card" style="border-color: var(--ink);">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <h3>Medium</h3><span class="small muted">3–4 people</span>
+          </div>
+          <p class="small" style="margin-top: 8px; color: var(--ink-soft);">Atta 8 kg · Basmati 4 kg + Kalanamak 500 g · four dals 500 g–1 kg · oil 1.5 L · spices 500 g. 18 kg.</p>
+          <div style="margin-top: 12px; padding-top: 10px; border-top: var(--b-hair) solid var(--husk-soft); display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted);">Monthly</span>
+            <span style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--teal-deep);">₹3,050</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <h3>Large</h3><span class="small muted">5–6 people</span>
+          </div>
+          <p class="small" style="margin-top: 8px; color: var(--ink-soft);">Atta 12 kg · Basmati 6 kg + Kalanamak 500 g · four dals 1–1.5 kg · oil 2 L · spices 800 g. 26.3 kg.</p>
+          <div style="margin-top: 12px; padding-top: 10px; border-top: var(--b-hair) solid var(--husk-soft); display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted);">Monthly</span>
+            <span style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--teal-deep);">₹4,415</span>
+          </div>
+        </article>
+      </div>
+
+      <p class="small muted" style="margin-top: 4px;">Every quantity above is a whole pack, so any of them can be ordered exactly as shown.</p>
+    </div>
+  </section>
+
+  <!-- ── You'll never see an empty builder ────────────────────────────── -->
+  <section class="band">
+    <div class="wrap split">
+      <div class="stack" style="flex: 1 1 420px;">
+        <p class="eyebrow">From December</p>
+        <h2>You'll never see an empty builder.</h2>
+        <p class="prose">A blank cart asks a first-time customer to assemble a month of groceries from nothing. You land on a basket already filled for your household, and change what you like.</p>
+        <p class="prose">The category rule is enforced quietly as you edit, never as a blocking error. Removing the last item in a required category explains why, rather than refusing.</p>
+        <div class="btn-row" style="margin-top: 6px;">
+          <a class="btn btn--primary" href="build.html">Open the builder</a>
+        </div>
+      </div>
+
+      <div class="card card--document" style="flex: 0 1 400px;">
+        <div class="doc__head">
+          <span class="doc__title">Medium</span>
+          <span class="doc__ref">FOR 3–4 PEOPLE</span>
+        </div>
+        <div class="doc__line"><span>Whole wheat atta (standard)</span><span>8 kg</span></div>
+        <div class="doc__line"><span>Basmati rice 1509</span><span>4 kg</span></div>
+        <div class="doc__line"><span>Kalanamak rice</span><span>500 g</span></div>
+        <div class="doc__line"><span>Arhar dal</span><span>1 kg</span></div>
+        <div class="doc__line"><span>Moong dal</span><span>1 kg</span></div>
+        <div class="doc__line"><span>Chana dal</span><span>1 kg</span></div>
+        <div class="doc__line"><span>Masoor dal</span><span>500 g</span></div>
+        <div class="doc__line"><span>Kachi ghani mustard oil</span><span>1.5 L</span></div>
+        <div class="doc__line"><span>Spice pack</span><span>500 g</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-top: 16px; margin-top: 10px; border-top: var(--b-rule) solid var(--ink);">
+          <a class="btn btn--ghost btn--sm" href="build.html">Change it</a>
+          <div style="text-align: right;">
+            <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted);">Running total</div>
+            <div style="font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--teal-deep);">₹3,050</div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; padding-top: 12px; border-top: var(--b-hair) solid var(--husk-soft);">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-muted); margin-bottom: 6px;"><span>Free delivery at ₹2,500</span><span style="color: var(--teal); font-weight: 600;">Reached</span></div>
+          <div style="height: 6px; background: var(--husk-soft);"><div style="width: 100%; height: 6px; background: var(--teal);"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Delivery ─────────────────────────────────────────────────────── -->
+  <section class="band band--alt">
+    <div class="wrap split">
+      <div class="stack" style="flex: 1 1 420px;">
+        <p class="eyebrow">Delivery</p>
+        <h2>Free above ₹2,500. <em>Priced honestly below it.</em></h2>
+        <div class="ledger" style="margin-top: 6px;">
+          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">From ₹2,500 of produce</span><span style="font-size: 15px;">Free</span></div>
+          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">Two months in one drop</span><span style="font-size: 15px;">One charge</span></div>
+          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">₹1,200 to ₹2,499</span><span style="font-size: 15px;">₹99</span></div>
+          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">Under ₹1,200</span><span style="font-size: 15px; color: var(--gold-ink);">₹249</span></div>
+        </div>
+      </div>
+
+      <div class="stack" style="flex: 1 1 400px;">
+        <p class="prose"><b>Under ₹1,200 we charge ₹249, and we will show you why.</b> Packing, the lab retain and one van drop cost us about ₹320 whether the order is ₹600 or ₹6,000. A ₹600 order does not cover that. We could bury it in the product price so every customer pays for it, or name it.</p>
+        <p class="prose">There is one threshold and it is the same for everyone. Prepaying takes 2% off at three months, 5% at six and 12% at twelve, and we read the ₹2,500 against the list price rather than the discounted one — otherwise the discount would push you further from free delivery, which would be a strange sort of benefit.</p>
+        <p class="prose"><b>Half our respondents are one- or two-person households</b>, whose natural monthly order lands under the threshold. The fix is not a smaller basket — it is a longer cycle. Atta keeps two months, dal and oil keep six. Order two months at once and a small household crosses ₹2,500 on its own, with no surcharge, no discount and one van trip instead of two.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────────────────────────────── -->
+  <section class="band">
+    <div class="wrap stack" style="max-width: 680px;">
+      <h2>Reserve a December trial pack.</h2>
+      <p class="prose">No payment now. We'll write once when prices are set, and once more when it ships.</p>
+      <div class="btn-row" style="margin-top: 6px;">
+        <a class="btn btn--primary" href="index.html#reserve">Reserve a December trial pack</a>
+        <a class="btn btn--ghost" href="proof.html">See how we verify it</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="farmers-card" href="farmers.html" lang="hi">
+      <span class="farmers-card__hi">किसान साझेदारी</span>
+      <span class="farmers-card__sub">प्राकृतिक खेती करने वाले किसानों के लिए</span>
+    </a>
+
+    <nav class="footer__cols" aria-label="Footer">
+      <div class="footer__col">
+        <p class="footer__label">The food</p>
+        <a href="basket.html">What you get</a>
+        <a href="build.html">Build a basket</a>
+        <a href="sourcing.html">Where it's from</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">The proof</p>
+        <a href="proof.html">The lab report</a>
+        <a href="faq.html">Questions</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">The company</p>
+        <a href="membership.html">Membership</a>
+        <a href="story.html">Why we started</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">Legal</p>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="shipping.html">Shipping &amp; delivery</a>
+        <a href="refunds.html">Refunds &amp; cancellation</a>
+      </div>
+    </nav>
+
+    <div class="footer__legal">
+      Bodh Organic Ecoculture Pvt Ltd · Delhi NCR · Launching December 2026<br>
+      FSSAI licence [ NUMBER ] · <a href="mailto:admin@ecoculture.in">admin@ecoculture.in</a> · <a href="https://wa.me/918178030060">WhatsApp</a><br>
+      Naturally grown, residue-tested. We hold no certification and claim none.
+    </div>
+  </div>
+</footer>
+
+<script src="data/prices.js"></script>
+<script src="scripts/site.js" defer></script>
+<script src="scripts/price-check.js" defer></script>
+
+</body>
+</html>
