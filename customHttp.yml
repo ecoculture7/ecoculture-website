@@ -31,6 +31,14 @@ customHeaders:
     headers:
       - key: Cache-Control
         value: 'public, max-age=0, must-revalidate'
+  - pattern: '/*.html'
+    headers:
+      - key: Cache-Control
+        value: 'public, max-age=0, must-revalidate'
+  - pattern: '/'
+    headers:
+      - key: Cache-Control
+        value: 'public, max-age=0, must-revalidate'
   - pattern: '/styles/**'
     headers:
       - key: Cache-Control
