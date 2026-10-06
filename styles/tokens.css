@@ -1,0 +1,83 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Ecoculture — design tokens
+   The single source of truth for colour, type and spacing. Nothing else in
+   the stylesheet should contain a raw hex value.
+
+   Light only, deliberately. The brand ground is paper; a dark mode would be
+   a different brand. Do not add prefers-color-scheme here.
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Ground ─────────────────────────────────────────────────────────── */
+  --paper:        #F7F2E7;   /* page ground */
+  --paper-2:      #FBF8F0;   /* alternating band */
+  --paper-3:      #FFFDF8;   /* raised card on either ground */
+
+  /* ── Ink ────────────────────────────────────────────────────────────── */
+  --ink:          #1C2B24;   /* body and headings      · 13.4:1 on paper */
+  --ink-soft:     #4A5C52;   /* secondary prose        ·  7.4:1 */
+  --ink-muted:    #5F6D65;   /* captions, table heads  ·  4.8:1 — AA floor */
+  --ink-faint:    #8A9890;   /* 2.7:1 — FAILS AA. Rules, dividers,
+                                disabled glyphs. NEVER text a reader needs. */
+
+  /* ── Husk — borders and rules ───────────────────────────────────────── */
+  --husk:         #D9CDB4;   /* card border on paper */
+  --husk-soft:    #E8E0CD;   /* hairline between rows */
+
+  /* ── Teal — the one accent ──────────────────────────────────────────── */
+  --teal:         #2E7D6B;   /* 4.4:1 — display text 24px+, buttons, marks */
+  --teal-deep:    #1B4D42;   /* 8.6:1 — any text under 24px, links */
+
+  /* ── Gold — attention, never text on paper ──────────────────────────── */
+  --gold:         #F5C060;   /* rules, markers, fills. 1.8:1 — not for text */
+  --gold-ink:     #8A6212;   /* 5.1:1 — the readable gold, for warnings */
+  --gold-wash:    #FDF6E7;   /* warning band ground */
+  --teal-wash:    #E8F0ED;   /* confirmation chip ground */
+
+  /* ── Reversed, on ink ───────────────────────────────────────────────── */
+  --on-ink:        #F2EDE1;
+  --on-ink-soft:   rgba(242, 237, 225, 0.75);
+  --on-ink-muted:  rgba(242, 237, 225, 0.58);
+  --on-ink-rule:   rgba(242, 237, 225, 0.12);
+
+  /* ── Type ───────────────────────────────────────────────────────────── */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Karla', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-deva:    'Mukta', system-ui, sans-serif;
+
+  /* fluid display sizes: min at 360px, max at 1280px */
+  --t-hero:  clamp(2.25rem, 1.30rem + 4.2vw, 4.00rem);
+  --t-h2:    clamp(1.60rem, 1.18rem + 1.9vw, 2.60rem);
+  --t-h3:    clamp(1.20rem, 1.05rem + 0.7vw, 1.55rem);
+  --t-lead:  clamp(1.00rem, 0.95rem + 0.3vw, 1.15rem);
+
+  /* ── Borders. The brand has no rounded corners anywhere. ────────────── */
+  --radius:       0;
+  --b-hair:       1px;
+  --b-rule:       1.5px;
+  --b-accent:     2px;
+  --b-marker:     3px;
+
+  --shadow-document: 0 1px 0 var(--husk-soft),
+                     0 12px 30px -22px rgba(28, 43, 36, 0.4);
+
+  /* ── Rhythm ─────────────────────────────────────────────────────────── */
+  --gutter:       24px;
+  --maxw:         1280px;
+  --measure:      68ch;   /* prose line length ceiling */
+  --tap:          44px;   /* minimum touch target. Never go under. */
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 48px; }
+}
+
+/* Respect a user who has asked for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

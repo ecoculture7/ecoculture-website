@@ -1,0 +1,23 @@
+[
+  {
+    "_comment": "Paste this into Amplify console > Hosting > Rewrites and redirects > Open text editor.",
+    "source": "/index.html", "target": "/", "status": "301", "condition": null
+  },
+  { "source": "/about.html",   "target": "/sourcing.html", "status": "301", "condition": null },
+
+  { "source": "/basket",       "target": "/basket.html",      "status": "200", "condition": null },
+  { "source": "/build",        "target": "/build.html",       "status": "200", "condition": null },
+  { "source": "/sourcing",     "target": "/sourcing.html",    "status": "200", "condition": null },
+  { "source": "/proof",        "target": "/proof.html",       "status": "200", "condition": null },
+  { "source": "/membership",   "target": "/membership.html",  "status": "200", "condition": null },
+  { "source": "/story",        "target": "/story.html",       "status": "200", "condition": null },
+  { "source": "/faq",          "target": "/faq.html",         "status": "200", "condition": null },
+  { "source": "/contact",      "target": "/contact.html",     "status": "200", "condition": null },
+  { "source": "/farmers",      "target": "/farmers.html",     "status": "200", "condition": null },
+  { "source": "/terms",        "target": "/terms.html",       "status": "200", "condition": null },
+  { "source": "/privacy",      "target": "/privacy.html",     "status": "200", "condition": null },
+  { "source": "/shipping",     "target": "/shipping.html",    "status": "200", "condition": null },
+  { "source": "/refunds",      "target": "/refunds.html",     "status": "200", "condition": null },
+
+  { "source": "/<*>",          "target": "/404.html",         "status": "404", "condition": null }
+]
