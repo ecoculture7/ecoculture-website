@@ -21,4 +21,15 @@
       ? Math.round(v * 100) + '%'
       : '₹' + v.toLocaleString('en-IN');
   });
+  /* Derived figures for a starting basket: its monthly total and its weight. */
+  if (window.ECO.calc) {
+    document.querySelectorAll('[data-tier-total]').forEach(function (el) {
+      var d = window.ECO.calc.tier(el.getAttribute('data-tier-total'));
+      el.textContent = '\u20B9' + d.total.toLocaleString('en-IN');
+    });
+    document.querySelectorAll('[data-tier-weight]').forEach(function (el) {
+      var d = window.ECO.calc.tier(el.getAttribute('data-tier-weight'));
+      el.textContent = (Math.round(d.weight * 10) / 10) + ' kg';
+    });
+  }
 })();
