@@ -29,7 +29,8 @@ placeholder. Overwriting means returning visitors see the old image for up to a 
 | `PLACEHOLDER-bundi-field.jpg` | Homepage and /sourcing, Bundi card | 3:2 | A wide Bundi field with its crop, in daylight, with the village or a landmark recognisable |
 | `PLACEHOLDER-skn-paddy.jpg` | Homepage and /sourcing, Sant Kabir Nagar card | 3:2 | Kalanamak paddy, black husk visible if possible |
 | `PLACEHOLDER-farmers-field.jpg` | /sourcing farmer cards (three) | 3:2 | One portrait-in-the-field per farmer: **three different photos**, not one reused |
-| `PLACEHOLDER-story-light.jpg` | /story (not yet placed) | 3:2 | The founder with farmers, or at a weigh-in |
+| `PLACEHOLDER-story-light.jpg` | Homepage **"Hold a trial pack" band**, full width behind the copy (and /story) | 16:9, 2000 px wide | Warm, calm, low-contrast: a field at golden hour or hands at the scale. The headline sits on the left half. Under 250 KB |
+| `PLACEHOLDER-farmers-field.jpg` (also used as the strip at the top of the **membership "Joining a harvest" panel**) | Homepage membership | 16:7 crop | The weigh-in or a named farmer at the field; a wide, short crop of the same shoot |
 
 Extras worth shooting at the same visit:
 - The **scale** during a weigh-in, with the farmer and the number visible.

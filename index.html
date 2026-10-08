@@ -356,28 +356,28 @@
             <p class="flow__p">A named farmer, in a named village.</p>
           </li>
           <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-person"/></svg></span>
+            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-flask"/></svg></span>
             <p class="flow__n">Step 2</p>
+            <h4 class="flow__h">Residue-tested</h4>
+            <p class="flow__p">Right after harvest, a sample from the lot goes to a NABL laboratory.</p>
+          </li>
+          <li class="flow__item">
+            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-person"/></svg></span>
+            <p class="flow__n">Step 3</p>
             <h4 class="flow__h">Cleaned and graded</h4>
             <p class="flow__p">By the producer company’s self-help groups.</p>
           </li>
           <li class="flow__item">
             <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-drop"/></svg></span>
-            <p class="flow__n">Step 3</p>
+            <p class="flow__n">Step 4</p>
             <h4 class="flow__h">Milled or pressed</h4>
             <p class="flow__p">Atta milled and spices ground in NCR the week they ship. Oil pressed at a ghani, not a plant.</p>
           </li>
           <li class="flow__item">
             <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-shield"/></svg></span>
-            <p class="flow__n">Step 4</p>
+            <p class="flow__n">Step 5</p>
             <h4 class="flow__h">Sealed as a lot</h4>
             <p class="flow__p">Recorded against the members whose commitment bought it.</p>
-          </li>
-          <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-flask"/></svg></span>
-            <p class="flow__n">Step 5</p>
-            <h4 class="flow__h">Residue-tested</h4>
-            <p class="flow__p">At a NABL laboratory, before it ships.</p>
           </li>
           <li class="flow__item">
             <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-truck"/></svg></span>
@@ -435,7 +435,7 @@
       <p class="prose">There is no membership fee. You pay for your food in advance, that money buys the harvest at the weigh-in, and the discount is what we pay you for the use of it. The longer you prepay, the more it is worth — which is why the discount is not flat.</p>
 
       <div class="lanes" style="margin-top: 10px;">
-        <section class="lane" aria-labelledby="lane-box">
+        <section class="lane lane--plain" aria-labelledby="lane-box">
           <h3 id="lane-box">A box subscription</h3>
           <p class="lane__sub">The food is bought <b>after</b> you order.</p>
           <ol class="lane__steps">
@@ -445,16 +445,24 @@
             <li>Delivered</li>
           </ol>
         </section>
+
         <section class="lane lane--us" aria-labelledby="lane-harvest">
-          <h3 id="lane-harvest">Joining a harvest</h3>
-          <p class="lane__sub">The food is bought <b>before the season</b>, by your commitment.</p>
-          <ol class="lane__steps">
-            <li>You commit, and prepay if you choose</li>
-            <li>Farmers are told what to sow, and promised we will buy it</li>
-            <li class="is-key">At the weigh-in, the commitment buys the harvest</li>
-            <li>Sealed as a lot, recorded against your name</li>
-            <li>Delivered, month by month</li>
-          </ol>
+          <figure class="lane__photo" data-placeholder>
+            <img src="/assets/img/PLACEHOLDER-farmers-field.jpg" alt="" width="900" height="380" loading="lazy">
+            <span class="lane__phototag">PLACEHOLDER — not a photograph of a real field</span>
+          </figure>
+          <div class="lane__inner">
+            <p class="lane__badge">How we work</p>
+            <h3 id="lane-harvest">Joining a harvest</h3>
+            <p class="lane__sub">The food is bought <b>before the season</b>, by your commitment.</p>
+            <ol class="lane__rich">
+              <li><span class="lane__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-calendar"/></svg></span><div><b>You commit</b><span>Before the season, and you prepay if you choose.</span></div></li>
+              <li><span class="lane__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-wheat"/></svg></span><div><b>Farmers are told what to sow</b><span>And promised we will buy it.</span></div></li>
+              <li class="is-key"><span class="lane__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-scale"/></svg></span><div><b>At the weigh-in, your commitment buys the harvest</b><span>The farmer is paid on the spot.</span></div></li>
+              <li><span class="lane__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-shield"/></svg></span><div><b>Sealed as a lot, in your name</b><span>Recorded against the members whose commitment bought it.</span></div></li>
+              <li><span class="lane__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-truck"/></svg></span><div><b>Delivered, month by month</b><span>With the lab report for the lot.</span></div></li>
+            </ol>
+          </div>
         </section>
       </div>
 
@@ -521,12 +529,17 @@
   </section>
 
   <!-- ── Reserve ──────────────────────────────────────────────────────── -->
-  <section class="band band--alt" id="reserve">
+  <section class="band band--photo" id="reserve">
+    <div class="band__media" data-placeholder>
+      <img src="/assets/img/PLACEHOLDER-story-light.jpg" alt="" width="1600" height="900" loading="lazy">
+    </div>
+    <div class="band__scrim"></div>
+    <span class="band__tag">PLACEHOLDER — not a photograph of a real field</span>
     <div class="wrap split" style="align-items: center;">
       <div class="stack" style="flex: 1 1 420px;">
         <h2>Hold a trial pack for December.</h2>
         <p class="prose">A small paid pack — enough of four things to actually cook with and tell the difference. No payment today. We'll write once when prices are set, and once more when it ships.</p>
-        <p class="small muted">Two emails. Nothing else, ever. Laukesh writes them himself.</p>
+        <p class="small">Two emails. Nothing else, ever. Laukesh writes them himself.</p>
       </div>
 
       <form id="reserve-form" name="reserve" data-endpoint="" novalidate
