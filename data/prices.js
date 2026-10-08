@@ -29,8 +29,8 @@ window.ECO.SKUS = [
   /* PROVISIONAL: haldi and dhaniya were one "spice pack" at 680 a kg. They are now
      sold separately at that same figure until the per-item prices are set, so no
      basket total moves. Jeera is out for now. Replace both prices when known. */
-  { k: 'haldi',     name: 'Haldi (turmeric)',        hi: 'sun-dried, ground to order',  cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'ground the week it ships' },
-  { k: 'dhaniya',   name: 'Dhaniya (coriander)',     hi: 'sun-dried, ground to order',  cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'ground the week it ships' }
+  { k: 'haldi',     name: 'Haldi (turmeric)',        hi: 'sun-dried and ground',         cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'processed in 2–3 month batches' },
+  { k: 'dhaniya',   name: 'Dhaniya (coriander)',     hi: 'sun-dried and ground',         cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'processed in 2–3 month batches' }
 ];
 
 /* Printed MRPs, per pack. Required on every pre-packaged food sold in India.

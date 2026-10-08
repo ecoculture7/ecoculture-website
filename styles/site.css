@@ -731,7 +731,7 @@ b, strong { font-weight: 600; color: var(--ink); }
 .flow__p { font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
 @media (min-width: 1100px) {
   .flowbox { padding: 28px 28px 30px; }
-  .flow { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; }
+  .flow { grid-template-columns: repeat(var(--flow-n, 6), minmax(0, 1fr)); gap: 22px; }
   .flow__item { padding: 64px 0 0; min-height: 0; }
   .flow__item::before { left: 48px; right: -22px; top: 23px; bottom: auto; width: auto; height: 2px; }
 }
