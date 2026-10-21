@@ -889,3 +889,63 @@ b, strong { font-weight: 600; color: var(--ink); }
 .founder__photo .icon { width: 56px; height: 56px; opacity: 0.5; }
 .founder__q { margin: 0; padding-left: 18px; border-left: var(--b-marker) solid var(--gold); }
 .founder__q p { font-family: var(--font-display); font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); line-height: 1.45; color: var(--ink); }
+
+/* ── Round 6: motion and interaction ─────────────────────────────────── */
+
+/* Reveal. Hidden only once motion.js has run (html.js); reduced-motion users
+   get the end state through the global override in tokens.css. */
+.js .reveal { opacity: 0; transform: translateY(14px); }
+.js .reveal.in { opacity: 1; transform: none; transition: opacity 0.45s ease var(--d, 0ms), transform 0.45s ease var(--d, 0ms); }
+
+/* Hero: a slow push-in on the photograph, and a cue to scroll. */
+@keyframes hero-push { from { transform: scale(1); } to { transform: scale(1.06); } }
+.hero__media img { animation: hero-push 22s ease-out forwards; transform-origin: 60% 40%; }
+@keyframes cue-bob { 0%, 100% { transform: rotate(90deg) translateX(0); } 50% { transform: rotate(90deg) translateX(5px); } }
+.hero__cue {
+  position: absolute; left: 50%; bottom: 16px; margin-left: -22px; z-index: 1;
+  width: var(--tap); height: var(--tap); display: flex; align-items: center; justify-content: center;
+  color: var(--on-ink-soft); border: var(--b-hair) solid var(--on-ink-rule);
+}
+.hero__cue .icon { animation: cue-bob 1.8s ease-in-out infinite; }
+.hero__cue:hover { color: var(--gold); border-color: var(--gold); }
+
+/* The trap runs; the way out runs the other colour. */
+@keyframes trap-run { to { stroke-dashoffset: -26; } }
+.trap__ring { animation: trap-run 1.4s linear infinite; }
+.trap__box, .trap__arrow, .trap__ring, .trap__c { transition: fill 0.5s ease, stroke 0.5s ease; }
+.trap--out .trap__ring  { stroke: var(--teal); }
+.trap--out .trap__box   { fill: var(--teal-wash); stroke: var(--teal-deep); }
+.trap--out .trap__arrow { fill: var(--teal); }
+.trap--out .trap__c     { fill: var(--teal-deep); }
+.trap__ctl { display: flex; justify-content: center; margin-top: 6px; }
+
+/* Dark band for the founder: a change of pace mid-page. */
+.band--ink .eyebrow { color: var(--gold); }
+.band--ink .founder__q { border-left-color: var(--gold); }
+.band--ink .founder__q p { color: var(--on-ink); }
+.band--ink .small.muted { color: var(--on-ink-muted); }
+.band--ink a { color: var(--gold); }
+.band--ink .founder__photo { background: var(--on-ink-rule); border-color: var(--on-ink-rule); color: var(--gold); }
+
+/* Timeline draws in once seen. */
+.tl__item::before { transform-origin: top; transform: scaleY(0); transition: transform 0.5s ease; }
+.tl--live .tl__item::before { transform: scaleY(1); }
+.tl--live .tl__item:nth-child(2)::before { transition-delay: 0.3s; }
+.tl--live .tl__item:nth-child(3)::before { transition-delay: 0.6s; }
+@media (min-width: 900px) {
+  .tl__item::before { transform-origin: left; transform: scaleX(0); }
+  .tl--live .tl__item::before { transform: scaleX(1); }
+}
+
+/* The report explains itself. */
+.js [data-why] { cursor: pointer; }
+.js [data-why]:hover span:first-child, .js [data-why]:focus-visible span:first-child { color: var(--teal-deep); text-decoration: underline; text-underline-offset: 0.18em; }
+.js [data-why].is-active { background: var(--teal-wash); margin-inline: -8px; padding-inline: 8px; }
+.doc__why { margin-top: 12px; padding: 10px 12px; background: var(--teal-wash); border-left: var(--b-marker) solid var(--teal); font-size: 13px; line-height: 1.55; color: var(--teal-deep); }
+
+/* Cards answer the pointer. */
+.item, .card { transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.item:hover { border-color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow-document); }
+.item__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.btn { transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease; }
+.btn:active { transform: translateY(1px); }
