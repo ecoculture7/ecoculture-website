@@ -32,7 +32,10 @@ placeholder. Overwriting means returning visitors see the old image for up to a 
 | `PLACEHOLDER-story-light.jpg` | Homepage **"Hold a trial pack" band**, full width behind the copy (and /story) | 16:9, 2000 px wide | Warm, calm, low-contrast: a field at golden hour or hands at the scale. The headline sits on the left half. Under 250 KB |
 | `PLACEHOLDER-farmers-field.jpg` (also used as the strip at the top of the **membership "Joining a harvest" panel**) | Homepage membership | 16:7 crop | The weigh-in or a named farmer at the field; a wide, short crop of the same shoot |
 
+| *(none yet)* | Homepage **founder block** | 4:5 portrait | Laukesh in a field or at a weigh-in, with a farmer, not posed. Daylight. |
+
 Extras worth shooting at the same visit:
+- **The inputs being made on the farm**: dung, urine, jaggery and pulse flour going into a drum (jeevamrit). This is the single photo that explains "natural, not organic" better than the table does; it would sit beside the comparison on the homepage.
 - The **scale** during a weigh-in, with the farmer and the number visible.
 - The **sealed lot**: sacks with lot code and seal.
 - The **ghani** pressing mustard oil.

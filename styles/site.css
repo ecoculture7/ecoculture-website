@@ -841,3 +841,51 @@ b, strong { font-weight: 600; color: var(--ink); }
 .lane__rich span:not(.lane__ico) { display: block; margin-top: 3px; font-size: 13px; line-height: 1.5; color: var(--on-ink-soft); }
 .lane__rich li.is-key .lane__ico { background: var(--gold); color: var(--ink); }
 .lane__rich li.is-key b { color: var(--gold); font-size: 18px; }
+
+/* ── Round 5: the mission sections ───────────────────────────────────── */
+
+/* The trap loop. Drawn in a 400-unit box so its 16px labels still read on a phone. */
+.trap__fig { padding: 16px 12px 12px; }
+.trap { width: 100%; max-width: 440px; height: auto; display: block; margin-inline: auto; }
+.trap__ring  { fill: none; stroke: var(--husk); stroke-width: 2.5; stroke-dasharray: 7 6; }
+.trap__arrow { fill: var(--teal-deep); }
+.trap__box   { fill: var(--paper-3); stroke: var(--ink); stroke-width: 1.5; }
+.trap__t     { font-family: var(--font-body); font-size: 16px; font-weight: 500; fill: var(--ink); }
+.trap__c     { font-family: var(--font-display); font-size: 19px; font-weight: 600; fill: var(--gold-ink); }
+
+/* Organic vs natural: a ledger with the natural column carrying the accent. */
+.compare { background: var(--paper-3); border: var(--b-hair) solid var(--husk); }
+.compare__head, .compare__row { display: grid; grid-template-columns: minmax(0, 1fr); }
+.compare__head { border-bottom: var(--b-rule) solid var(--ink); }
+.compare__head span { padding: 12px 14px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+.compare__head span:first-child { display: none; }
+.compare__row { border-bottom: var(--b-hair) solid var(--husk-soft); }
+.compare__row:last-child { border-bottom: 0; }
+.compare__row span { padding: 10px 14px; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+.compare__label { font-family: var(--font-display); font-weight: 600; font-size: 16px !important; color: var(--ink) !important; padding-top: 16px !important; }
+.compare__us { background: var(--teal-wash); color: var(--ink) !important; font-weight: 500; }
+.compare__head .compare__us { color: var(--teal-deep) !important; }
+.compare__row span[data-col]::before { content: attr(data-col) " · "; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+.compare__row .compare__us[data-col]::before { color: var(--teal-deep); }
+@media (min-width: 768px) {
+  .compare__head, .compare__row { grid-template-columns: 180px minmax(0, 1fr) minmax(0, 1fr); }
+  .compare__head span:first-child { display: block; }
+  .compare__row span { padding: 14px 16px; }
+  .compare__label { padding-top: 14px !important; }
+  .compare__row span[data-col]::before { display: none; }
+  .compare__us { border-left: var(--b-accent) solid var(--teal); }
+}
+
+/* 2028 targets */
+.targets { margin-top: 22px; padding-top: 22px; border-top: var(--b-rule) solid var(--ink); display: flex; flex-direction: column; gap: 16px; }
+.targets__label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-deep); }
+
+/* Founder */
+.founder__photo {
+  position: relative; flex: 0 0 240px; aspect-ratio: 4 / 5; max-width: 240px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--husk-soft); color: var(--teal-deep); border: var(--b-hair) solid var(--husk);
+}
+.founder__photo .icon { width: 56px; height: 56px; opacity: 0.5; }
+.founder__q { margin: 0; padding-left: 18px; border-left: var(--b-marker) solid var(--gold); }
+.founder__q p { font-family: var(--font-display); font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); line-height: 1.45; color: var(--ink); }
