@@ -303,7 +303,7 @@ b, strong { font-weight: 600; color: var(--ink); }
    This band makes that impossible to miss, and is deleted with the file. */
 .shot[data-placeholder] { position: relative; }
 .shot[data-placeholder]::after {
-  content: "PLACEHOLDER — not a photograph of a real field";
+  content: "PLACEHOLDER — a generated image, not a photograph of a real field";
   position: absolute; inset-inline: 0; top: 0;
   background: var(--gold-wash);
   border-bottom: var(--b-accent) solid var(--gold);
@@ -949,3 +949,42 @@ b, strong { font-weight: 600; color: var(--ink); }
 .item__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .btn { transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease; }
 .btn:active { transform: translateY(1px); }
+
+/* ── Round 7: section bar and the scroll-driven trap ─────────────────── */
+
+/* Sticky section bar. Hidden under the hero, slides in once the page has
+   been scrolled past it. Sits under the masthead, whose height subnav.js
+   measures into --masthead-h. */
+.subnav {
+  position: sticky; top: var(--masthead-h, 69px); z-index: 19;
+  background: var(--paper-2); border-bottom: var(--b-hair) solid var(--husk-soft);
+  transform: translateY(-110%); opacity: 0; pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.subnav--on { transform: none; opacity: 1; pointer-events: auto; }
+.subnav__inner {
+  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+  padding-block: 6px; -webkit-overflow-scrolling: touch;
+}
+.subnav__inner::-webkit-scrollbar { display: none; }
+.subnav a {
+  flex: none; display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px;
+  font-size: 13px; font-weight: 500; color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+  border-bottom: var(--b-accent) solid transparent;
+}
+.subnav a:hover { color: var(--ink); }
+.subnav a.is-active { color: var(--teal-deep); font-weight: 600; border-bottom-color: var(--gold); }
+@media (min-width: 1100px) { .subnav__inner { gap: 10px; justify-content: center; } .subnav a { font-size: 14px; } }
+/* anchors land below both bars */
+main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
+
+/* The trap lights up node by node as it scrolls through the viewport, then
+   turns into the way out on its own. The button still works for a tap. */
+.trap__node .trap__box { transition: fill 0.4s ease, stroke 0.4s ease, stroke-width 0.4s ease; }
+.trap__node.is-lit .trap__box { stroke: var(--gold-ink); stroke-width: 2.5; fill: var(--gold-wash); }
+.trap__node.is-lit .trap__t { font-weight: 600; }
+.trap--out .trap__node.is-lit .trap__box { stroke: var(--teal-deep); stroke-width: 2.5; fill: var(--teal-wash); }
+.trap__progress { display: flex; gap: 5px; justify-content: center; margin-top: 8px; }
+.trap__progress span { width: 22px; height: 4px; background: var(--husk-soft); transition: background 0.3s ease; }
+.trap__progress span.is-lit { background: var(--gold); }
+.trap__fig.is-out .trap__progress span.is-lit { background: var(--teal); }

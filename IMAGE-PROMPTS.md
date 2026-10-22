@@ -30,6 +30,14 @@ Negative prompt, where the tool takes one:
 
 ---
 
+## Filled so far (generated, band on)
+
+- Hero: `GEN-hero-farmer.jpg` (2000×1180, 471 KB — over the 250 KB budget; re-export at quality 70 when convenient)
+- Bundi card: `GEN-bundi-field.webp` (1264×848)
+- Sant Kabir Nagar card: `GEN-skn-paddy.webp` (1264×848)
+
+Still open: farmer strip (membership), reserve band, jeevamrit drum, lab sample, the twelve item tiles.
+
 ## Slot by slot
 
 | Slot | Size | Prompt (add the style line) | Stock search phrase |
