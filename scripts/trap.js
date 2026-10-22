@@ -11,11 +11,11 @@
   if (!svg) return;
 
   var nodes = svg.querySelectorAll('.trap__node');
-  var centre = svg.querySelector('.trap__c');
+  var centre = document.getElementById('trap-label');
   var caption = fig.querySelector('figcaption');
   var btn = document.getElementById('trap-btn');
   var marks = fig.querySelectorAll('.trap__progress span');
-  if (!btn || nodes.length !== 4) return;
+  if (!btn || !centre || nodes.length !== 4) return;
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -23,11 +23,11 @@
     ['Makes the inputs', 'on the farm'],
     ['Soil recovers,', 'needs less', 'each year'],
     ['Yields steady,', 'no residue'],
-    ['Price fixed', 'before sowing,', 'paid at the scale']
+    ['Price fixed', 'before sowing,', 'paid at scale']
   ];
   var orig = [];
   nodes.forEach(function (n) {
-    orig.push([].map.call(n.querySelectorAll('text'), function (t) { return t.textContent; }));
+    orig.push([].map.call(n.querySelectorAll('text.trap__t'), function (t) { return t.textContent; }));
   });
   var origCentre = centre.textContent;
   var origCaption = caption.textContent;
@@ -35,7 +35,7 @@
   var manual = false;
 
   function setLines(node, lines) {
-    node.querySelectorAll('text').forEach(function (t, i) { t.textContent = lines[i] || ''; });
+    node.querySelectorAll('text.trap__t').forEach(function (t, i) { t.textContent = lines[i] || ''; });
   }
   function light(count) {
     nodes.forEach(function (n, i) { n.classList.toggle('is-lit', i < count); });
@@ -46,11 +46,14 @@
     svg.classList.toggle('trap--out', out);
     fig.classList.toggle('is-out', out);
     nodes.forEach(function (n, i) { setLines(n, out ? OUT[i] : orig[i]); });
-    centre.textContent = out ? 'Way out' : origCentre;
+    centre.textContent = out ? 'The way out · the same four steps, turned' : origCentre;
+    centre.classList.toggle('is-out', out);
     caption.textContent = out
       ? 'Change only the first step and the loop keeps turning \u2014 the other way. This is what we buy into when we commit to a harvest.'
       : origCaption;
-    btn.textContent = out ? 'Show the trap again' : 'Break the loop';
+    btn.querySelector('span').textContent = out ? 'Show the trap again' : 'Break the loop';
+    var hint = fig.querySelector('.trap__hint');
+    if (hint) hint.hidden = out;
     btn.setAttribute('aria-pressed', String(out));
     if (out) light(4);
   }

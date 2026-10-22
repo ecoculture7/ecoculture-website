@@ -989,3 +989,47 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 .trap__progress span { width: 22px; height: 4px; background: var(--husk-soft); transition: background 0.3s ease; }
 .trap__progress span.is-lit { background: var(--gold); }
 .trap__fig.is-out .trap__progress span.is-lit { background: var(--teal); }
+
+/* ── Round 8 ─────────────────────────────────────────────────────────── */
+
+/* The loop, redrawn */
+.trap__start { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-ink); text-align: center; margin-bottom: 6px; }
+.trap__start.is-out { color: var(--teal-deep); }
+.trap__box   { fill: var(--paper-3); stroke: var(--husk); stroke-width: 1.5; }
+.trap__badge { fill: var(--ink); }
+.trap__n     { font-family: var(--font-display); font-size: 14px; font-weight: 700; fill: var(--on-ink); }
+.trap__t     { font-size: 14px; font-weight: 500; }
+.trap__ico   { color: var(--teal-deep); fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: square; stroke-linejoin: miter; }
+.trap__ring  { stroke: var(--husk); stroke-width: 3; }
+.trap__arrow { fill: var(--ink-soft); }
+.trap__node.is-lit .trap__box   { stroke: var(--gold-ink); stroke-width: 2.5; fill: var(--gold-wash); }
+.trap__node.is-lit .trap__badge { fill: var(--gold-ink); }
+.trap__node.is-lit .trap__ico   { color: var(--gold-ink); }
+.trap--out .trap__box   { fill: var(--teal-wash); stroke: var(--teal); }
+.trap--out .trap__badge { fill: var(--teal-deep); }
+.trap--out .trap__ico   { color: var(--teal-deep); }
+.trap--out .trap__node.is-lit .trap__box   { stroke: var(--teal-deep); fill: var(--teal-wash); }
+.trap--out .trap__node.is-lit .trap__badge { fill: var(--teal-deep); }
+.trap--out .trap__node.is-lit .trap__ico   { color: var(--teal-deep); }
+.trap--out .trap__arrow { fill: var(--teal); }
+.trap--out .trap__ring  { stroke: var(--teal); }
+
+/* The button reads as a button */
+.trap__ctl { flex-direction: column; align-items: center; gap: 10px; margin-top: 14px; }
+.trap__hint { font-size: 14px; font-weight: 600; color: var(--teal-deep); }
+.trap__btn { width: 100%; max-width: 320px; min-height: 50px; gap: 8px; animation: trap-pulse 2.4s ease-in-out infinite; }
+.trap__btn .icon { width: 20px; height: 20px; }
+@keyframes trap-pulse { 0%, 100% { box-shadow: 0 0 0 0 var(--teal-wash); } 50% { box-shadow: 0 0 0 10px var(--teal-wash); } }
+.trap__fig.is-out .trap__btn { animation: none; }
+
+/* Photo cards (soil, farmer, you) */
+.card--photo { padding-top: 0; }
+.card__img { position: relative; margin: 0 -18px 16px; aspect-ratio: 16 / 9; overflow: hidden; background: var(--husk-soft); display: flex; align-items: center; justify-content: center; color: var(--teal-deep); }
+@media (min-width: 768px) { .card__img { margin-inline: -22px; } }
+.card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__img--pending .icon { width: 40px; height: 40px; opacity: 0.5; }
+
+/* Clips on the district cards */
+.clip { margin: 0; }
+.clip video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; background: var(--ink); }
+.clip figcaption { margin-top: 8px; font-size: 12px; color: var(--ink-muted); }

@@ -46,6 +46,13 @@ Negative prompt, where the tool takes one:
 
 Still open: farmer strip (membership), reserve band, jeevamrit drum, lab sample, the twelve item tiles.
 
+## Two new slots (Everyone wins cards)
+
+| Slot | Size | Prompt (add the style line) | Stock search phrase |
+|---|---|---|---|
+| **Farmer economy** card | 1600×900 | A farmer's hands counting notes at a steel weighing scale beside full sacks, village yard, morning light, no face | "farmer hands weighing scale cash India" |
+| **Consumer wellness** card | 1600×900 | A family's kitchen table in a Delhi flat at dinner, a steel thali of dal, rice and roti, hands reaching, faces out of frame or turned away, warm evening light | "Indian family dinner table thali hands" |
+
 ## Slot by slot
 
 | Slot | Size | Prompt (add the style line) | Stock search phrase |
