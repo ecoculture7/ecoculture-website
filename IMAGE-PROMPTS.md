@@ -30,9 +30,16 @@ Negative prompt, where the tool takes one:
 
 ---
 
-## Filled so far (generated, band on)
+## Real photographs in place (no band)
 
-- Hero: `GEN-hero-farmer.jpg` (2000×1180, 471 KB — over the 250 KB budget; re-export at quality 70 when convenient)
+- Hero: `REAL-urad-field.jpg` (black gram field, 494 KB — re-export under 250 KB when convenient)
+- Reserve band: `REAL-river-sunset.jpg` (371 KB)
+- Natural, not organic: `REAL-jeevamrit-drums.jpg` (483 KB)
+- Held, not published: the farmer at the sandstone slabs. Needs name, village and written consent first.
+
+## Generated, band on
+
+- Hero (retired): `GEN-hero-farmer.jpg`, no longer referenced; delete when convenient
 - Bundi card: `GEN-bundi-field.webp` (1264×848)
 - Sant Kabir Nagar card: `GEN-skn-paddy.webp` (1264×848)
 
