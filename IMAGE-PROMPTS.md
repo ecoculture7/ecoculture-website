@@ -46,6 +46,46 @@ Negative prompt, where the tool takes one:
 
 Still open: farmer strip (membership), reserve band, jeevamrit drum, lab sample, the twelve item tiles.
 
+## Painted tiles (the reference style): three cards and the loop
+
+**Style line, pasted at the end of every prompt below:**
+
+> Painted illustration in muted ink-wash and sepia, soft brushwork, warm ochre,
+> slate and moss tones, quiet morning light, North Indian plains, the top-left
+> quarter kept dark and uncluttered so a title can sit on it, 16:9, no text, no
+> logos, no watermark, no faces in focus.
+
+Save as JPEG, 1600×900, under 150 KB each. **The filenames are fixed**: the page
+looks for exactly these and shows its drawn fallback until each one exists.
+
+**The three cards** (`/assets/img/tiles/`)
+
+| File | Scene |
+|---|---|
+| `soil.jpg` | A cross-section of living soil: dark crumbly earth with roots reaching down, an earthworm, a seedling above the surface, dew on the leaves |
+| `farmer.jpg` | A farmer in a cotton kurta at a large iron weighing scale in a village yard, sacks of grain beside it, seen from behind or in profile |
+| `family.jpg` | A family kitchen table in a Delhi flat at dinner, a steel thali of dal, rice and roti, hands reaching, faces turned away, warm evening light |
+
+**The loop, as the trap** (`/assets/img/loop/`)
+
+| File | Scene |
+|---|---|
+| `trap-1.jpg` | A farmer at the counter of a dim agri-input shop, sacks of urea and bottles of pesticide stacked behind, a ledger open on the counter |
+| `trap-2.jpg` | Cracked, pale, compacted field soil with sparse stubble, a fertiliser sack half-empty at its edge |
+| `trap-3.jpg` | A thin standing crop with gaps, a spray pump on the bund, grain heads small and few |
+| `trap-4.jpg` | A mandi at dusk: a farmer beside a small heap of grain, a trader weighing it, notes changing hands, the farmer's face unseen |
+
+**The loop, as the way out** (same folder; shown when the loop flips)
+
+| File | Scene |
+|---|---|
+| `out-1.jpg` | The same farmer stirring a blue drum of jeevamrit under a tree, a cow tethered behind, sacks of jaggery and gram flour beside |
+| `out-2.jpg` | Dark, moist, crumbly soil in cupped hands, roots and an earthworm visible, a green field soft behind |
+| `out-3.jpg` | A dense healthy crop, heavy grain heads, no spray pump, bees and a dragonfly above it |
+| `out-4.jpg` | A weigh-in in a village yard: a big iron scale, sealed sacks, a farmer being paid on the spot, a price written on a board before sowing |
+
+Pair each trap-N with its out-N: same place, same farmer, the other outcome.
+
 ## Two new slots (Everyone wins cards)
 
 | Slot | Size | Prompt (add the style line) | Stock search phrase |

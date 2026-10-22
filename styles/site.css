@@ -1056,3 +1056,51 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 .band--ink .prose { color: var(--on-ink-soft); }
 .band--ink .clip figcaption { color: var(--on-ink-muted); }
 .band--ink .clip video { border: var(--b-hair) solid var(--on-ink-rule); }
+
+/* ── Round 10: picture tiles, and the loop as four picture-cards ──────── */
+
+/* A tile: 16:9, a drawn fallback until its picture exists, then the picture
+   with the title on it (dark wash top-left, as in the reference). */
+.tile { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--paper-2); }
+.tile__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile__fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.tile--photo .tile__fallback { display: none; }
+.tile--photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, var(--scrim) 0%, transparent 55%); pointer-events: none; }
+.tile--card { margin: 0 -18px 16px; }
+@media (min-width: 768px) { .tile--card { margin-inline: -22px; } }
+.tile__title {
+  position: absolute; left: 16px; top: 12px; z-index: 1; margin: 0;
+  font-family: var(--font-display); font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem); font-weight: 600; line-height: 1.1; color: var(--ink);
+}
+.tile--photo .tile__title { color: var(--on-ink); text-shadow: 0 1px 2px var(--scrim); }
+.tile--card .ill__word { display: none; }
+
+/* The loop grid: 1 top-left, 2 top-right, 3 bottom-right, 4 bottom-left */
+.loop { list-style: none; margin: 10px 0 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 38px; }
+.loop__node { margin: 0; min-width: 0; }
+.loop__node--1 { grid-area: 1 / 1; } .loop__node--2 { grid-area: 1 / 2; }
+.loop__node--3 { grid-area: 2 / 2; } .loop__node--4 { grid-area: 2 / 1; }
+.tile--sm { border: var(--b-rule) solid var(--husk); background: var(--paper-3); transition: border-color 0.4s ease, background-color 0.4s ease; }
+.tile--sm .tile__fallback .icon { width: 36px; height: 36px; color: var(--teal-deep); }
+.tile__n {
+  position: absolute; left: 8px; top: 8px; z-index: 2; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
+  background: var(--ink); color: var(--on-ink); font-family: var(--font-display); font-size: 14px; font-weight: 700;
+}
+.loop__cap { margin-top: 8px; font-size: 13px; line-height: 1.4; font-weight: 500; color: var(--ink); }
+.loop__arrow {
+  position: absolute; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  background: var(--paper-3); border: var(--b-hair) solid var(--husk); color: var(--ink-soft); transform: translate(-50%, -50%);
+}
+.loop__arrow .icon { width: 18px; height: 18px; }
+.loop__arrow--1 { left: 50%; top: 22%; }
+.loop__arrow--2 { left: 75%; top: 50%; } .loop__arrow--2 .icon { transform: rotate(90deg); }
+.loop__arrow--3 { left: 50%; top: 78%; } .loop__arrow--3 .icon { transform: rotate(180deg); }
+.loop__arrow--4 { left: 25%; top: 50%; } .loop__arrow--4 .icon { transform: rotate(-90deg); }
+/* lit, and the way out */
+.loop__node.is-lit .tile--sm { border-color: var(--gold-ink); background: var(--gold-wash); }
+.loop__node.is-lit .tile__n { background: var(--gold-ink); }
+.loop--out .tile--sm { border-color: var(--teal); background: var(--teal-wash); }
+.loop--out .tile__n { background: var(--teal-deep); }
+.loop--out .loop__arrow { color: var(--teal-deep); border-color: var(--teal); }
+.loop--out .loop__node.is-lit .tile--sm { border-color: var(--teal-deep); background: var(--teal-wash); }
+.loop--out .loop__node.is-lit .tile__n { background: var(--teal-deep); }
