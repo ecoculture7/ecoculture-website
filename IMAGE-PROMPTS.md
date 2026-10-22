@@ -35,6 +35,7 @@ Negative prompt, where the tool takes one:
 - Hero: `REAL-urad-field.jpg` (black gram field, 494 KB — re-export under 250 KB when convenient)
 - Reserve band: `REAL-river-sunset.jpg` (371 KB)
 - Natural, not organic: `REAL-jeevamrit-drums.jpg` (483 KB)
+- Founder block: `REAL-founder-laukesh.jpg`
 - Held, not published: the farmer at the sandstone slabs. Needs name, village and written consent first.
 
 ## Generated, band on
