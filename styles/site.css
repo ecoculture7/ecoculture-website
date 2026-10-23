@@ -1108,3 +1108,17 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 /* A tile whose picture already carries its title: no overlay, no wash. */
 .tile--titled.tile--photo .tile__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .tile--titled.tile--photo::after { display: none; }
+
+/* ── Round 12 ────────────────────────────────────────────────────────── */
+.card__lens { font-family: var(--font-display); font-size: 20px; font-weight: 700; line-height: 1.25; color: var(--ink); margin-top: 2px; }
+
+/* The chain with pictures: a small picture at the left on a phone, a wide
+   one on top of each column on desktop. */
+.flow--pics .flow__item { padding: 0 0 26px 110px; min-height: 72px; }
+.flow--pics .flow__item::before { left: 46px; top: 76px; }
+.flow__pic { position: absolute; left: 0; top: 0; width: 94px; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; border: var(--b-hair) solid var(--husk); }
+@media (min-width: 1100px) {
+  .flow--pics .flow__item { padding: 0; min-height: 0; }
+  .flow--pics .flow__item::before { display: none; }
+  .flow--pics .flow__pic { position: static; width: 100%; height: auto; aspect-ratio: 16 / 9; margin-bottom: 12px; }
+}
