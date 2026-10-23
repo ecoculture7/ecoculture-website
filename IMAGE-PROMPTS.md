@@ -41,50 +41,55 @@ Negative prompt, where the tool takes one:
 ## Generated, band on
 
 - Hero (retired): `GEN-hero-farmer.jpg`, no longer referenced; delete when convenient
-- Bundi card: `GEN-bundi-field.webp` (1264×848)
-- Sant Kabir Nagar card: `GEN-skn-paddy.webp` (1264×848)
+- Bundi card: `REAL-bundi-field.jpg` (real)
+- Sant Kabir Nagar card: `REAL-skn-field.jpg` (real)
 
 Still open: farmer strip (membership), reserve band, jeevamrit drum, lab sample, the twelve item tiles.
 
-## Painted tiles (the reference style): three cards and the loop
+## Painted tiles: done
 
-**Style line, pasted at the end of every prompt below:**
+`tiles/soil.jpg`, `tiles/farmer.jpg`, `tiles/family.jpg` are in, with their titles
+painted into the image. The real field photographs are in on the district cards
+(`REAL-skn-field.jpg`, `REAL-bundi-field.jpg`); the generated district images are
+no longer referenced and can be deleted.
 
-> Painted illustration in muted ink-wash and sepia, soft brushwork, warm ochre,
-> slate and moss tones, quiet morning light, North Indian plains, the top-left
-> quarter kept dark and uncluttered so a title can sit on it, 16:9, no text, no
-> logos, no watermark, no faces in focus.
+## The loop: eight pictures, brand colours, no text
 
-Save as JPEG, 1600×900, under 150 KB each. **The filenames are fixed**: the page
-looks for exactly these and shows its drawn fallback until each one exists.
+These sit in small cards with a number badge and a caption under them, so the
+picture carries **no words at all** and no reserved dark corner. Same painter's
+hand as the three tiles, but the palette is the site's own.
 
-**The three cards** (`/assets/img/tiles/`)
+**Style line, pasted at the end of every prompt:**
 
-| File | Scene |
-|---|---|
-| `soil.jpg` | A cross-section of living soil: dark crumbly earth with roots reaching down, an earthworm, a seedling above the surface, dew on the leaves |
-| `farmer.jpg` | A farmer in a cotton kurta at a large iron weighing scale in a village yard, sacks of grain beside it, seen from behind or in profile |
-| `family.jpg` | A family kitchen table in a Delhi flat at dinner, a steel thali of dal, rice and roti, hands reaching, faces turned away, warm evening light |
+> Painted illustration, soft ink-wash brushwork, in a limited palette of warm
+> parchment cream (#F7F2E7), deep pine green (#1B4D42), mid teal (#2E7D6B),
+> harvest gold (#F5C060) and soft tan (#D9CDB4), with dark ink-green (#1C2B24)
+> for lines and shadows. North Indian village, quiet daylight. Centred subject,
+> plain uncluttered background, 16:9. Absolutely no text, letters, numbers,
+> logos or watermarks. No faces in focus.
 
-**The loop, as the trap** (`/assets/img/loop/`)
+Save as JPEG, 1600×900, under 120 KB each, into `/assets/img/loop/`. **Filenames
+are fixed**; the page shows each one the moment it exists.
 
-| File | Scene |
-|---|---|
-| `trap-1.jpg` | A farmer at the counter of a dim agri-input shop, sacks of urea and bottles of pesticide stacked behind, a ledger open on the counter |
-| `trap-2.jpg` | Cracked, pale, compacted field soil with sparse stubble, a fertiliser sack half-empty at its edge |
-| `trap-3.jpg` | A thin standing crop with gaps, a spray pump on the bund, grain heads small and few |
-| `trap-4.jpg` | A mandi at dusk: a farmer beside a small heap of grain, a trader weighing it, notes changing hands, the farmer's face unseen |
+**The trap**
 
-**The loop, as the way out** (same folder; shown when the loop flips)
+| File | Scene | Lead colour |
+|---|---|---|
+| `trap-1.jpg` | A farmer at the counter of a dim agri-input shop, sacks of urea and bottles of pesticide stacked behind, a ledger open on the counter | tan and ink-green, a little gold on the ledger |
+| `trap-2.jpg` | Cracked, pale, compacted field soil with sparse stubble, a fertiliser sack half-empty at its edge | tan and cream, the green almost gone |
+| `trap-3.jpg` | A thin standing crop with gaps, a spray pump on the bund, grain heads small and few | washed-out teal, tan |
+| `trap-4.jpg` | A mandi at dusk: a farmer beside a small heap of grain, a trader at a scale, notes changing hands, the farmer's face unseen | ink-green shadows, a little gold |
 
-| File | Scene |
-|---|---|
-| `out-1.jpg` | The same farmer stirring a blue drum of jeevamrit under a tree, a cow tethered behind, sacks of jaggery and gram flour beside |
-| `out-2.jpg` | Dark, moist, crumbly soil in cupped hands, roots and an earthworm visible, a green field soft behind |
-| `out-3.jpg` | A dense healthy crop, heavy grain heads, no spray pump, bees and a dragonfly above it |
-| `out-4.jpg` | A weigh-in in a village yard: a big iron scale, sealed sacks, a farmer being paid on the spot, a price written on a board before sowing |
+**The way out** (same place, same farmer, the other outcome)
 
-Pair each trap-N with its out-N: same place, same farmer, the other outcome.
+| File | Scene | Lead colour |
+|---|---|---|
+| `out-1.jpg` | The same farmer stirring a blue drum of jeevamrit under a tree, a cow tethered behind, sacks of jaggery and gram flour beside | teal and gold on cream |
+| `out-2.jpg` | Dark, moist, crumbly soil in cupped hands, roots and an earthworm visible, a green field soft behind | pine green and gold |
+| `out-3.jpg` | A dense healthy crop, heavy grain heads, bees and a dragonfly above it, no spray pump | gold and teal |
+| `out-4.jpg` | A weigh-in in a village yard: a big iron scale, sealed sacks, a farmer paid on the spot, a chalkboard with a price (the board blank, no writing) | teal and gold, cream ground |
+
+Generate the two `-1` pictures first; they carry the flip.
 
 ## Two new slots (Everyone wins cards)
 

@@ -1104,3 +1104,7 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 .loop--out .loop__arrow { color: var(--teal-deep); border-color: var(--teal); }
 .loop--out .loop__node.is-lit .tile--sm { border-color: var(--teal-deep); background: var(--teal-wash); }
 .loop--out .loop__node.is-lit .tile__n { background: var(--teal-deep); }
+
+/* A tile whose picture already carries its title: no overlay, no wash. */
+.tile--titled.tile--photo .tile__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.tile--titled.tile--photo::after { display: none; }
