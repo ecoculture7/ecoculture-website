@@ -21,6 +21,21 @@
       ? Math.round(v * 100) + '%'
       : '₹' + v.toLocaleString('en-IN');
   });
+  /* Prepayment, in rupees: data-save="M:2" = Medium basket, PREPAY[2]. */
+  if (window.ECO.calc && window.ECO.PREPAY) {
+    document.querySelectorAll('[data-save]').forEach(function (el) {
+      var p = el.getAttribute('data-save').split(':');
+      var d = window.ECO.calc.tier(p[0]), o = window.ECO.PREPAY[+p[1]];
+      if (!d || !o) return;
+      el.textContent = '\u20B9' + Math.round(d.total * o.months * o.discount).toLocaleString('en-IN');
+    });
+    document.querySelectorAll('[data-months]').forEach(function (el) {
+      var p = el.getAttribute('data-months').split(':');
+      var o = window.ECO.PREPAY[+p[1]];
+      if (!o) return;
+      el.textContent = String(Math.round(o.months * o.discount * 10) / 10);
+    });
+  }
   /* Derived figures for a starting basket: its monthly total and its weight. */
   if (window.ECO.calc) {
     document.querySelectorAll('[data-tier-total]').forEach(function (el) {

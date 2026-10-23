@@ -1120,5 +1120,32 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 @media (min-width: 1100px) {
   .flow--pics .flow__item { padding: 0; min-height: 0; }
   .flow--pics .flow__item::before { display: none; }
-  .flow--pics .flow__pic { position: static; width: 100%; height: auto; aspect-ratio: 16 / 9; margin-bottom: 12px; }
+  .flow--pics .flow__pic { position: relative; width: 100%; height: auto; aspect-ratio: 16 / 9; margin-bottom: 12px; }
 }
+
+/* ── Round 13 ────────────────────────────────────────────────────────── */
+
+/* Ledger paper for the cost section: faint ruled lines and a margin rule. */
+.band--ledger {
+  position: relative; background: var(--paper-2); border-block: var(--b-hair) solid var(--husk-soft);
+  background-image: repeating-linear-gradient(180deg, transparent 0 31px, var(--husk-soft) 31px 32px);
+}
+.band--ledger::before { content: ""; position: absolute; top: 0; bottom: 0; left: max(16px, calc((100% - var(--maxw)) / 2 + var(--gutter) - 14px)); width: 2px; background: var(--gold); opacity: 0.7; }
+
+/* The picture slot inside a step */
+.tile--step { border: var(--b-hair) solid var(--husk); background: var(--teal-wash); }
+.tile--step .tile__fallback .icon { width: 30px; height: 30px; color: var(--teal-deep); }
+@media (min-width: 1100px) { .tile--step .tile__fallback .icon { width: 40px; height: 40px; } }
+
+/* Prepayment plans */
+.plans { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 6px; }
+@media (min-width: 900px) { .plans { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; } }
+.plan { position: relative; padding: 16px 14px 18px; background: var(--paper-3); border: var(--b-hair) solid var(--husk); display: flex; flex-direction: column; gap: 4px; }
+.plan--best { border: var(--b-accent) solid var(--teal-deep); background: var(--teal-wash); }
+.plan__tag { position: absolute; top: -11px; left: 12px; padding: 2px 8px; background: var(--gold); color: var(--ink); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.plan__m { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+.plan__d { font-family: var(--font-display); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); font-weight: 600; line-height: 1.05; color: var(--teal-deep); }
+.plan__s { font-size: 13px; line-height: 1.45; color: var(--ink-soft); margin-top: 4px; }
+.plan__s span { font-weight: 600; color: var(--ink); }
+.rule-note--open { border-left-color: var(--gold); background: var(--gold-wash); padding: 12px 15px; }
+.rule-note--open p { color: var(--gold-ink); }

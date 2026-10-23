@@ -91,6 +91,19 @@ are fixed**; the page shows each one the moment it exists.
 
 Generate the two `-1` pictures first; they carry the flip.
 
+## The five steps (homepage "Where it comes from" and /sourcing)
+
+Same painter's hand and the same brand-colour style line as the loop. **No text.**
+1600×900 JPEG under 120 KB, into `/assets/img/steps/`, fixed names.
+
+| File | Scene | Lead colour |
+|---|---|---|
+| `step-1.jpg` | Harvest: a farmer cutting ripe wheat with a sickle at first light, bundles behind, a village edge far off | gold and pine green |
+| `step-2.jpg` | Residue test: a small sealed sample bag of grain on a laboratory bench beside a glass flask and a pipette, a window of daylight, no people | cream, teal glass, a gold grain |
+| `step-3.jpg` | Sealed and stored: stitched jute sacks stacked in a cool brick store, each with a plain cloth tag, a shaft of light from a high window | tan and ink-green |
+| `step-4.jpg` | Processed: a stone chakki mill turning, flour gathering at its edge; beside it a wooden ghani pressing mustard seed | gold and tan |
+| `step-5.jpg` | Delivered: a cloth-wrapped parcel of staples handed over at a Delhi doorway, a van at the kerb, morning, faces turned away | teal and cream |
+
 ## Two new slots (Everyone wins cards)
 
 | Slot | Size | Prompt (add the style line) | Stock search phrase |

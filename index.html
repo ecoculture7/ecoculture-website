@@ -62,7 +62,6 @@
     <a href="#wins">Everyone wins</a>
     <a href="#proof">Proof</a>
     <a href="#from">Where it's from</a>
-    <a href="#fields">Film</a>
     <a href="#sizes">Basket</a>
     <a href="#membership">Membership</a>
   </div>
@@ -270,35 +269,14 @@
     </div>
   </section>
 
-  <!-- ── Proof strip ──────────────────────────────────────────────────── -->
-  <section class="band band--alt">
-    <div class="wrap grid-3">
-      <div class="figure">
-        <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-flask"/></svg></div>
-        <span class="figure__n">Every harvest</span>
-        <p>residue-tested at a NABL laboratory right after harvest. The report travels with your order — the claim above, checked.</p>
-      </div>
-      <div class="figure">
-        <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-shield"/></svg></div>
-        <span class="figure__n">75%</span>
-        <p>of people who already buy organic staples don't believe they're genuinely chemical-free. Those products are certified.</p>
-      </div>
-      <div class="figure">
-        <div class="iconbox"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-pin"/></svg></div>
-        <span class="figure__n">2</span>
-        <p>districts we buy from — which is why a report from us names a field, not a region.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ── The proof ────────────────────────────────────────────────────── -->
   <section class="band" id="proof">
     <div class="wrap split">
       <div class="stack" style="flex: 1 1 440px;">
         <p class="eyebrow">How you'll know</p>
-        <h2>A certificate says a system was followed. <em>A lab report says what's in your bag.</em></h2>
-        <p class="prose">The organic staples most people already doubt are certified — the logo is right there on the pack, and it still hasn't settled the question. <b>So we'd rather hand you the actual test.</b></p>
-        <p class="prose">And because we buy from two districts rather than twenty states, that report can name the field it came from. <b>A lab report from an anonymous supply chain is a claim. One attached to a named plot is evidence.</b></p>
+        <h2>Don't trust the label. <em>Read the lab report.</em></h2>
+        <p class="prose">Most "organic" packs carry a logo, and most people still don't believe it. So instead of a logo, we send you the test. Every harvest goes to a NABL-accredited laboratory to be checked for pesticide residue, and the report comes with your order.</p>
+        <p class="prose">And because we buy from a few partnered clusters, not from all over the country, the report can say <b>which farm your food came from.</b></p>
         <p style="margin-top: 4px;"><a href="/proof.html">How we verify a harvest, start to finish →</a></p>
       </div>
 
@@ -315,7 +293,7 @@
           <div class="doc__rule"></div>
           <div class="doc__line"><span>Item</span><span>Sona Moti whole wheat, 5 kg</span></div>
           <div class="doc__line" data-why="The farmer’s name, with their consent. A report from an anonymous supply chain is a claim; one attached to a person is evidence."><span>Grown by</span><span>[ farmer name ]</span></div>
-          <div class="doc__line" data-why="The field has a place. Two districts, not twenty states, is what makes this line possible."><span>Village</span><span>[ village ], Bundi</span></div>
+          <div class="doc__line" data-why="The field has a place. Buying from a few partnered clusters, not the whole country, is what makes this line possible."><span>Village</span><span>[ village ], Bundi</span></div>
           <div class="doc__line" data-why="The sample went to the lab right after this date, before the lot was sealed."><span>Harvested</span><span>[ date ]</span></div>
           <div class="doc__line" data-why="Atta is milled within a week of shipping, so this date is close to your delivery date."><span>Milled</span><span>[ date ], Ghaziabad</span></div>
           <div class="doc__line" data-why="What the farmer was paid, on the day. The point of the whole model, written on your report."><span>Paid at weigh-in</span><span>₹ [ amount ]</span></div>
@@ -331,8 +309,8 @@
   <section class="band band--alt" id="from">
     <div class="wrap stack">
       <p class="eyebrow">Where it comes from</p>
-      <h2>Two districts. <em>Not five states.</em></h2>
-      <p class="prose">Buying narrow is what makes a harvest record possible. A supply chain spanning twenty states can tell you a region; one spanning two districts can tell you a person.</p>
+      <h2>Partnered natural-farming clusters. <em>Not an anonymous supply chain.</em></h2>
+      <p class="prose">We buy from a few clusters we know, not from everywhere. That is what lets a lab report name a farm instead of a region. We start with two, in Bundi and Sant Kabir Nagar, and add clusters as we grow.</p>
 
       <div class="grid-2" style="margin-top: 10px;">
         <article class="card">
@@ -360,33 +338,33 @@
 
       <div class="flowbox">
         <h3 class="flowbox__title">The same five steps, for every item.</h3>
-        <ol class="flow" style="--flow-n: 5;">
+        <ol class="flow flow--pics" style="--flow-n: 5;">
           <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-wheat"/></svg></span>
+            <div class="tile tile--step flow__pic" data-src="/assets/img/steps/step-1.jpg"><span class="tile__fallback"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-wheat"/></svg></span></div>
             <p class="flow__n">Step 1</p>
             <h4 class="flow__h">Harvest</h4>
             <p class="flow__p">A named farmer, in a named village.</p>
           </li>
           <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-flask"/></svg></span>
+            <div class="tile tile--step flow__pic" data-src="/assets/img/steps/step-2.jpg"><span class="tile__fallback"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-flask"/></svg></span></div>
             <p class="flow__n">Step 2</p>
             <h4 class="flow__h">Residue-tested</h4>
             <p class="flow__p">Right after harvest, a sample goes to a NABL laboratory.</p>
           </li>
           <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-shield"/></svg></span>
+            <div class="tile tile--step flow__pic" data-src="/assets/img/steps/step-3.jpg"><span class="tile__fallback"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-shield"/></svg></span></div>
             <p class="flow__n">Step 3</p>
             <h4 class="flow__h">Sealed and stored</h4>
             <p class="flow__p">The lot is sealed and stored, and recorded against the members whose commitment bought it.</p>
           </li>
           <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-drop"/></svg></span>
+            <div class="tile tile--step flow__pic" data-src="/assets/img/steps/step-4.jpg"><span class="tile__fallback"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-drop"/></svg></span></div>
             <p class="flow__n">Step 4</p>
             <h4 class="flow__h">Processed before it ships</h4>
             <p class="flow__p">Atta is milled within a week of shipping. Dal and spices are processed in batches that last two to three months. Oil is pressed at a ghani, not a plant.</p>
           </li>
           <li class="flow__item">
-            <span class="flow__ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-truck"/></svg></span>
+            <div class="tile tile--step flow__pic" data-src="/assets/img/steps/step-5.jpg"><span class="tile__fallback"><svg class="icon" aria-hidden="true"><use href="/assets/icons.v1.svg#i-truck"/></svg></span></div>
             <p class="flow__n">Step 5</p>
             <h4 class="flow__h">Delivered</h4>
             <p class="flow__p">Delhi NCR, once a month, with the report for that lot.</p>
@@ -394,30 +372,7 @@
         </ol>
       </div>
 
-      <p style="margin-top: 6px;"><a href="/sourcing.html">Every item, and where each one comes from →</a></p>
-    </div>
-  </section>
-
-  <!-- ── From the fields ──────────────────────────────────────────────── -->
-  <section class="band band--ink" id="fields">
-    <div class="wrap stack">
-      <p class="eyebrow">From the fields</p>
-      <h2>Two clusters, <em>on film.</em></h2>
-      <p class="prose">Shot on a phone by us, not by a crew. Tap to play; both have sound.</p>
-      <div class="clips">
-        <figure class="clip">
-          <video controls preload="metadata" playsinline width="854" height="480">
-            <source src="/assets/video/skn-kalanamak.mp4" type="video/mp4">
-          </video>
-          <figcaption>Kalanamak paddy · Sant Kabir Nagar, Uttar Pradesh · October 2026 · 19 s</figcaption>
-        </figure>
-        <figure class="clip">
-          <video controls preload="metadata" playsinline width="854" height="480">
-            <source src="/assets/video/bundi-jeevamrit.mp4" type="video/mp4">
-          </video>
-          <figcaption>Natural farming and jeevamrit distribution · Samriddh Mahila FPO, Bundi, Rajasthan · August 2026 · 32 s</figcaption>
-        </figure>
-      </div>
+      <p style="margin-top: 6px;"><a href="/sourcing.html">Every item, where it comes from, and both clusters on film →</a></p>
     </div>
   </section>
 
@@ -439,11 +394,11 @@
   </section>
 
   <!-- ── Household explorer ───────────────────────────────────────────── -->
-  <section class="band band--grain" id="sizes">
+  <section class="band band--ledger" id="sizes">
     <div class="wrap stack">
-      <p class="eyebrow">Pick a size</p>
-      <h2>Find your household. <em>See what it costs.</em></h2>
-      <p class="prose">Three starting baskets, sized to how many people you cook for. Every one can be changed line by line.</p>
+      <p class="eyebrow">What it costs</p>
+      <h2>How much for your family, <em>each month?</em></h2>
+      <p class="prose">Pick how many people you cook for. You'll see a month of staples and what it costs. Change any line in the builder.</p>
       <div id="explorer" class="explorer" style="margin-top: 10px;"></div>
       <noscript><p class="small">The three starting baskets, with prices, are listed on <a href="/basket.html">What you get</a>.</p></noscript>
     </div>
@@ -652,9 +607,47 @@
   <section class="band band--alt" id="membership">
     <div class="wrap stack">
       <p class="eyebrow">Membership</p>
-      <h2>You're not subscribing to a box. <em>You're joining a harvest.</em></h2>
-      <p class="prose">There is no membership fee. You pay for your food in advance, that money buys the harvest at the weigh-in, and the discount is what we pay you for the use of it. The longer you prepay, the more it is worth — which is why the discount is not flat.</p>
+      <h2>Pay for the harvest before it's sown. <em>Get it cheaper, and get it first.</em></h2>
+      <p class="prose">No membership fee, and no box you can't change. You prepay for the months you choose; that money buys the harvest at the weigh-in, and the discount is what we pay you for using it early. Prefer to pay month by month? That is a perfectly good way to buy.</p>
 
+      <div class="plans">
+        <div class="plan">
+          <p class="plan__m">Month by month</p>
+          <p class="plan__d">List price</p>
+          <p class="plan__s">Stop whenever you like.</p>
+        </div>
+        <div class="plan">
+          <p class="plan__m">3 months</p>
+          <p class="plan__d"><span data-eco="PREPAY.0.discount" data-fmt="pct">a little</span> off</p>
+          <p class="plan__s">Keep <span data-save="M:0">some</span> on a Medium basket.</p>
+        </div>
+        <div class="plan">
+          <p class="plan__m">6 months</p>
+          <p class="plan__d"><span data-eco="PREPAY.1.discount" data-fmt="pct">more</span> off</p>
+          <p class="plan__s">Keep <span data-save="M:1">more</span> on a Medium basket.</p>
+        </div>
+        <div class="plan plan--best">
+          <p class="plan__tag">Best value</p>
+          <p class="plan__m">12 months</p>
+          <p class="plan__d"><span data-eco="PREPAY.2.discount" data-fmt="pct">the most</span> off</p>
+          <p class="plan__s">Keep <span data-save="M:2">the most</span> on a Medium basket — about <span data-months="M:2">a month</span> months of staples, free.</p>
+        </div>
+      </div>
+      <p class="small muted">Savings shown for a Medium basket (3–4 people) at today's prices. Delivery is charged per drop and is free above <span data-eco="DELIVERY.freeFrom" data-fmt="inr">a set amount</span> of produce, read before any discount.</p>
+
+      <div class="grid-2" style="margin-top: 10px; max-width: 900px;">
+        <div class="rule-note"><h3>Your price is locked</h3><p>The rate you prepay at holds for the whole season, whatever the mandi does after.</p></div>
+        <div class="rule-note"><h3>You come first when a crop is short</h3><p>A natural harvest can fall short. Members are served before anyone else.</p></div>
+        <div class="rule-note"><h3>Your name on the register</h3><p>Every sealed lot is recorded against the members whose money bought it. It is your harvest, not stock on a shelf.</p></div>
+        <div class="rule-note rule-note--open"><h3>If you need to stop</h3><p>[ Unused months refunded in full. To be confirmed with the CA before launch; this is the sentence the whole offer rests on. ]</p></div>
+      </div>
+
+      <div class="btn-row" style="margin-top: 6px;">
+        <a class="btn btn--primary" href="#reserve">Reserve now, choose a plan in December</a>
+        <a class="btn btn--ghost" href="/membership.html">How the discount is worked out</a>
+      </div>
+
+      <h3 class="h3-size" style="margin-top: 18px;">Why we call it a harvest, not a box</h3>
       <div class="lanes" style="margin-top: 10px;">
         <section class="lane lane--plain" aria-labelledby="lane-box">
           <h3 id="lane-box">A box subscription</h3>
@@ -687,14 +680,6 @@
         </section>
       </div>
 
-      <div class="grid-2" style="margin-top: 10px; max-width: 900px;">
-        <div class="rule-note"><h3>Your name on the register</h3><p>Sealed lots, recorded against the members whose commitment bought them.</p></div>
-        <div class="rule-note"><h3>Locked pricing</h3><p>The rate holds for the season, whatever the mandi does after.</p></div>
-        <div class="rule-note"><h3>First claim</h3><p>When a crop falls short, members are served before anyone else.</p></div>
-        <div class="rule-note"><h3>2% · 5% · 12%</h3><p>Three, six or twelve months prepaid. The ladder is the cost of money, not a loyalty tier — and monthly is a perfectly good way to buy.</p></div>
-      </div>
-
-      <p style="margin-top: 6px;"><a href="/membership.html">The terms in full, including how the discount is calculated →</a></p>
     </div>
   </section>
 
