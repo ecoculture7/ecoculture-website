@@ -7,7 +7,9 @@
 
    PROVISIONAL FIGURES ARE MARKED `provisional: true`. The banner on any page
    that shows them reads from that flag, so clearing it is a one-word edit.
-   Last reviewed: 6 October 2026.
+   Last reviewed: 24 October 2026. Prices for the nine packed items are the
+   figures on the pouch artwork (MRP = unit price, inclusive of all taxes).
+   Oil, haldi and dhaniya are still the October working figures.
    ────────────────────────────────────────────────────────────────────────── */
 
 window.ECO = window.ECO || {};
@@ -16,15 +18,15 @@ window.ECO = window.ECO || {};
    `step` is both the minimum and the increment: the first tap buys a real
    pack, so no quantity the builder can produce is unbuyable.             */
 window.ECO.SKUS = [
-  { k: 'atta',      name: 'Whole wheat atta',        hi: 'standard, stone-ground',     cat: 'atta',  unit: 'kg', price: 78,  step: 1,    note: '' },
-  { k: 'bansi',     name: 'Bansi atta',              hi: 'durum, coarse grind',        cat: 'atta',  unit: 'kg', price: 138, step: 1,    note: '' },
-  { k: 'sonamoti',  name: 'Sona Moti atta',          hi: 'landrace, low yield',        cat: 'atta',  unit: 'kg', price: 188, step: 1,    note: 'small lots only' },
-  { k: 'basmati',   name: 'Basmati rice',            hi: '1509 / 1718, unpolished',    cat: 'rice',  unit: 'kg', price: 158, step: 1,    note: '' },
-  { k: 'kalanamak', name: 'Kalanamak rice',          hi: 'GI-tagged, our own farmers', cat: 'rice',  unit: 'kg', price: 299, step: 0.5,  note: '500 g pack · in every basket' },
-  { k: 'arhar',     name: 'Arhar dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 248, step: 0.5,  note: 'source being named' },
-  { k: 'moong',     name: 'Moong dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 230, step: 0.5,  note: '' },
-  { k: 'chana',     name: 'Chana dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 185, step: 0.5,  note: '' },
-  { k: 'masoor',    name: 'Masoor dal',              hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 245, step: 0.5,  note: '' },
+  { k: 'atta',      name: 'Whole wheat atta',        hi: 'standard, stone-ground',     cat: 'atta',  unit: 'kg', price: 82,  step: 1,    note: '' },
+  { k: 'bansi',     name: 'Bansi atta',              hi: 'durum, coarse grind',        cat: 'atta',  unit: 'kg', price: 105, step: 1,    note: '' },
+  { k: 'sonamoti',  name: 'Sona Moti atta',          hi: 'landrace, low yield',        cat: 'atta',  unit: 'kg', price: 158, step: 1,    note: 'small lots only' },
+  { k: 'basmati',   name: 'Basmati rice',            hi: '1509 / 1718, unpolished',    cat: 'rice',  unit: 'kg', price: 166, step: 1,    note: '' },
+  { k: 'kalanamak', name: 'Kalanamak rice',          hi: 'GI-tagged, our own farmers', cat: 'rice',  unit: 'kg', price: 314, step: 0.5,  note: '500 g pack · in every basket' },
+  { k: 'arhar',     name: 'Arhar dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 261, step: 0.5,  note: 'source being named' },
+  { k: 'moong',     name: 'Moong dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 242, step: 0.5,  note: '' },
+  { k: 'chana',     name: 'Chana dal',               hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 195, step: 0.5,  note: '' },
+  { k: 'masoor',    name: 'Masoor dal',              hi: 'unpolished',                 cat: 'dal',   unit: 'kg', price: 210, step: 0.5,  note: '' },
   { k: 'oil',       name: 'Kachi ghani mustard oil', hi: 'cold-pressed, not refined',  cat: 'oil',   unit: 'L',  price: 345, step: 0.5,  note: '' },
   /* PROVISIONAL: haldi and dhaniya were one "spice pack" at 680 a kg. They are now
      sold separately at that same figure until the per-item prices are set, so no
@@ -33,34 +35,33 @@ window.ECO.SKUS = [
   { k: 'dhaniya',   name: 'Dhaniya (coriander)',     hi: 'sun-dried and ground',         cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'processed in 2–3 month batches' }
 ];
 
-/* Printed MRPs, per pack. Required on every pre-packaged food sold in India.
-   ONLY Kalanamak is confirmed (₹399 on a 1 kg pack against ₹299 selling).
-   Every other row is that same 25% rule applied and rounded to a printable
-   number — a SAMPLE, pending the CA. Do not put an unconfirmed MRP on a page
-   or a pack: an inflated MRP is the one claim here that could draw a notice. */
+/* Printed MRPs, per pack, as on the pouch artwork (24 October 2026). On these
+   packs the MRP is the selling price, inclusive of all taxes. Oil, haldi and
+   dhaniya have no pouch yet; their rows are the earlier samples and stay
+   unconfirmed, which is why the flag below is still true. */
 window.ECO.MRP = {
-  provisional: true,          /* <- clear this when the CA confirms the set */
-  reviewed: '2026-10-06',
+  provisional: true,          /* <- clear when oil, haldi and dhaniya are confirmed */
+  reviewed: '2026-10-24',
   packs: [
-    { k: 'atta',      pack: 1,   sells: 78,  mrp: 105,  confirmed: false },
-    { k: 'atta',      pack: 2,   sells: 156, mrp: 209,  confirmed: false },
-    { k: 'atta',      pack: 5,   sells: 390, mrp: 520,  confirmed: false },
-    { k: 'bansi',     pack: 1,   sells: 138, mrp: 185,  confirmed: false },
-    { k: 'bansi',     pack: 2,   sells: 276, mrp: 369,  confirmed: false },
-    { k: 'sonamoti',  pack: 1,   sells: 188, mrp: 255,  confirmed: false },
-    { k: 'sonamoti',  pack: 2,   sells: 376, mrp: 505,  confirmed: false },
-    { k: 'basmati',   pack: 1,   sells: 158, mrp: 215,  confirmed: false },
-    { k: 'basmati',   pack: 5,   sells: 790, mrp: 1055, confirmed: false },
-    { k: 'kalanamak', pack: 0.5, sells: 150, mrp: 200,  confirmed: true  },
-    { k: 'kalanamak', pack: 1,   sells: 299, mrp: 399,  confirmed: true  },
-    { k: 'arhar',     pack: 0.5, sells: 124, mrp: 169,  confirmed: false },
-    { k: 'arhar',     pack: 1,   sells: 248, mrp: 335,  confirmed: false },
-    { k: 'moong',     pack: 0.5, sells: 115, mrp: 155,  confirmed: false },
-    { k: 'moong',     pack: 1,   sells: 230, mrp: 309,  confirmed: false },
-    { k: 'chana',     pack: 0.5, sells: 92,  mrp: 125,  confirmed: false },
-    { k: 'chana',     pack: 1,   sells: 185, mrp: 249,  confirmed: false },
-    { k: 'masoor',    pack: 0.5, sells: 122, mrp: 165,  confirmed: false },
-    { k: 'masoor',    pack: 1,   sells: 245, mrp: 329,  confirmed: false },
+    { k: 'atta',      pack: 1,   sells: 82,  mrp: 82,   confirmed: true  },
+    { k: 'atta',      pack: 2,   sells: 164, mrp: 164,  confirmed: true  },
+    { k: 'atta',      pack: 5,   sells: 410, mrp: 410,  confirmed: true  },
+    { k: 'bansi',     pack: 1,   sells: 105, mrp: 105,  confirmed: true  },
+    { k: 'bansi',     pack: 2,   sells: 210, mrp: 210,  confirmed: true  },
+    { k: 'sonamoti',  pack: 1,   sells: 158, mrp: 158,  confirmed: true  },
+    { k: 'sonamoti',  pack: 2,   sells: 315, mrp: 315,  confirmed: true  },
+    { k: 'basmati',   pack: 1,   sells: 166, mrp: 166,  confirmed: true  },
+    { k: 'basmati',   pack: 5,   sells: 830, mrp: 830,  confirmed: true  },
+    { k: 'kalanamak', pack: 0.5, sells: 158, mrp: 158,  confirmed: true  },
+    { k: 'kalanamak', pack: 1,   sells: 314, mrp: 314,  confirmed: true  },
+    { k: 'arhar',     pack: 0.5, sells: 131, mrp: 131,  confirmed: true  },
+    { k: 'arhar',     pack: 1,   sells: 261, mrp: 261,  confirmed: true  },
+    { k: 'moong',     pack: 0.5, sells: 121, mrp: 121,  confirmed: true  },
+    { k: 'moong',     pack: 1,   sells: 242, mrp: 242,  confirmed: true  },
+    { k: 'chana',     pack: 0.5, sells: 98,  mrp: 98,   confirmed: true  },
+    { k: 'chana',     pack: 1,   sells: 195, mrp: 195,  confirmed: true  },
+    { k: 'masoor',    pack: 0.5, sells: 105, mrp: 105,  confirmed: true  },
+    { k: 'masoor',    pack: 1,   sells: 210, mrp: 210,  confirmed: true  },
     { k: 'oil',       pack: 0.5, sells: 172, mrp: 230,  confirmed: false },
     { k: 'oil',       pack: 1,   sells: 345, mrp: 460,  confirmed: false },
     { k: 'haldi',     pack: 0.1, sells: 68,  mrp: 95,   confirmed: false },
