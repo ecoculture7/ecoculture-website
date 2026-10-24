@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_old/
+Disallow: /backend/
+
+Sitemap: https://ecoculture.in/sitemap.xml
