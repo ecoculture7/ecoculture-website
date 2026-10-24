@@ -1149,3 +1149,10 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 .plan__s span { font-weight: 600; color: var(--ink); }
 .rule-note--open { border-left-color: var(--gold); background: var(--gold-wash); padding: 12px 15px; }
 .rule-note--open p { color: var(--gold-ink); }
+
+/* ── Round 14 ────────────────────────────────────────────────────────── */
+.form-status__row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.form-status--ok .btn--ghost { border-color: var(--teal-deep); color: var(--teal-deep); }
+/* pack renders: the whole pack, on the tile's own paper */
+.item__img--pack { background: var(--paper-2); }
+.item__img--pack img { object-fit: contain; padding: 4px; }

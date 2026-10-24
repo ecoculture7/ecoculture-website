@@ -1,5 +1,11 @@
 # Reserve form backend (Lambda + DynamoDB + SES)
 
+**Status:** not yet deployed. Until `data-endpoint` is set on the form, the page
+collects the details and hands the visitor a pre-filled WhatsApp message and a
+pre-filled email to send themselves (see `scripts/reserve.js`). Nothing is
+stored on the site, so nothing can be lost on it; the cost is one extra tap
+for the visitor and no central list until this backend exists.
+
 ```
 browser ──POST JSON──▶ Lambda Function URL ──▶ DynamoDB  (the signup, keyed by email)
                                           └──▶ SES       (an email to admin@ecoculture.in)

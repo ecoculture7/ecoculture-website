@@ -124,6 +124,13 @@ Same painter's hand and the same brand-colour style line as the loop. **No text.
 | **Natural, not organic** (beside the comparison; not yet placed) | 1600×1067, <180 KB | A farmer's hands stirring a blue plastic drum of jeevamrit — a dark fermenting slurry of cow dung, urine, jaggery and gram flour — in a shaded corner of a farmyard, a cow tethered out of focus behind, no face | "farmer preparing jeevamrit drum natural farming" |
 | **Lab step** (`/proof`, not yet placed) | 1600×1067, <180 KB | A small sealed sample bag of wheat grain beside a tagged jute sack, a paper tag with a handwritten lot code, on a wooden table in daylight, no people | "grain sample bag lab tag sack" |
 
+## Pack renders in place
+
+`assets/img/products/<key>-<pack>-<side>.webp`, 1200×1200, 26–45 KB each. On the
+homepage item cards: arhar, bansi, basmati, chana, kalanamak (1 kg front). Still
+drawn: atta, sonamoti, moong, masoor, oil, haldi, dhaniya. Add
+`<key>-1kg-front.webp` (or `-500ml-`/`-100g-`) for each and tell me.
+
 ## The twelve item tiles (`#basket`)
 
 Same frame for all twelve so the grid reads as a set: **1200×900 (4:3)**, under 90 KB

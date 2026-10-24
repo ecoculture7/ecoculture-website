@@ -1,4 +1,5 @@
-/* Reserve form: posts to the Lambda behind the Function URL in data-endpoint.
+/* Reserve form. With a Function URL in data-endpoint it posts there; without
+   one it hands the visitor a pre-filled WhatsApp message and email to send.
 
    The one rule: "thank you" appears only after the server says the signup was
    stored and emailed. If the endpoint is blank, unreachable or errors, the
@@ -24,15 +25,32 @@
     e.preventDefault();
     status.hidden = true;
 
-    var endpoint = form.getAttribute('data-endpoint');
-    if (!endpoint) {
-      show('This form is not connected yet, so nothing was sent. ' + FALLBACK, 'error');
-      return;
-    }
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+    /* Without a backend the visitor sends the message themselves, with the
+       details filled in: WhatsApp on a phone, email anywhere. Nothing is
+       stored on this site, so nothing can be lost on it. */
+    var endpoint = form.getAttribute('data-endpoint');
+    if (!endpoint) {
+      var text = [
+        'Trial pack reservation',
+        'Name: ' + data.name,
+        'Email: ' + data.email,
+        'WhatsApp: ' + (data.phone || '-'),
+        'Area: ' + data.area,
+        'Household: ' + data.household
+      ].join('\n');
+      var wa = 'https://wa.me/918178030060?text=' + encodeURIComponent(text);
+      var mail = 'mailto:admin@ecoculture.in?subject=' + encodeURIComponent('Trial pack reservation') + '&body=' + encodeURIComponent(text);
+      show('<b>One more tap.</b> Send this to us on WhatsApp or by email; it arrives with your details already filled in.' +
+        '<span class="form-status__row"><a class="btn btn--primary btn--sm" href="' + wa + '" target="_blank" rel="noopener">Send on WhatsApp</a>' +
+        '<a class="btn btn--ghost btn--sm" href="' + mail + '">Send by email</a></span>', 'ok');
+      btn.textContent = 'Details ready';
+      return;
+    }
 
     btn.disabled = true;
     btn.textContent = 'Sending…';
