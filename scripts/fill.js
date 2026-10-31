@@ -22,13 +22,17 @@
       : '₹' + v.toLocaleString('en-IN');
   });
   /* MRP per unit, from the rule in prices.js: data-mrp-of="atta". */
-  if (window.ECO.SKUS && window.ECO.mrpOf) {
-    var byKey = {};
+  if (window.ECO.SKUS && window.ECO.mrpOf && window.ECO.MRP) {
+    var byKey = {}, confirmedKeys = {};
     window.ECO.SKUS.forEach(function (s) { byKey[s.k] = s; });
+    window.ECO.MRP.packs.forEach(function (r) { if (r.confirmed) confirmedKeys[r.k] = true; });
     document.querySelectorAll('[data-mrp-of]').forEach(function (el) {
       var s = byKey[el.getAttribute('data-mrp-of')];
-      if (!s) return;
+      var line = el.closest('.item__mrp, .ledger__mrp') || el;
+      /* rule: no MRP on a page while the set is provisional or the pack unconfirmed */
+      if (!s || window.ECO.MRP.provisional || !confirmedKeys[s.k]) { line.remove(); return; }
       el.textContent = '\u20B9' + window.ECO.mrpOf(s.price).toLocaleString('en-IN') + ' / ' + s.unit;
+      line.classList.add('is-ready');
     });
   }
   /* Prepayment, in rupees: data-save="M:2" = Medium basket, PREPAY[2]. */

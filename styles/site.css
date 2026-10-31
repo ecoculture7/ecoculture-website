@@ -1159,5 +1159,6 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 
 /* ── Round 16: two prices ─────────────────────────────────────────────── */
 .item__mrp { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+.item__mrp:not(.is-ready), .ledger__mrp:not(.is-ready) { display: none; }
 .item__mrp span { font-weight: 600; color: var(--ink-soft); }
 .ledger__mrp { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }

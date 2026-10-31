@@ -44,7 +44,7 @@ window.ECO.mrpOf = function (sp) { return Math.ceil(sp * 1.05 - 1e-9); };
    (and checked against the pouch artwork for the nineteen packs that have one).
    Oil, haldi and dhaniya packs have no artwork yet, hence confirmed: false. */
 window.ECO.MRP = {
-  provisional: false,
+  provisional: true,          /* <- the CA has not signed the set off; MRPs stay off the pages until this is false */
   reviewed: '2026-11-01',
   packs: [
     { k: 'atta',       pack: 1,   sells: 78,  confirmed: true },

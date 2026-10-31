@@ -41,7 +41,7 @@
   /* Also flag any provisional figure that has reached a page, so a sample MRP
      cannot quietly become a published one. */
   if (window.ECO.MRP && window.ECO.MRP.provisional &&
-      document.querySelector('[data-mrp]')) {
+      document.querySelector('[data-mrp], [data-mrp-of]')) {
     console.warn(
       'This page shows an MRP while data/prices.js still has provisional: true. ' +
       'Only Kalanamak is confirmed. Clear the flag when the CA signs the set off.'
