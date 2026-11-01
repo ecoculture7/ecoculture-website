@@ -21,18 +21,34 @@
       ? Math.round(v * 100) + '%'
       : '₹' + v.toLocaleString('en-IN');
   });
-  /* MRP per unit, from the rule in prices.js: data-mrp-of="atta". */
-  if (window.ECO.SKUS && window.ECO.mrpOf && window.ECO.MRP) {
-    var byKey = {}, confirmedKeys = {};
+  /* MRP, shelf-anchored, per pack (data/prices.js ECO.MRP). The page shows the
+     MRP of the unit pack (1 kg / 1 L, else the smallest pack) struck through
+     beside the selling price, and a one-line dated note. Nothing shows while
+     the set is provisional or the pack is unconfirmed: the line is removed. */
+  if (window.ECO.SKUS && window.ECO.MRP) {
+    var M = window.ECO.MRP, byKey = {}, packOf = {};
     window.ECO.SKUS.forEach(function (s) { byKey[s.k] = s; });
-    window.ECO.MRP.packs.forEach(function (r) { if (r.confirmed) confirmedKeys[r.k] = true; });
+    M.packs.forEach(function (r) {
+      if (!r.confirmed) return;
+      var cur = packOf[r.k];
+      if (!cur || (cur.pack !== 1 && (r.pack === 1 || r.pack < cur.pack))) packOf[r.k] = r;
+    });
+    function packLabel(r, unit) {
+      return r.pack >= 1 ? r.pack + ' ' + unit : Math.round(r.pack * 1000) + (unit === 'L' ? ' ml' : ' g');
+    }
     document.querySelectorAll('[data-mrp-of]').forEach(function (el) {
-      var s = byKey[el.getAttribute('data-mrp-of')];
+      var k = el.getAttribute('data-mrp-of'), s = byKey[k], r = packOf[k];
       var line = el.closest('.item__mrp, .ledger__mrp') || el;
-      /* rule: no MRP on a page while the set is provisional or the pack unconfirmed */
-      if (!s || window.ECO.MRP.provisional || !confirmedKeys[s.k]) { line.remove(); return; }
-      el.textContent = '\u20B9' + window.ECO.mrpOf(s.price).toLocaleString('en-IN') + ' / ' + s.unit;
+      if (!s || !r || M.provisional) { line.remove(); return; }
+      el.textContent = '\u20B9' + r.mrp.toLocaleString('en-IN');
+      var pk = line.querySelector('[data-mrp-pack]');
+      if (pk) pk.textContent = '\u00B7 ' + packLabel(r, s.unit) + (r.pack === 1 ? '' : ' (sells \u20B9' + r.sells.toLocaleString('en-IN') + ')');
       line.classList.add('is-ready');
+    });
+    document.querySelectorAll('.mrp-note').forEach(function (el) {
+      if (M.provisional) { el.remove(); return; }
+      el.querySelectorAll('[data-mrp-date]').forEach(function (d) { d.textContent = M.anchoredLabel; });
+      el.hidden = false;
     });
   }
   /* Prepayment, in rupees: data-save="M:2" = Medium basket, PREPAY[2]. */

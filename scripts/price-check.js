@@ -44,7 +44,7 @@
       document.querySelector('[data-mrp], [data-mrp-of]')) {
     console.warn(
       'This page shows an MRP while data/prices.js still has provisional: true. ' +
-      'Only Kalanamak is confirmed. Clear the flag when the CA signs the set off.'
+      'Clear the flag only once the set is signed off.'
     );
   }
 })();

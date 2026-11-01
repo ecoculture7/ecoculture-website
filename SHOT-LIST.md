@@ -1,6 +1,6 @@
 # Photography and film brief
 
-The brand rule: **every face has a name, every field a village.** No stock, no
+The brand rule: **every pack names its collective, every field a district.** A farmer is named only with written consent. No stock, no
 AI imagery, no unnamed people. Every placeholder on the site is a file called
 `PLACEHOLDER-*` with a visible band across it. This brief says what replaces each.
 
@@ -25,12 +25,12 @@ placeholder. Overwriting means returning visitors see the old image for up to a 
 
 | Replaces | Where it appears | Ratio | What to shoot |
 |---|---|---|---|
-| `PLACEHOLDER-hero-grain.jpg` | Homepage hero, **full width behind the headline** | 16:9, **2000 px wide** | A named farmer at harvest or at the weigh-in. **Leave the left half calm and dark-ish** (sky, crop, shadow): the headline sits there. Put the person in the right third. Under 250 KB. The caption names them: `[ farmer ], [ village ], Bundi · [ month ]` |
+| `PLACEHOLDER-hero-grain.jpg` | Homepage hero, **full width behind the headline** | 16:9, **2000 px wide** | A farmer from a partnered collective at harvest or at the weigh-in (the caption names the collective and district, not the person). **Leave the left half calm and dark-ish** (sky, crop, shadow): the headline sits there. Put the person in the right third. Under 250 KB. The caption names them: `[ farmer ], [ village ], Bundi · [ month ]` |
 | `PLACEHOLDER-bundi-field.jpg` | Homepage and /sourcing, Bundi card | 3:2 | A wide Bundi field with its crop, in daylight, with the village or a landmark recognisable |
 | `PLACEHOLDER-skn-paddy.jpg` | Homepage and /sourcing, Sant Kabir Nagar card | 3:2 | Kalanamak paddy, black husk visible if possible |
 | `PLACEHOLDER-farmers-field.jpg` | /sourcing farmer cards (three) | 3:2 | One portrait-in-the-field per farmer: **three different photos**, not one reused |
 | `PLACEHOLDER-story-light.jpg` | Homepage **"Hold a trial pack" band**, full width behind the copy (and /story) | 16:9, 2000 px wide | Warm, calm, low-contrast: a field at golden hour or hands at the scale. The headline sits on the left half. Under 250 KB |
-| `PLACEHOLDER-farmers-field.jpg` (also used as the strip at the top of the **membership "Joining a harvest" panel**) | Homepage membership | 16:7 crop | The weigh-in or a named farmer at the field; a wide, short crop of the same shoot |
+| `PLACEHOLDER-farmers-field.jpg` (also used as the strip at the top of the **membership "Joining a harvest" panel**) | Homepage membership | 16:7 crop | The weigh-in or a farmer at the field; a wide, short crop of the same shoot |
 
 | *(none yet)* | Homepage **founder block** | 4:5 portrait | Laukesh in a field or at a weigh-in, with a farmer, not posed. Daylight. |
 
@@ -58,4 +58,4 @@ next to `.video__empty`.
 - A poster image (`assets/img/weigh-in-poster.jpg`), and **captions** as a
   `.vtt` file: many people watch without sound, and Hindi speech needs English
   captions (and the reverse).
-- Name each farmer on screen when they speak. Same consent rule as photos.
+- Name the collective and district on screen when someone speaks; a farmer’s own name only with written consent, as for photos.

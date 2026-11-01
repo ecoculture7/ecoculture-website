@@ -34,10 +34,12 @@ _redirects            Netlify redirects, including the old site's URLs
 
 **1. Prices live in `data/prices.js` and nowhere else.** Two prices per item: the
 selling price (what the customer pays, the `price` on each SKU) and the MRP printed
-on the pack, which is `mrpOf(price)` = selling price x 1.05 rounded up. Change the
+on the pack, which is shelf-anchored: the certified-organic shelf price of the closest
+equivalent on a dated run, per pack, in `ECO.MRP.packs` (fallback: selling price x 1.05
+rounded up). The rule and sources are on `/mrp.html`. Change the
 selling price in the data first, then the two pages that carry `data-price` guards. If you find a rupee
 figure in an HTML file, that is a bug. Figures marked `provisional: true` are
-not yet confirmed — the MRPs are samples pending the CA.
+not yet confirmed and are removed from every page by `fill.js`.
 
 **2. Colours live in `styles/tokens.css` and nowhere else.** `--ink-faint` fails
 WCAG AA at 2.7:1 and is for rules and dividers only, never for text a reader
@@ -87,7 +89,7 @@ what stops five months of silent signups happening twice.
       and carrying a visible band. The brand rule is that every face has a
       name and every field a village — stock imagery is fatal to it.
 - [ ] FSSAI licence number in the footer (currently `[ NUMBER ]`).
-- [ ] Confirmed per-pack MRPs in `data/prices.js`.
+- [x] Confirmed per-pack MRPs in `data/prices.js` (shelf-anchored, 22 October).
 - [ ] The four legal pages written, not just linked.
 - [ ] A named arhar source, or arhar comes off the basket.
 - [ ] The real residue report replaces the specimen on /proof.

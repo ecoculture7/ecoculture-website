@@ -169,11 +169,11 @@ Nothing here is optional, and none of it is design.
 
 - [ ] **Photography.** Every image is named `PLACEHOLDER-*` and renders with a
       band across it reading "not a photograph of a real field". The brand rule
-      is that every face has a name and every field a village. One caught
+      is that every pack names its collective and every field a district. One caught
       instance of stock imagery undoes the whole argument.
 - [ ] **FSSAI licence number** in the footer, replacing `[ NUMBER ]`.
-- [ ] **Confirmed per-pack MRPs** in `data/prices.js`. Clear `provisional: true`
-      only when the CA has signed them off.
+- [x] **Confirmed per-pack MRPs** in `data/prices.js`, shelf-anchored (22 October).
+      Set `provisional: true` to pull them off every page in one word.
 - [ ] **The four legal pages written**, not just linked. They are drafts: every `[ bracket ]` filled and the whole set reviewed by the CA and a lawyer. Each page carries a visible "Draft" banner (delete it only after that review).
 - [ ] **A named arhar source**, or arhar comes off the basket. It is in all
       three pre-filled baskets and the page currently says "source being named".

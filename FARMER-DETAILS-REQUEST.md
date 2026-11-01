@@ -14,7 +14,7 @@ Ask each farmer's permission first, and record that they said yes.
 
 | # | What we need | Why |
 |---|---|---|
-| 1 | Full name, as they want it written | The site names every farmer |
+| 1 | Full name, as they want it written | The site names the collective; a farmer’s name is published only with consent |
 | 2 | Village, block and district | Every field gets a village |
 | 3 | Land under natural farming, in acres or bigha (say which) | Shown beside the name |
 | 4 | Which of our crops they grow, and how much they expect to supply this season | Ties a farmer to an item |
@@ -41,7 +41,7 @@ Landscape, at least 1600 px wide, taken in daylight.
 5. Who supplies Kalanamak in Sant Kabir Nagar? The site says fifteen farmers
    we trained ourselves; please confirm the number and send the same details as
    above for at least two of them.
-6. **Arhar:** is there a named farmer or group in the Banda track yet? If not,
+6. **Arhar:** is there a named collective or group in the Banda track yet? If not,
    it comes off the basket.
 7. What is the weigh-in process: where, who records it, and how is the farmer
    paid (cash, transfer) and how quickly?

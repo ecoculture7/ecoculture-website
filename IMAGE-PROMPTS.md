@@ -1,7 +1,7 @@
 # Temporary images: generation prompts and stock searches
 
 These stand in until the real shoot (see `SHOT-LIST.md`). Three rules, because the
-brand promise is *every face has a name, every field a village*:
+brand promise is *every pack names its collective, every field a district*:
 
 1. **Keep the placeholder band on every generated or stock image.** The band
    (`PLACEHOLDER — not a photograph of a real field`) is removed only when a real,

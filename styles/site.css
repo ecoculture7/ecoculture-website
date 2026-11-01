@@ -670,10 +670,12 @@ b, strong { font-weight: 600; color: var(--ink); }
 .hero__inner { padding-block: 56px 40px; display: flex; flex-direction: column; gap: 28px; }
 .hero__copy { max-width: 640px; }
 .hero h1 { color: var(--on-ink); }
+.hero__q { display: block; }
+.hero__a { display: block; font-size: 0.6em; font-weight: 500; line-height: 1.25; letter-spacing: -0.01em; margin-top: 0.45em; color: var(--on-ink-soft); }
 .hero em { color: var(--gold); }
 .hero__lead {
   font-family: var(--font-display); font-weight: 500;
-  font-size: clamp(1.4rem, 1.05rem + 1.5vw, 2.1rem); line-height: 1.28; letter-spacing: -0.015em;
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.6rem); line-height: 1.3; letter-spacing: -0.01em;
   color: var(--on-ink);
 }
 .hero mark { background: none; color: var(--gold); font-weight: 700; box-shadow: inset 0 -0.14em 0 var(--gold); }
@@ -1160,5 +1162,18 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 /* ── Round 16: two prices ─────────────────────────────────────────────── */
 .item__mrp { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
 .item__mrp:not(.is-ready), .ledger__mrp:not(.is-ready) { display: none; }
-.item__mrp span { font-weight: 600; color: var(--ink-soft); }
+.item__mrp s, .ledger__mrp s { text-decoration: line-through; text-decoration-thickness: 1px; }
+.item__mrp s span, .ledger__mrp s span { font-weight: 600; color: var(--ink-soft); }
+.mrp-note { color: var(--ink-soft); }
+.mrp-note[hidden] { display: none; }
 .ledger__mrp { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+
+/* ── /mrp.html: the MRP table ───────────────────────────────────────── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 10px; }
+.mrp-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+.mrp-table th, .mrp-table td { padding: 9px 8px; border-bottom: var(--b-hair) solid var(--husk-soft); text-align: left; vertical-align: top; }
+.mrp-table th { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-muted); }
+.mrp-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mrp-table s { color: var(--ink-muted); }
+.mrp-table b { color: var(--teal-deep); }
+.mrp-table .anchor { color: var(--ink-soft); font-size: 13px; }

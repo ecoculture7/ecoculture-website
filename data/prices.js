@@ -7,10 +7,11 @@
 
    PROVISIONAL FIGURES ARE MARKED `provisional: true`. The banner on any page
    that shows them reads from that flag, so clearing it is a one-word edit.
-   Last reviewed: 1 November 2026. Two prices per item: the selling price (SP,
-   below) and the printed MRP, which is SP x 1.05 rounded up to the rupee. The
-   pouch artwork of 24 October carries the MRPs; every one of its nineteen
-   packs matches that formula against the SPs here.
+   Last reviewed: 1 November 2026, against the consolidated price list of
+   22 October 2026. Two prices per item: the selling price (SP, below) and the
+   printed MRP, which is SHELF-ANCHORED (see ECO.MRP). The pouch artwork of
+   24 October still carries the superseded SP x 1.05 figures and must be
+   re-set to the MRPs below before the next label print run.
    ────────────────────────────────────────────────────────────────────────── */
 
 window.ECO = window.ECO || {};
@@ -36,45 +37,64 @@ window.ECO.SKUS = [
   { k: 'dhaniya',   name: 'Dhaniya (coriander)',     hi: 'sun-dried and ground',         cat: 'spice', unit: 'kg', price: 680, step: 0.1,  note: 'processed in 2–3 month batches' }
 ];
 
-/* The MRP rule, finalised: MRP = selling price x 1.05, rounded UP to the rupee.
-   It is printed on the pack; the customer pays the selling price. */
-window.ECO.mrpOf = function (sp) { return Math.ceil(sp * 1.05 - 1e-9); };
+/* MRP — shelf-anchored, decided 22 October 2026 (replaces the +5% rule of
+   16 October). The printed MRP of each pack is the own-site price of the
+   closest equivalent at three named certified-organic brands on a dated run,
+   the highest where more than one sells it. Where there is no like-for-like
+   comparator, or the shelf is at or below our selling price, the fallback is
+   SP + 5% rounded up to the rupee. No brand is named on a pack or a product
+   page; the sources are on one page, /mrp.html. MRP is fixed per label print
+   run and re-fetched at each run, not more than quarterly. The selling price
+   moves freely beneath it and never exceeds it.
+   Pages show the MRP struck through beside the highlighted selling price,
+   with the one-line note in fill.js. Nothing reaches a page while
+   provisional is true or a pack is unconfirmed. */
+window.ECO.mrpFallback = function (sp) { return Math.ceil(sp * 1.05 - 1e-9); };
 
-/* Packs: the selling price of each pack. The MRP is derived by the rule above
-   (and checked against the pouch artwork for the nineteen packs that have one).
-   Oil, haldi and dhaniya packs have no artwork yet, hence confirmed: false. */
 window.ECO.MRP = {
-  provisional: true,          /* <- the CA has not signed the set off; MRPs stay off the pages until this is false */
+  provisional: false,         /* set true to pull every MRP and note off the pages in one word */
+  rule: 'shelf',
+  anchored: '2026-10-21',     /* the dated shelf run the MRPs were read on */
+  anchoredLabel: '21 October 2026',
   reviewed: '2026-11-01',
+  shelf: ['Swadesi Way', 'Organic Tattva', 'Two Brothers'],
   packs: [
-    { k: 'atta',       pack: 1,   sells: 78,  confirmed: true },
-    { k: 'atta',       pack: 2,   sells: 156, confirmed: true },
-    { k: 'atta',       pack: 5,   sells: 390, confirmed: true },
-    { k: 'bansi',      pack: 1,   sells: 100, confirmed: true },
-    { k: 'bansi',      pack: 2,   sells: 200, confirmed: true },
-    { k: 'sonamoti',   pack: 1,   sells: 150, confirmed: true },
-    { k: 'sonamoti',   pack: 2,   sells: 300, confirmed: true },
-    { k: 'basmati',    pack: 1,   sells: 158, confirmed: true },
-    { k: 'basmati',    pack: 5,   sells: 790, confirmed: true },
-    { k: 'kalanamak',  pack: 0.5, sells: 150, confirmed: true },
-    { k: 'kalanamak',  pack: 1,   sells: 299, confirmed: true },
-    { k: 'arhar',      pack: 0.5, sells: 124, confirmed: true },
-    { k: 'arhar',      pack: 1,   sells: 248, confirmed: true },
-    { k: 'moong',      pack: 0.5, sells: 115, confirmed: true },
-    { k: 'moong',      pack: 1,   sells: 230, confirmed: true },
-    { k: 'chana',      pack: 0.5, sells: 93,  confirmed: true },
-    { k: 'chana',      pack: 1,   sells: 185, confirmed: true },
-    { k: 'masoor',     pack: 0.5, sells: 100, confirmed: true },
-    { k: 'masoor',     pack: 1,   sells: 200, confirmed: true },
-    { k: 'oil',        pack: 0.5, sells: 172, confirmed: false },
-    { k: 'oil',        pack: 1,   sells: 345, confirmed: false },
-    { k: 'haldi',      pack: 0.1, sells: 68,  confirmed: false },
-    { k: 'haldi',      pack: 0.5, sells: 340, confirmed: false },
-    { k: 'dhaniya',    pack: 0.1, sells: 68,  confirmed: false },
-    { k: 'dhaniya',    pack: 0.5, sells: 340, confirmed: false }
+    { k: 'atta',      pack: 1,   sells: 78,  mrp: 90,   anchor: 'Swadesi Way, Lokwan atta 1 kg',                       confirmed: true },
+    { k: 'atta',      pack: 2,   sells: 156, mrp: 175,  anchor: 'Swadesi Way, Lokwan atta 2 kg',                       confirmed: true },
+    { k: 'atta',      pack: 5,   sells: 390, mrp: 425,  anchor: 'Swadesi Way, Lokwan atta 5 kg (Organic Tattva 399)',  confirmed: true },
+    { k: 'bansi',     pack: 1,   sells: 100, mrp: 105,  anchor: 'shelf at our price (Swadesi Way ≈100), fallback +5%', confirmed: true },
+    { k: 'bansi',     pack: 2,   sells: 200, mrp: 210,  anchor: 'fallback +5%',                                        confirmed: true },
+    { k: 'sonamoti',  pack: 1,   sells: 150, mrp: 158,  anchor: 'shelf below our price (Swadesi Way ≈145), fallback +5%', confirmed: true },
+    { k: 'sonamoti',  pack: 2,   sells: 300, mrp: 315,  anchor: 'fallback +5%',                                        confirmed: true },
+    { k: 'basmati',   pack: 1,   sells: 158, mrp: 220,  anchor: 'Organic Tattva, Biryani basmati 1 kg',                confirmed: true },
+    { k: 'basmati',   pack: 5,   sells: 790, mrp: 1089, anchor: 'Organic Tattva, Biryani basmati 5 kg',                confirmed: true },
+    { k: 'kalanamak', pack: 0.5, sells: 150, mrp: 215,  anchor: 'Two Brothers, Kalanamak 2 kg at 855, pro-rated',      confirmed: true },
+    { k: 'kalanamak', pack: 1,   sells: 299, mrp: 425,  anchor: 'Two Brothers, Kalanamak 2 kg at 855, pro-rated',      confirmed: true },
+    { k: 'arhar',     pack: 0.5, sells: 124, mrp: 135,  anchor: 'Organic Tattva, arhar dal 500 g',                     confirmed: true },
+    { k: 'arhar',     pack: 1,   sells: 248, mrp: 270,  anchor: 'Organic Tattva, arhar dal 1 kg',                      confirmed: true },
+    { k: 'moong',     pack: 0.5, sells: 115, mrp: 155,  anchor: 'Organic Tattva, moong dal 500 g',                     confirmed: true },
+    { k: 'moong',     pack: 1,   sells: 230, mrp: 310,  anchor: 'Organic Tattva, moong dal 1 kg',                      confirmed: true },
+    { k: 'chana',     pack: 0.5, sells: 92,  mrp: 120,  anchor: 'Organic Tattva, chana dal 500 g',                     confirmed: true },
+    { k: 'chana',     pack: 1,   sells: 185, mrp: 235,  anchor: 'Organic Tattva, chana dal 1 kg',                      confirmed: true },
+    { k: 'masoor',    pack: 0.5, sells: 100, mrp: 140,  anchor: 'Organic Tattva, malka masoor 500 g',                  confirmed: true },
+    { k: 'masoor',    pack: 1,   sells: 200, mrp: 275,  anchor: 'Organic Tattva, malka masoor 1 kg',                   confirmed: true },
+    { k: 'oil',       pack: 0.5, sells: 172, mrp: 200,  anchor: 'Swadesi Way, black mustard oil 500 ml (≈200)',        confirmed: true },
+    { k: 'oil',       pack: 1,   sells: 345, mrp: 425,  anchor: 'Two Brothers, mustard oil 1 L',                       confirmed: true },
+    /* The list prices one three-spice pack (haldi, dhaniya, jeera) at 68 per
+       100 g with no like-for-like comparator, so fallback +5%. Haldi and dhaniya
+       are sold separately here at a provisional figure, so their packs stay
+       unconfirmed and show no MRP until their own prices are set. */
+    { k: 'haldi',     pack: 0.1, sells: 68,  mrp: 72,   anchor: 'no like-for-like comparator, fallback +5%',           confirmed: false },
+    { k: 'haldi',     pack: 0.5, sells: 340, mrp: 357,  anchor: 'fallback +5%',                                        confirmed: false },
+    { k: 'dhaniya',   pack: 0.1, sells: 68,  mrp: 72,   anchor: 'no like-for-like comparator, fallback +5%',           confirmed: false },
+    { k: 'dhaniya',   pack: 0.5, sells: 340, mrp: 357,  anchor: 'fallback +5%',                                        confirmed: false }
   ]
 };
-window.ECO.MRP.packs.forEach(function (r) { r.mrp = window.ECO.mrpOf(r.sells); });
+/* Every row must respect the rule: selling price never above MRP. */
+window.ECO.MRP.packs.forEach(function (r) {
+  if (r.mrp == null) r.mrp = window.ECO.mrpFallback(r.sells);
+  if (r.sells > r.mrp) throw new Error('prices.js: ' + r.k + ' ' + r.pack + ' sells above its MRP');
+});
 
 /* The three starting points. Every quantity is a legal pack multiple. */
 window.ECO.TIERS = {
