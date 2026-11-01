@@ -10,8 +10,7 @@
    Last reviewed: 1 November 2026, against the consolidated price list of
    22 October 2026. Two prices per item: the selling price (SP, below) and the
    printed MRP, which is SHELF-ANCHORED (see ECO.MRP). The pouch artwork of
-   24 October still carries the superseded SP x 1.05 figures and must be
-   re-set to the MRPs below before the next label print run.
+   1 November (assets/img/products/v2) prints these MRPs on every pack.
    ────────────────────────────────────────────────────────────────────────── */
 
 window.ECO = window.ECO || {};
@@ -80,14 +79,14 @@ window.ECO.MRP = {
     { k: 'masoor',    pack: 1,   sells: 200, mrp: 275,  anchor: 'Organic Tattva, malka masoor 1 kg',                   confirmed: true },
     { k: 'oil',       pack: 0.5, sells: 172, mrp: 200,  anchor: 'Swadesi Way, black mustard oil 500 ml (≈200)',        confirmed: true },
     { k: 'oil',       pack: 1,   sells: 345, mrp: 425,  anchor: 'Two Brothers, mustard oil 1 L',                       confirmed: true },
-    /* The list prices one three-spice pack (haldi, dhaniya, jeera) at 68 per
-       100 g with no like-for-like comparator, so fallback +5%. Haldi and dhaniya
-       are sold separately here at a provisional figure, so their packs stay
-       unconfirmed and show no MRP until their own prices are set. */
-    { k: 'haldi',     pack: 0.1, sells: 68,  mrp: 72,   anchor: 'no like-for-like comparator, fallback +5%',           confirmed: false },
-    { k: 'haldi',     pack: 0.5, sells: 340, mrp: 357,  anchor: 'fallback +5%',                                        confirmed: false },
-    { k: 'dhaniya',   pack: 0.1, sells: 68,  mrp: 72,   anchor: 'no like-for-like comparator, fallback +5%',           confirmed: false },
-    { k: 'dhaniya',   pack: 0.5, sells: 340, mrp: 357,  anchor: 'fallback +5%',                                        confirmed: false }
+    /* Spices: no like-for-like comparator on the shelf, so fallback +5%. The
+       packs are 100 g and 200 g, as on the pouch artwork of 1 November, which
+       prints these MRPs. Their per-kilo selling price is still marked
+       provisional above; set confirmed: false here if that figure moves. */
+    { k: 'haldi',     pack: 0.1, sells: 68,  mrp: 72,   anchor: 'no like-for-like comparator, fallback +5%',           confirmed: true },
+    { k: 'haldi',     pack: 0.2, sells: 136, mrp: 143,  anchor: 'fallback +5%',                                        confirmed: true },
+    { k: 'dhaniya',   pack: 0.1, sells: 68,  mrp: 72,   anchor: 'no like-for-like comparator, fallback +5%',           confirmed: true },
+    { k: 'dhaniya',   pack: 0.2, sells: 136, mrp: 143,  anchor: 'fallback +5%',                                        confirmed: true }
   ]
 };
 /* Every row must respect the rule: selling price never above MRP. */

@@ -44,7 +44,7 @@ Negative prompt, where the tool takes one:
 - Bundi card: `REAL-bundi-field.jpg` (real)
 - Sant Kabir Nagar card: `REAL-skn-field.jpg` (real)
 
-Still open: farmer strip (membership), reserve band, jeevamrit drum, lab sample, the twelve item tiles.
+Still open: farmer strip (membership), reserve band, jeevamrit drum, lab sample. The twelve item tiles are the pack renders in `assets/img/products/v2/`.
 
 ## Painted tiles: done
 
