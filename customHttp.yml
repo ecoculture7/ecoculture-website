@@ -1,5 +1,10 @@
 # Security headers, applied by Amplify Hosting to every response.
 # Amplify reads this file from the build output root on each deploy.
+#
+# The analytics and advertising hosts in script-src, connect-src and img-src
+# are for GA4 and Meta Pixel, loaded by scripts/consent.js only after consent.
+# If the tools change, change these hosts, consent.js and the privacy page's
+# cookie table together. script-src never gets 'unsafe-inline'.
 customHeaders:
   - pattern: '**'
     headers:
@@ -14,12 +19,12 @@ customHeaders:
       - key: Content-Security-Policy
         value: >-
           default-src 'self';
-          img-src 'self' data:;
+          img-src 'self' data: https://www.google-analytics.com https://www.facebook.com;
           media-src 'self';
           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
           font-src 'self' https://fonts.gstatic.com;
-          script-src 'self';
-          connect-src 'self' https://*.lambda-url.ap-south-1.on.aws;
+          script-src 'self' https://www.googletagmanager.com https://connect.facebook.net;
+          connect-src 'self' https://*.lambda-url.ap-south-1.on.aws https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com;
           form-action 'self';
           frame-ancestors 'none';
           base-uri 'self'
