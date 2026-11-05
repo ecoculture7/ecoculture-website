@@ -28,24 +28,23 @@
 
     var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'chart', role: 'img' });
     svg.setAttribute('aria-label',
-      'Delivery fee by order value: ' + inr(D.smallFee) + ' under ' + inr(D.midFrom) + ', ' +
-      inr(D.midFee) + ' from ' + inr(D.midFrom) + ', free from ' + inr(D.freeFrom) + '.');
+      'Delivery fee by order value: ' + inr(D.smallFee) + ' under ' + inr(D.freeFrom) + ', free from ' + inr(D.freeFrom) + '.');
 
     /* gridlines and y labels */
-    [0, D.midFee, D.smallFee].forEach(function (v) {
+    [0, D.smallFee].forEach(function (v) {
       svg.appendChild(s('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), class: 'chart__grid' }));
       svg.appendChild(s('text', { x: L - 8, y: y(v) + 4, class: 'chart__tick chart__tick--end' }, v ? inr(v) : 'Free'));
     });
 
     /* the step line */
-    var pts = [[0, D.smallFee], [D.midFrom, D.smallFee], [D.midFrom, D.midFee], [D.freeFrom, D.midFee], [D.freeFrom, 0], [xMax, 0]];
+    var pts = [[0, D.smallFee], [D.freeFrom, D.smallFee], [D.freeFrom, 0], [xMax, 0]];
     svg.appendChild(s('polyline', {
       points: pts.map(function (p) { return x(p[0]) + ',' + y(p[1]); }).join(' '),
       class: 'chart__line'
     }));
 
     /* thresholds */
-    [D.midFrom, D.freeFrom].forEach(function (v) {
+    [D.freeFrom].forEach(function (v) {
       svg.appendChild(s('line', { x1: x(v), x2: x(v), y1: y(yMax), y2: y(0) + 6, class: 'chart__thresh' }));
       svg.appendChild(s('text', { x: x(v), y: H - B + 28, class: 'chart__tick chart__tick--mid' }, inr(v)));
     });

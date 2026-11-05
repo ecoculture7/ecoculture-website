@@ -339,7 +339,7 @@
           </div>
         </div>
         <div style="margin-top: 14px; padding-top: 12px; border-top: var(--b-hair) solid var(--husk-soft);">
-          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-muted); margin-bottom: 6px;"><span>Free delivery at ₹2,500</span><span style="color: var(--teal); font-weight: 600;">Reached</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-muted); margin-bottom: 6px;"><span>Free delivery at <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the threshold</span></span><span style="color: var(--teal); font-weight: 600;">Reached</span></div>
           <div style="height: 6px; background: var(--husk-soft);"><div style="width: 100%; height: 6px; background: var(--teal);"></div></div>
         </div>
       </div>
@@ -351,12 +351,11 @@
     <div class="wrap split">
       <div class="stack" style="flex: 1 1 420px;">
         <p class="eyebrow">Delivery</p>
-        <h2>Free above ₹2,500. <em>Priced honestly below it.</em></h2>
+        <h2>Free above <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the threshold</span>. <em>Priced honestly below it.</em></h2>
         <div class="ledger" style="margin-top: 6px;">
-          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">From ₹2,500 of produce</span><span style="font-size: 15px;">Free</span></div>
+          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">From <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the threshold</span> of produce</span><span style="font-size: 15px;">Free</span></div>
           <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">Two months in one drop</span><span style="font-size: 15px;">One charge</span></div>
-          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">₹1,200 to ₹2,499</span><span style="font-size: 15px;">₹99</span></div>
-          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">Under ₹1,200</span><span style="font-size: 15px; color: var(--gold-ink);">₹249</span></div>
+          <div class="doc__line" style="border-bottom-style: solid; border-color: var(--husk-soft); padding: 13px 0;"><span style="font-size: 15px;">Under <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the threshold</span></span><span style="font-size: 15px; color: var(--gold-ink);"><span data-eco="DELIVERY.smallFee" data-fmt="inr">a fee</span></span></div>
         </div>
         <figure class="infographic" style="margin-top: 14px;">
           <div id="delivery-chart"></div>
@@ -365,9 +364,9 @@
       </div>
 
       <div class="stack" style="flex: 1 1 400px;">
-        <p class="prose"><b>Under ₹1,200 we charge ₹249, and we will show you why.</b> Packing, the lab retain and one van drop cost us about ₹320 whether the order is ₹600 or ₹6,000. A ₹600 order does not cover that. We could bury it in the product price so every customer pays for it, or name it.</p>
-        <p class="prose">Month by month, delivery is free from <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the set amount</span>. On any prepaid term it is free from <span data-eco="DELIVERY.member.freeFrom" data-fmt="inr">a lower amount</span>: the one member benefit that shows up on every drop. Prepaying takes <span data-eco="PREPAY.0.discount" data-fmt="pct">a small share</span> off at three months, <span data-eco="PREPAY.1.discount" data-fmt="pct">more</span> at six and <span data-eco="PREPAY.2.discount" data-fmt="pct">the most</span> at twelve, and either threshold is read against the list price rather than the discounted one — otherwise the discount would push you further from free delivery, which would be a strange sort of benefit.</p>
-        <p class="prose"><b>Half our respondents are one- or two-person households</b>, whose natural monthly order lands under <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the month-by-month threshold</span>. Two answers. Prepay any term, and the Small basket clears the member threshold on its own. Or order a longer cycle: atta keeps two months, dal and oil keep six, so two months in one drop crosses <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the threshold</span> with no surcharge and one van trip instead of two.</p>
+        <p class="prose"><b>Under <span data-eco="DELIVERY.freeFrom" data-fmt="inr">the threshold</span> we charge <span data-eco="DELIVERY.smallFee" data-fmt="inr">a fee</span>, and we will show you why.</b> Packing, the lab retain and one van drop cost us about <span data-eco="DELIVERY.perOrderCost" data-fmt="inr">the same</span> whether the order is small or large. A small order does not cover that. We could bury it in the product price so every customer pays for it, or name it.</p>
+        <p class="prose">One threshold, read against the list price rather than the discounted one — otherwise your prepayment discount would push you further from free delivery, which would be a strange sort of benefit.</p>
+        <p class="prose"><b>Half our respondents are one- or two-person households.</b> The Small basket clears the threshold on its own. If you want fewer drops, order a longer cycle: atta keeps two months, dal and oil keep six, so two months in one drop means one van trip instead of two.</p>
       </div>
     </div>
   </section>

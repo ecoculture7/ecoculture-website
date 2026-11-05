@@ -1148,7 +1148,7 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 
 /* Prepayment plans */
 .plans { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 6px; }
-@media (min-width: 900px) { .plans { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; } }
+@media (min-width: 900px) { .plans { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } }
 .plan { position: relative; padding: 16px 14px 18px; background: var(--paper-3); border: var(--b-hair) solid var(--husk); display: flex; flex-direction: column; gap: 4px; }
 .plan--best { border: var(--b-accent) solid var(--teal-deep); background: var(--teal-wash); }
 .plan__tag { position: absolute; top: -11px; left: 12px; padding: 2px 8px; background: var(--gold); color: var(--ink); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }

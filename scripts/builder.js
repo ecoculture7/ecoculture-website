@@ -27,7 +27,7 @@
     { k: 'spice', title: 'Spices', req: true, why: 'Every basket needs at least one spice so we can plan the grind.' }
   ];
 
-  var state = { tier: 'M', steps: {}, months: 0, code: '' };
+  var state = { tier: 'M', steps: {}, months: ECO.PREPAY[0].months, code: '' };
   /* The format of a code issued by backend/reserve when a trial ships. The
      real check happens at payment; here it only decides whether to show the
      credit line. */
@@ -61,10 +61,7 @@
     ECO.SKUS.forEach(function (s) { state.steps[s.k] = Math.round((q[s.k] || 0) / s.step); });
   }
 
-  /* A prepaid term makes a member, and a member's band is the lower one. */
-  function isMember() { return state.months > 0; }
-  function band() { return isMember() && D.member ? D.member : D; }
-  function deliveryFee(list) { return ECO.calc.fee(list, isMember()); }
+  function deliveryFee(list) { return ECO.calc.fee(list); }
 
   /* ── Build the page once ──────────────────────────────────────────────── */
 
@@ -200,8 +197,8 @@
 
   /* Prepay */
   var fs = el('fieldset', 'prepay');
-  fs.appendChild(el('legend', 'prepay__legend', 'Pay ahead?'));
-  var opts = [{ months: 0, discount: 0 }].concat(ECO.PREPAY);
+  fs.appendChild(el('legend', 'prepay__legend', 'Prepaid for'));
+  var opts = ECO.PREPAY;   /* membership is prepaid: there is no month-by-month option */
   opts.forEach(function (o) {
     var lab = el('label', 'prepay__opt');
     var inp = document.createElement('input');
@@ -211,8 +208,8 @@
     inp.checked = o.months === state.months;
     inp.addEventListener('change', function () { state.months = o.months; render(); });
     lab.appendChild(inp);
-    lab.appendChild(el('span', 'prepay__t', o.months ? o.months + ' months' : 'Month by month'));
-    lab.appendChild(el('span', 'prepay__d', o.months ? Math.round(o.discount * 100) + '% off' : 'list price'));
+    lab.appendChild(el('span', 'prepay__t', o.months + ' months'));
+    lab.appendChild(el('span', 'prepay__d', Math.round(o.discount * 100) + '% off'));
     fs.appendChild(lab);
   });
   doc.appendChild(fs);
@@ -248,7 +245,7 @@
   var cta = el('a', 'btn btn--primary bsum__cta', 'Reserve a December trial pack');
   cta.href = '/index.html#reserve';
   doc.appendChild(cta);
-  doc.appendChild(el('p', 'small muted bsum__fine', 'Payment opens when the gateway is live. Delivery is read on the list price, before any prepayment discount or credit.'));
+  doc.appendChild(el('p', 'small muted bsum__fine', 'Membership is prepaid; payment opens when the gateway is live. Delivery is read on the list price, before the discount or the credit.'));
 
   side.appendChild(doc);
 
@@ -321,23 +318,21 @@
     /* Totals */
     var fee = list ? deliveryFee(list) : 0;
     ui.listRow.val.textContent = inr(list);
-    ui.delRow.label.textContent = isMember() ? 'Delivery (member)' : 'Delivery';
     ui.delRow.val.textContent = !list ? '—' : (fee ? inr(fee) : 'Free');
     ui.delRow.val.classList.toggle('bsum__free', list > 0 && fee === 0);
     ui.perMonth.textContent = inr(list + fee);
 
-    /* Progress to free delivery, read on the list price; the member band when prepaying */
-    var B = band();
-    var pct = Math.min(100, Math.round((list / B.freeFrom) * 100));
+    /* Progress to free delivery, read on the list price */
+    var pct = Math.min(100, Math.round((list / D.freeFrom) * 100));
     ui.progBar.style.width = pct + '%';
-    ui.progLabel.textContent = (isMember() ? 'Member free delivery at ' : 'Free delivery at ') + inr(B.freeFrom);
-    ui.progState.textContent = list >= B.freeFrom ? 'Reached' : inr(B.freeFrom - list) + ' to go';
-    ui.progState.classList.toggle('bprog__state--on', list >= B.freeFrom);
+    ui.progLabel.textContent = 'Free delivery at ' + inr(D.freeFrom);
+    ui.progState.textContent = list >= D.freeFrom ? 'Reached' : inr(D.freeFrom - list) + ' to go';
+    ui.progState.classList.toggle('bprog__state--on', list >= D.freeFrom);
 
     /* Prepay: list → discount → trial credit. Delivery is per drop, on list. */
     var codeOk = CODE_RE.test(state.code);
     var pp = ECO.calc.prepay(list, state.months, codeOk);
-    ui.creditBox.hidden = !(state.months && list && ECO.TRIAL);
+    ui.creditBox.hidden = !(list && ECO.TRIAL);
     if (ECO.TRIAL) {
       ui.creditHint.textContent = codeOk
         ? inr(ECO.TRIAL.price) + ' comes off this payment. The code is checked when you pay.'

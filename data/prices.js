@@ -102,26 +102,21 @@ window.ECO.TIERS = {
   L: { label: 'Large',  who: '5–6 people', q: { atta: 12, basmati: 6, kalanamak: 0.5, arhar: 1.5, moong: 1.5, chana: 1,   masoor: 1,   oil: 2,   haldi: 0.4, dhaniya: 0.4 } }
 };
 
-/* Delivery. ONE threshold, read on the LIST price before any prepayment
-   discount — reading it after would push a prepaying customer away from
-   free delivery, which would be a strange sort of benefit.
-   ₹2,500: a ₹150 drop is 6.0% of order value, the top of the 4–6% band.
-   ₹249:   per-order cost is ~₹320 and near-fixed; at 21% contribution this
-           breaks even at ₹338 of produce, and the cheapest compliant
-           order is ₹412, so every compliant order clears.                */
+/* Delivery. Membership is prepaid (3, 6 or 12 months) and there is no
+   month-by-month purchase, so there is ONE band for everyone who buys:
+   free from freeFrom, read on the LIST price before the prepayment discount
+   (read after it, the discount would push a member away from free delivery,
+   which would be a strange sort of benefit). Below it, smallFee: a packed
+   order, the lab retain and one van drop cost about perOrderCost whatever
+   the order size. The Small basket clears freeFrom on its own; only a
+   custom basket under it pays the fee. Decided 5 November 2026; the earlier
+   2,500 / 1,200 / 99 bands are gone.
+   The trial pack (ECO.TRIAL) sits under freeFrom: whether it is delivered
+   free by hand or carries smallFee is still the founder's decision.      */
 window.ECO.DELIVERY = {
-  freeFrom: 2500,
-  midFrom: 1200,
-  midFee: 99,
+  freeFrom: 1200,
   smallFee: 249,
-  perOrderCost: 320,
-  /* Members (any prepaid term) get free delivery from the lower threshold.
-     Still read on the LIST price. It is the one member benefit that shows up
-     every month. Cost, so it is decided with the number in view: Medium and
-     Large already clear 2,500, so it bites only on Small at ~1,672, which
-     otherwise pays 99 a month: 1,188 per Small member per year
-     (MEMBERSHIP-FUNNEL.md §6).                                            */
-  member: { freeFrom: 1200, midFrom: 0, midFee: 0, smallFee: 249 }
+  perOrderCost: 320
 };
 
 /* Prepayment. There is no membership fee: the discount is the interest paid
