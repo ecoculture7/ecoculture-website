@@ -1186,32 +1186,47 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
 .mrp-table .anchor { color: var(--ink-soft); font-size: 13px; }
 
 /* ── Cookie consent ─────────────────────────────────────────────────────
-   Accept and Reject are the same button: same class, same size, same weight. */
+   One strip along the bottom: text left, the three buttons right in a row.
+   Accept and Reject are the same button: same class, same size, same weight.
+   The Choose form opens below the strip only when asked. [hidden] must win
+   over the display rules here, or the form shows by default. */
 .consent {
   position: fixed; inset-inline: 0; bottom: 0; z-index: 60;
   background: var(--paper-3); border-top: var(--b-accent) solid var(--gold);
-  box-shadow: 0 -8px 32px rgba(28, 43, 36, 0.14);
-  padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom));
+  box-shadow: 0 -6px 24px rgba(28, 43, 36, 0.14);
+  padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
 }
-.consent__inner { position: relative; max-width: var(--maxw); margin: 0 auto; display: flex; flex-direction: column; gap: 12px; padding-right: 36px; }
-.consent__text { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-soft); max-width: 72ch; }
+.consent [hidden] { display: none !important; }
+.consent__inner {
+  position: relative; max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px 24px; align-items: center;
+  padding-right: 40px;
+}
+.consent__text { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
 .consent__text b { color: var(--ink); }
-.consent__btns { display: flex; flex-wrap: wrap; gap: 10px; }
-.consent__btns .btn { min-height: var(--tap); }
-.consent__choose { display: flex; flex-direction: column; gap: 8px; }
-.consent__opt { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--ink-soft); min-height: var(--tap); }
-.consent__opt input { width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--teal-deep); flex: 0 0 auto; }
+.consent__btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.consent__btns .btn { min-height: var(--tap); padding-inline: 16px; font-size: 14px; white-space: nowrap; }
+.consent__choose { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 8px; border-top: var(--b-hair) solid var(--husk-soft); }
+.consent__opt { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; line-height: 1.45; color: var(--ink-soft); flex: 1 1 220px; }
+.consent__opt input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--teal-deep); flex: 0 0 auto; }
 .consent__opt b { color: var(--ink); }
 .consent__close {
-  position: absolute; top: -4px; right: 0; width: var(--tap); height: var(--tap);
-  background: none; border: 0; font-size: 26px; line-height: 1; color: var(--ink-muted); cursor: pointer;
+  position: absolute; top: 50%; right: -8px; transform: translateY(-50%); width: var(--tap); height: var(--tap);
+  background: none; border: 0; font-size: 24px; line-height: 1; color: var(--ink-muted); cursor: pointer;
 }
 .consent__close:hover { color: var(--ink); }
-.has-buildbar .consent { bottom: 0; }
+@media (max-width: 599px) {
+  .consent { padding-top: 10px; }
+  .consent__inner { gap: 8px; padding-right: 0; }
+  .consent__text { font-size: 12.5px; padding-right: 36px; }
+  .consent__btns { flex-wrap: nowrap; }
+  .consent__btns .btn { flex: 1 1 0; min-height: 40px; padding-inline: 6px; font-size: 13px; }
+  .consent__close { top: 0; transform: none; right: -10px; }
+}
 @media (min-width: 900px) {
-  .consent__inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; }
-  .consent__inner:has(.consent__choose:not([hidden])) { flex-wrap: wrap; }
-  .consent__choose { flex: 1 1 100%; flex-direction: row; gap: 20px; }
+  .consent__inner { grid-template-columns: minmax(0, 1fr) auto; }
+  .consent__text { max-width: 70ch; }
+  .consent__btns { flex-wrap: nowrap; }
 }
 
 /* ── WhatsApp chat button ───────────────────────────────────────────────
