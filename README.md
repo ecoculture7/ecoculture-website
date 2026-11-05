@@ -36,7 +36,7 @@ _redirects            Netlify redirects, including the old site's URLs
 selling price (what the customer pays, the `price` on each SKU) and the MRP printed
 on the pack, which is shelf-anchored: the certified-organic shelf price of the closest
 equivalent on a dated run, per pack, in `ECO.MRP.packs` (fallback: selling price x 1.05
-rounded up). The rule and sources are on `/mrp.html`. Change the
+rounded up). The rule is on `/mrp.html`; no brand is named anywhere. Change the
 selling price in the data first, then the two pages that carry `data-price` guards. If you find a rupee
 figure in an HTML file, that is a bug. Figures marked `provisional: true` are
 not yet confirmed and are removed from every page by `fill.js`.

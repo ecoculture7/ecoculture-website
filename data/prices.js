@@ -38,11 +38,12 @@ window.ECO.SKUS = [
 
 /* MRP — shelf-anchored, decided 22 October 2026 (replaces the +5% rule of
    16 October). The printed MRP of each pack is the own-site price of the
-   closest equivalent at three named certified-organic brands on a dated run,
+   closest equivalent at certified-organic brands on a dated shelf run,
    the highest where more than one sells it. Where there is no like-for-like
    comparator, or the shelf is at or below our selling price, the fallback is
-   SP + 5% rounded up to the rupee. No brand is named on a pack or a product
-   page; the sources are on one page, /mrp.html. MRP is fixed per label print
+   SP + 5% rounded up to the rupee. No brand is ever named: the rule compares
+   against the category, never a competitor (marketing plan 3.4). The method
+   is on /mrp.html. MRP is fixed per label print
    run and re-fetched at each run, not more than quarterly. The selling price
    moves freely beneath it and never exceeds it.
    Pages show the MRP struck through beside the highlighted selling price,
@@ -56,29 +57,28 @@ window.ECO.MRP = {
   anchored: '2026-10-21',     /* the dated shelf run the MRPs were read on */
   anchoredLabel: '21 October 2026',
   reviewed: '2026-11-01',
-  shelf: ['Swadesi Way', 'Organic Tattva', 'Two Brothers'],
   packs: [
-    { k: 'atta',      pack: 1,   sells: 78,  mrp: 90,   anchor: 'Swadesi Way, Lokwan atta 1 kg',                       confirmed: true },
-    { k: 'atta',      pack: 2,   sells: 156, mrp: 175,  anchor: 'Swadesi Way, Lokwan atta 2 kg',                       confirmed: true },
-    { k: 'atta',      pack: 5,   sells: 390, mrp: 425,  anchor: 'Swadesi Way, Lokwan atta 5 kg (Organic Tattva 399)',  confirmed: true },
-    { k: 'bansi',     pack: 1,   sells: 100, mrp: 105,  anchor: 'shelf at our price (Swadesi Way ≈100), fallback +5%', confirmed: true },
+    { k: 'atta',      pack: 1,   sells: 78,  mrp: 90,   anchor: 'certified-organic Lokwan atta, 1 kg, dated shelf run',                       confirmed: true },
+    { k: 'atta',      pack: 2,   sells: 156, mrp: 175,  anchor: 'certified-organic Lokwan atta, 2 kg, dated shelf run',                       confirmed: true },
+    { k: 'atta',      pack: 5,   sells: 390, mrp: 425,  anchor: 'certified-organic Lokwan atta, 5 kg, highest of two sellers',  confirmed: true },
+    { k: 'bansi',     pack: 1,   sells: 100, mrp: 105,  anchor: 'shelf at or below our price, fallback +5%', confirmed: true },
     { k: 'bansi',     pack: 2,   sells: 200, mrp: 210,  anchor: 'fallback +5%',                                        confirmed: true },
-    { k: 'sonamoti',  pack: 1,   sells: 150, mrp: 158,  anchor: 'shelf below our price (Swadesi Way ≈145), fallback +5%', confirmed: true },
+    { k: 'sonamoti',  pack: 1,   sells: 150, mrp: 158,  anchor: 'shelf at or below our price, fallback +5%', confirmed: true },
     { k: 'sonamoti',  pack: 2,   sells: 300, mrp: 315,  anchor: 'fallback +5%',                                        confirmed: true },
-    { k: 'basmati',   pack: 1,   sells: 158, mrp: 220,  anchor: 'Organic Tattva, Biryani basmati 1 kg',                confirmed: true },
-    { k: 'basmati',   pack: 5,   sells: 790, mrp: 1089, anchor: 'Organic Tattva, Biryani basmati 5 kg',                confirmed: true },
-    { k: 'kalanamak', pack: 0.5, sells: 157, mrp: 215,  anchor: 'Two Brothers, Kalanamak 2 kg at 855, pro-rated',      confirmed: true },
-    { k: 'kalanamak', pack: 1,   sells: 314, mrp: 425,  anchor: 'Two Brothers, Kalanamak 2 kg at 855, pro-rated',      confirmed: true },
-    { k: 'arhar',     pack: 0.5, sells: 124, mrp: 135,  anchor: 'Organic Tattva, arhar dal 500 g',                     confirmed: true },
-    { k: 'arhar',     pack: 1,   sells: 248, mrp: 270,  anchor: 'Organic Tattva, arhar dal 1 kg',                      confirmed: true },
-    { k: 'moong',     pack: 0.5, sells: 115, mrp: 155,  anchor: 'Organic Tattva, moong dal 500 g',                     confirmed: true },
-    { k: 'moong',     pack: 1,   sells: 230, mrp: 310,  anchor: 'Organic Tattva, moong dal 1 kg',                      confirmed: true },
-    { k: 'chana',     pack: 0.5, sells: 92,  mrp: 120,  anchor: 'Organic Tattva, chana dal 500 g',                     confirmed: true },
-    { k: 'chana',     pack: 1,   sells: 185, mrp: 235,  anchor: 'Organic Tattva, chana dal 1 kg',                      confirmed: true },
-    { k: 'masoor',    pack: 0.5, sells: 100, mrp: 140,  anchor: 'Organic Tattva, malka masoor 500 g',                  confirmed: true },
-    { k: 'masoor',    pack: 1,   sells: 200, mrp: 275,  anchor: 'Organic Tattva, malka masoor 1 kg',                   confirmed: true },
-    { k: 'oil',       pack: 0.5, sells: 172, mrp: 200,  anchor: 'Swadesi Way, black mustard oil 500 ml (≈200)',        confirmed: true },
-    { k: 'oil',       pack: 1,   sells: 345, mrp: 425,  anchor: 'Two Brothers, mustard oil 1 L',                       confirmed: true },
+    { k: 'basmati',   pack: 1,   sells: 158, mrp: 220,  anchor: 'certified-organic biryani-grade basmati, 1 kg, dated shelf run',                confirmed: true },
+    { k: 'basmati',   pack: 5,   sells: 790, mrp: 1089, anchor: 'certified-organic biryani-grade basmati, 5 kg, dated shelf run',                confirmed: true },
+    { k: 'kalanamak', pack: 0.5, sells: 157, mrp: 215,  anchor: 'certified-organic Kalanamak, 2 kg pack, pro-rated',      confirmed: true },
+    { k: 'kalanamak', pack: 1,   sells: 314, mrp: 425,  anchor: 'certified-organic Kalanamak, 2 kg pack, pro-rated',      confirmed: true },
+    { k: 'arhar',     pack: 0.5, sells: 124, mrp: 135,  anchor: 'certified-organic arhar dal, 500 g, dated shelf run',                     confirmed: true },
+    { k: 'arhar',     pack: 1,   sells: 248, mrp: 270,  anchor: 'certified-organic arhar dal, 1 kg, dated shelf run',                      confirmed: true },
+    { k: 'moong',     pack: 0.5, sells: 115, mrp: 155,  anchor: 'certified-organic moong dal, 500 g, dated shelf run',                     confirmed: true },
+    { k: 'moong',     pack: 1,   sells: 230, mrp: 310,  anchor: 'certified-organic moong dal, 1 kg, dated shelf run',                      confirmed: true },
+    { k: 'chana',     pack: 0.5, sells: 92,  mrp: 120,  anchor: 'certified-organic chana dal, 500 g, dated shelf run',                     confirmed: true },
+    { k: 'chana',     pack: 1,   sells: 185, mrp: 235,  anchor: 'certified-organic chana dal, 1 kg, dated shelf run',                      confirmed: true },
+    { k: 'masoor',    pack: 0.5, sells: 100, mrp: 140,  anchor: 'certified-organic malka masoor, 500 g, dated shelf run',                  confirmed: true },
+    { k: 'masoor',    pack: 1,   sells: 200, mrp: 275,  anchor: 'certified-organic malka masoor, 1 kg, dated shelf run',                   confirmed: true },
+    { k: 'oil',       pack: 0.5, sells: 172, mrp: 200,  anchor: 'certified-organic black mustard oil, 500 ml, dated shelf run',        confirmed: true },
+    { k: 'oil',       pack: 1,   sells: 345, mrp: 425,  anchor: 'certified-organic kachi ghani mustard oil, 1 L, dated shelf run',                       confirmed: true },
     /* Spices: no like-for-like comparator on the shelf, so fallback +5%. The
        packs are 100 g and 200 g, as on the pouch artwork of 1 November, which
        prints these MRPs. Their per-kilo selling price is still marked
