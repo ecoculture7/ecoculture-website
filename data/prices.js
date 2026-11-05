@@ -127,3 +127,25 @@ window.ECO.PREPAY = [
   { months: 6,  discount: 0.05, impliedAnnual: 0.24 },
   { months: 12, discount: 0.12, impliedAnnual: 0.26 }
 ];
+
+/* The trial pack: four of the smallest legal packs, enough to cook with. Its
+   price is DERIVED from SKUS here at load and written down nowhere else, so it
+   cannot drift. The credit: take any prepaid term within creditDays of the
+   trial shipping and the whole trial price comes off that payment, so the
+   trial ends up free (MEMBERSHIP-FUNNEL.md §2). The code that proves a trial
+   was bought is issued by backend/reserve when the pack ships.
+   Cart order, one rule: list price → prepay discount → trial credit →
+   delivery band read on the LIST price.                                  */
+window.ECO.TRIAL = {
+  creditDays: 30,
+  items: [
+    { k: 'atta',      pack: 1   },
+    { k: 'kalanamak', pack: 0.5 },
+    { k: 'moong',     pack: 0.5 },
+    { k: 'oil',       pack: 0.5 }
+  ]
+};
+window.ECO.TRIAL.price = window.ECO.TRIAL.items.reduce(function (sum, it) {
+  var sku = window.ECO.SKUS.filter(function (s) { return s.k === it.k; })[0];
+  return sum + Math.round(sku.price * it.pack + 1e-9);
+}, 0);

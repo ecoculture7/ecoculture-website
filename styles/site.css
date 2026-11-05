@@ -469,6 +469,8 @@ b, strong { font-weight: 600; color: var(--ink); }
 
 .bstatus { margin-top: 14px; font-size: 13px; line-height: 1.5; color: var(--teal-deep); }
 .bstatus--gap { color: var(--gold-ink); }
+.credit { margin-top: 12px; }
+.credit input { font-family: var(--font-mono, monospace); letter-spacing: 0.08em; text-transform: uppercase; }
 .bsum__cta { width: 100%; margin-top: 14px; }
 .bsum__fine { margin-top: 10px; }
 

@@ -27,7 +27,11 @@
     { k: 'spice', title: 'Spices', req: true, why: 'Every basket needs at least one spice so we can plan the grind.' }
   ];
 
-  var state = { tier: 'M', steps: {}, months: 0 };
+  var state = { tier: 'M', steps: {}, months: 0, code: '' };
+  /* The format of a code issued by backend/reserve when a trial ships. The
+     real check happens at payment; here it only decides whether to show the
+     credit line. */
+  var CODE_RE = /^ECO-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
   var ui = { tiers: {}, rows: {}, notes: {}, groups: {} };
 
   /* ── Helpers ──────────────────────────────────────────────────────────── */
@@ -213,6 +217,26 @@
     fs.appendChild(lab);
   });
   doc.appendChild(fs);
+  /* Trial credit code: only meaningful on a prepaid term */
+  var creditBox = el('div', 'field credit');
+  creditBox.hidden = true;
+  var creditLab = el('label', null, 'Trial credit code');
+  creditLab.htmlFor = 'credit-code';
+  var creditInp = document.createElement('input');
+  creditInp.id = 'credit-code';
+  creditInp.name = 'credit';
+  creditInp.type = 'text';
+  creditInp.autocomplete = 'off';
+  creditInp.placeholder = 'ECO-XXXX-XXXX';
+  creditInp.setAttribute('spellcheck', 'false');
+  creditInp.addEventListener('input', function () { state.code = creditInp.value.trim().toUpperCase(); render(); });
+  var creditHint = el('span', 'hint');
+  creditBox.appendChild(creditLab);
+  creditBox.appendChild(creditInp);
+  creditBox.appendChild(creditHint);
+  doc.appendChild(creditBox);
+  ui.creditBox = creditBox; ui.creditHint = creditHint;
+
   ui.prepayResult = el('p', 'bnote bnote--ok');
   ui.prepayResult.hidden = true;
   doc.appendChild(ui.prepayResult);
@@ -225,7 +249,7 @@
   var cta = el('a', 'btn btn--primary bsum__cta', 'Reserve a December trial pack');
   cta.href = '/index.html#reserve';
   doc.appendChild(cta);
-  doc.appendChild(el('p', 'small muted bsum__fine', 'No payment now. Delivery is read on the list price, before any prepayment discount.'));
+  doc.appendChild(el('p', 'small muted bsum__fine', 'Payment opens when the gateway is live. Delivery is read on the list price, before any prepayment discount or credit.'));
 
   side.appendChild(doc);
 
@@ -309,13 +333,18 @@
     ui.progState.textContent = list >= D.freeFrom ? 'Reached' : inr(D.freeFrom - list) + ' to go';
     ui.progState.classList.toggle('bprog__state--on', list >= D.freeFrom);
 
-    /* Prepay */
-    var opt = null;
-    ECO.PREPAY.forEach(function (o) { if (o.months === state.months) opt = o; });
-    if (opt && list) {
-      var full = list * opt.months;
-      var pay = Math.round(full * (1 - opt.discount));
-      ui.prepayResult.textContent = 'Pay ' + inr(pay) + ' now for ' + opt.months + ' months of basket — you keep ' + inr(full - pay) + '. Delivery is charged on each drop.';
+    /* Prepay: list → discount → trial credit. Delivery is per drop, on list. */
+    var codeOk = CODE_RE.test(state.code);
+    var pp = ECO.calc.prepay(list, state.months, codeOk);
+    ui.creditBox.hidden = !(state.months && list && ECO.TRIAL);
+    if (ECO.TRIAL) {
+      ui.creditHint.textContent = codeOk
+        ? inr(ECO.TRIAL.price) + ' comes off this payment. The code is checked when you pay.'
+        : 'Sent to you when your trial pack ships. Within ' + ECO.TRIAL.creditDays + ' days it takes the whole trial price, ' + inr(ECO.TRIAL.price) + ', off any prepaid term.';
+    }
+    if (pp) {
+      ui.prepayResult.textContent = 'Pay ' + inr(pp.pay) + ' now for ' + pp.months + ' months of basket: you keep ' + inr(pp.saved) +
+        (pp.credit ? ', and your trial credit of ' + inr(pp.credit) + ' is taken off' : '') + '. Delivery is charged on each drop.';
       ui.prepayResult.hidden = false;
     } else {
       ui.prepayResult.hidden = true;

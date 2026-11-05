@@ -23,7 +23,20 @@ Test the logic on your laptop, no AWS needed:
 
 ```
 node backend/reserve/test.mjs
+node backend/reserve/credit.test.mjs
 ```
+
+## Trial credit codes (`credit.mjs`)
+
+When a trial pack ships, issue a code with `issueCode()`, store it in a second
+table `ecoculture-credit` (partition key `code`) as
+`{ code, email, amount, shippedAt, creditDays, redeemedAt: null }` with
+`amount` = the trial price at the time, and send it to the customer by email
+and WhatsApp. At prepay checkout the builder posts `{ code }` to a second
+Function URL wired to `createCreditHandler`; the payment step posts
+`{ code, action: 'redeem' }` once the gateway confirms, which burns it. The
+code is worth `amount`, once, within `creditDays` of `shippedAt`. Not
+deployed until a payment gateway is chosen.
 
 ## 1. SES — verify the address
 

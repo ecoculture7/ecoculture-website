@@ -66,6 +66,19 @@
       el.textContent = String(Math.round(o.months * o.discount * 10) / 10);
     });
   }
+  /* The trial pack: its price, its contents and the credit window, from ECO.TRIAL. */
+  if (window.ECO.TRIAL && window.ECO.SKUS) {
+    var T = window.ECO.TRIAL, skuOf = {};
+    window.ECO.SKUS.forEach(function (s) { skuOf[s.k] = s; });
+    document.querySelectorAll('[data-trial-price]').forEach(function (el) { el.textContent = '\u20B9' + T.price.toLocaleString('en-IN'); });
+    document.querySelectorAll('[data-trial-days]').forEach(function (el) { el.textContent = String(T.creditDays); });
+    document.querySelectorAll('[data-trial-items]').forEach(function (el) {
+      el.textContent = T.items.map(function (it) {
+        var s = skuOf[it.k], q = it.pack < 1 ? Math.round(it.pack * 1000) + (s.unit === 'L' ? ' ml' : ' g') : it.pack + ' ' + s.unit;
+        return s.name + ' ' + q;
+      }).join(', ');
+    });
+  }
   /* Derived figures for a starting basket: its monthly total and its weight. */
   if (window.ECO.calc) {
     document.querySelectorAll('[data-tier-total]').forEach(function (el) {

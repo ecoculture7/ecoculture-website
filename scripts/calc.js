@@ -41,5 +41,32 @@
     return { label: def.label, who: def.who, lines: lines, total: total, weight: weight, byCat: byCat, fee: fee(total) };
   }
 
-  ECO.calc = { line: line, fmtQty: fmtQty, fee: fee, tier: tier, catTitles: CAT_TITLES };
+  /* The trial pack as lines, from ECO.TRIAL. */
+  function trial() {
+    var T = ECO.TRIAL, lines = [], total = 0;
+    if (!T) return { lines: lines, total: 0 };
+    T.items.forEach(function (it) {
+      var sku = ECO.SKUS.filter(function (s) { return s.k === it.k; })[0];
+      if (!sku) return;
+      var amount = line(sku, it.pack);
+      lines.push({ sku: sku, qty: it.pack, amount: amount });
+      total += amount;
+    });
+    return { lines: lines, total: total };
+  }
+
+  /* What a prepaid term costs, in the fixed order:
+     list → prepay discount → trial credit. Delivery is NOT in here: it is read
+     on the list price per drop, by fee(). */
+  function prepay(list, months, withCredit) {
+    var opt = null;
+    ECO.PREPAY.forEach(function (o) { if (o.months === months) opt = o; });
+    if (!opt || !list) return null;
+    var full = list * opt.months;
+    var discounted = Math.round(full * (1 - opt.discount));
+    var credit = withCredit && ECO.TRIAL ? Math.min(ECO.TRIAL.price, discounted) : 0;
+    return { months: opt.months, discount: opt.discount, full: full, discounted: discounted, saved: full - discounted, credit: credit, pay: discounted - credit };
+  }
+
+  ECO.calc = { line: line, fmtQty: fmtQty, fee: fee, tier: tier, trial: trial, prepay: prepay, catTitles: CAT_TITLES };
 })();
