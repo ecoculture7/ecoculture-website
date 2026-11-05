@@ -1213,3 +1213,24 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
   .consent__inner:has(.consent__choose:not([hidden])) { flex-wrap: wrap; }
   .consent__choose { flex: 1 1 100%; flex-direction: row; gap: 20px; }
 }
+
+/* ── WhatsApp chat button ───────────────────────────────────────────────
+   A link to wa.me, no third-party script. Hidden while the consent banner
+   is up so the two never overlap; lifted above the builder's total bar. */
+.wa-fab {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 50;
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 52px; padding: 0 18px 0 14px; border-radius: 999px;
+  background: var(--whatsapp); color: #fff; text-decoration: none;
+  font-weight: 600; font-size: 15px; letter-spacing: 0.01em;
+  box-shadow: 0 6px 20px rgba(28, 43, 36, 0.28);
+}
+.wa-fab:hover, .wa-fab:focus-visible { background: var(--whatsapp-deep); color: #fff; }
+.wa-fab svg { width: 24px; height: 24px; fill: currentColor; flex: 0 0 auto; }
+.has-buildbar .wa-fab { bottom: calc(68px + env(safe-area-inset-bottom)); }
+body:has(.consent) .wa-fab { display: none; }
+@media (max-width: 599px) {
+  .wa-fab { width: 56px; height: 56px; min-height: 56px; padding: 0; justify-content: center; }
+  .wa-fab__t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+@media print { .wa-fab { display: none; } }

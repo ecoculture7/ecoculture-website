@@ -70,6 +70,10 @@
   --maxw:         1280px;
   --measure:      68ch;   /* prose line length ceiling */
   --tap:          44px;   /* minimum touch target. Never go under. */
+
+  /* WhatsApp's own green, for the chat button only. */
+  --whatsapp:      #25D366;
+  --whatsapp-deep: #1DA851;
 }
 
 @media (min-width: 768px) {

@@ -24,3 +24,12 @@
     }
   });
 })();
+
+/* The WhatsApp button opens a chat with the page named, so the reply can be
+   specific. The number lives in the markup; this only adds the text. */
+(function () {
+  var wa = document.querySelector('.wa-fab');
+  if (!wa) return;
+  var page = document.title.replace(/\s*[—-]\s*Ecoculture\s*$/, '').trim();
+  wa.href = 'https://wa.me/918178030060?text=' + encodeURIComponent('Hi Ecoculture, I have a question about: ' + page);
+})();
