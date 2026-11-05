@@ -71,18 +71,18 @@
         <p>In some areas we deliver ourselves. In others a delivery partner brings it. Either way the pack is sealed and carries its lot code, and the lab report for that lot reaches you by email.</p>
         <h2>What delivery costs</h2>
         <table>
-          <thead><tr><th>Order value</th><th>Delivery</th></tr></thead>
+          <thead><tr><th>Order value</th><th>Month by month</th><th>Members (any prepaid term)</th></tr></thead>
           <tbody>
-            <tr><td><span data-eco="DELIVERY.freeFrom" data-fmt="inr">the free-delivery threshold</span> and above</td><td>Free</td></tr>
-            <tr><td><span data-eco="DELIVERY.midFrom" data-fmt="inr">the lower threshold</span> up to that</td><td><span data-eco="DELIVERY.midFee" data-fmt="inr">a small fee</span></td></tr>
-            <tr><td>Below <span data-eco="DELIVERY.midFrom" data-fmt="inr">the lower threshold</span></td><td><span data-eco="DELIVERY.smallFee" data-fmt="inr">a larger fee</span></td></tr>
+            <tr><td><span data-eco="DELIVERY.freeFrom" data-fmt="inr">the free-delivery threshold</span> and above</td><td>Free</td><td>Free</td></tr>
+            <tr><td><span data-eco="DELIVERY.member.freeFrom" data-fmt="inr">the member threshold</span> up to that</td><td><span data-eco="DELIVERY.midFee" data-fmt="inr">a small fee</span></td><td>Free</td></tr>
+            <tr><td>Below <span data-eco="DELIVERY.member.freeFrom" data-fmt="inr">the member threshold</span></td><td><span data-eco="DELIVERY.smallFee" data-fmt="inr">a larger fee</span></td><td><span data-eco="DELIVERY.member.smallFee" data-fmt="inr">a larger fee</span></td></tr>
           </tbody>
         </table>
-        <p>One threshold, read on the price before any prepayment discount, so prepaying never pushes you into a delivery charge. Two months delivered in one drop are one charge.</p>
+        <p>Read on the list price, before any prepayment discount, so prepaying never pushes you into a delivery charge. Members get free delivery from <span data-eco="DELIVERY.member.freeFrom" data-fmt="inr">the lower threshold</span>: it is the one benefit of membership that shows up every month. Two months delivered in one drop are one charge.</p>
         <p>A packed order, the lab retain sample and one van drop cost us about <span data-eco="DELIVERY.perOrderCost" data-fmt="inr">the same</span> whether the order is ₹600 or ₹6,000. A small order does not cover that. We could bury it in the product price so every customer pays for it, and we would rather show you.</p>
         <figure class="infographic" style="margin-top: 18px;">
           <div id="delivery-chart"></div>
-          <figcaption>What a delivery costs at each order value.</figcaption>
+          <figcaption>What a delivery costs at each order value, month by month. Members pay nothing from <span data-eco="DELIVERY.member.freeFrom" data-fmt="inr">the member threshold</span>.</figcaption>
         </figure>
         <h2>If nobody is home</h2>
         <p>We will call before we arrive. If we cannot reach you, we will try again [ number of attempts and when ]. We will not leave food with a neighbour or outside your door unless you have told us to, in writing or on WhatsApp.</p>

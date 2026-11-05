@@ -61,11 +61,10 @@
     ECO.SKUS.forEach(function (s) { state.steps[s.k] = Math.round((q[s.k] || 0) / s.step); });
   }
 
-  function deliveryFee(list) {
-    if (list >= D.freeFrom) return 0;
-    if (list >= D.midFrom) return D.midFee;
-    return D.smallFee;
-  }
+  /* A prepaid term makes a member, and a member's band is the lower one. */
+  function isMember() { return state.months > 0; }
+  function band() { return isMember() && D.member ? D.member : D; }
+  function deliveryFee(list) { return ECO.calc.fee(list, isMember()); }
 
   /* ── Build the page once ──────────────────────────────────────────────── */
 
@@ -322,16 +321,18 @@
     /* Totals */
     var fee = list ? deliveryFee(list) : 0;
     ui.listRow.val.textContent = inr(list);
+    ui.delRow.label.textContent = isMember() ? 'Delivery (member)' : 'Delivery';
     ui.delRow.val.textContent = !list ? '—' : (fee ? inr(fee) : 'Free');
     ui.delRow.val.classList.toggle('bsum__free', list > 0 && fee === 0);
     ui.perMonth.textContent = inr(list + fee);
 
-    /* Progress to free delivery, read on the list price */
-    var pct = Math.min(100, Math.round((list / D.freeFrom) * 100));
+    /* Progress to free delivery, read on the list price; the member band when prepaying */
+    var B = band();
+    var pct = Math.min(100, Math.round((list / B.freeFrom) * 100));
     ui.progBar.style.width = pct + '%';
-    ui.progLabel.textContent = 'Free delivery at ' + inr(D.freeFrom);
-    ui.progState.textContent = list >= D.freeFrom ? 'Reached' : inr(D.freeFrom - list) + ' to go';
-    ui.progState.classList.toggle('bprog__state--on', list >= D.freeFrom);
+    ui.progLabel.textContent = (isMember() ? 'Member free delivery at ' : 'Free delivery at ') + inr(B.freeFrom);
+    ui.progState.textContent = list >= B.freeFrom ? 'Reached' : inr(B.freeFrom - list) + ' to go';
+    ui.progState.classList.toggle('bprog__state--on', list >= B.freeFrom);
 
     /* Prepay: list → discount → trial credit. Delivery is per drop, on list. */
     var codeOk = CODE_RE.test(state.code);

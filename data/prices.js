@@ -114,7 +114,14 @@ window.ECO.DELIVERY = {
   midFrom: 1200,
   midFee: 99,
   smallFee: 249,
-  perOrderCost: 320
+  perOrderCost: 320,
+  /* Members (any prepaid term) get free delivery from the lower threshold.
+     Still read on the LIST price. It is the one member benefit that shows up
+     every month. Cost, so it is decided with the number in view: Medium and
+     Large already clear 2,500, so it bites only on Small at ~1,672, which
+     otherwise pays 99 a month: 1,188 per Small member per year
+     (MEMBERSHIP-FUNNEL.md §6).                                            */
+  member: { freeFrom: 1200, midFrom: 0, midFee: 0, smallFee: 249 }
 };
 
 /* Prepayment. There is no membership fee: the discount is the interest paid

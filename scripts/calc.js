@@ -17,8 +17,10 @@
     return q + ' ' + sku.unit;
   }
 
-  function fee(list) {
-    var D = ECO.DELIVERY;
+  /* The delivery band, read on the LIST price. A member (any prepaid term)
+     uses ECO.DELIVERY.member. */
+  function fee(list, member) {
+    var D = member && ECO.DELIVERY.member ? ECO.DELIVERY.member : ECO.DELIVERY;
     if (list >= D.freeFrom) return 0;
     if (list >= D.midFrom) return D.midFee;
     return D.smallFee;
@@ -38,7 +40,7 @@
       weight += qty;
       byCat[sku.cat] = (byCat[sku.cat] || 0) + amount;
     });
-    return { label: def.label, who: def.who, lines: lines, total: total, weight: weight, byCat: byCat, fee: fee(total) };
+    return { label: def.label, who: def.who, lines: lines, total: total, weight: weight, byCat: byCat, fee: fee(total), memberFee: fee(total, true) };
   }
 
   /* The trial pack as lines, from ECO.TRIAL. */
