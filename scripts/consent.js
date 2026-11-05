@@ -13,8 +13,11 @@
    ECO.consent.open(). Withdrawing a group deletes that group's cookies and
    stops its tags; a reload does not restore them.
 
-   The tags themselves live in ECO.consent.tags, below, keyed by group.
-   Nothing loads unless its group is consented AND its id is set.
+   The tags live in ECO.consent.tags, below, keyed by group: GA4 for
+   measurement, Meta Pixel for advertising (the founder's choice of tools is
+   still open; substitute here, in customHttp.yml and in the privacy cookie
+   table together). Nothing loads unless its group is consented AND its id
+   is set, and no tag is ever written inline.
 
    API:  ECO.consent.get()  -> { measurement: bool, advertising: bool, at, version } | null
          ECO.consent.set({ measurement, advertising })
@@ -25,11 +28,45 @@
   var GROUPS = ['measurement', 'advertising'];
   var state = null, dialog = null, loaded = {};
 
-  /* ── Tags, gated on consent. Empty until the tools are chosen (commit 7):
-        a group with no id and no loader never loads anything. ── */
+  /* ── Tags, gated on consent. Fill the ids in when the founder chooses the
+        tools; while an id is empty the tag never loads. Each `load` must use
+        an external script (CSP: script-src has no 'unsafe-inline'). ── */
   var TAGS = {
-    measurement: { id: '', cookies: [], load: function () {}, stop: function () {} },
-    advertising: { id: '', cookies: [], load: function () {}, stop: function () {} }
+    measurement: {
+      /* Google Analytics 4: anonymised IP, no Google Signals, no ads personalisation. */
+      id: '',                                  /* e.g. 'G-XXXXXXXXXX' */
+      cookies: [/^_ga/, /^_gid$/, /^_gat/],
+      load: function (id) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        gtag('js', new Date());
+        gtag('config', id, { anonymize_ip: true, allow_google_signals: false, allow_ad_personalization_signals: false });
+        script('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id));
+      },
+      stop: function () {
+        if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+        if (this.id) window['ga-disable-' + this.id] = true;
+      }
+    },
+    advertising: {
+      /* Meta Pixel: fires only on consent; no Advanced Matching (no hashed email or phone). */
+      id: '',                                  /* e.g. '1234567890' */
+      cookies: [/^_fbp$/, /^_fbc$/],
+      load: function (id) {
+        var f = window;
+        if (f.fbq) return;
+        var n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n;
+        n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+        script('https://connect.facebook.net/en_US/fbevents.js');
+        n('consent', 'grant');
+        n('init', id);
+        n('track', 'PageView');
+      },
+      stop: function () { if (window.fbq) window.fbq('consent', 'revoke'); }
+    }
   };
 
   function script(src) {
