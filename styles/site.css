@@ -1234,3 +1234,14 @@ body:has(.consent) .wa-fab { display: none; }
   .wa-fab__t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 @media print { .wa-fab { display: none; } }
+
+/* ── Membership story ───────────────────────────────────────────────── */
+.gives { display: grid; gap: 18px 20px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px)  { .gives { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .gives { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gives .rule-note p { font-size: 14px; }
+.wins3 { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .wins3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } }
+.wins3__col { padding: 16px 16px 18px; background: var(--paper-3); border-top: var(--b-marker) solid var(--gold); }
+.wins3__who { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-deep); margin-bottom: 8px; }
+.wins3__col p:not(.wins3__who) { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
