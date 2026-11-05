@@ -64,7 +64,7 @@
     }).then(function (r) {
       if (r.res.ok && r.body.ok) {
         form.reset();
-        show('<b>You’re on the list.</b> We’ll write once when prices are set, and once more when your pack ships.', 'ok');
+        show('<b>You’re on the list.</b> We’ll write once before your pack ships, with the price and how to pay, and once more when it is on its way.', 'ok');
         btn.textContent = 'Reserved';
         return;
       }
