@@ -243,7 +243,7 @@
   doc.appendChild(ui.status);
 
   var cta = el('a', 'btn btn--primary bsum__cta', 'Get first access on WhatsApp');
-  cta.href = 'https://wa.me/918178030060?text=Hi%20Ecoculture%2C%20please%20add%20me%20to%20the%20first-access%20list%20for%20the%20harvest%20sale.';
+  cta.href = 'https://chat.whatsapp.com/L1RkySHghFvJKTBEEFv1M5';
   cta.setAttribute('data-wa-list', '');
   cta.target = '_blank'; cta.rel = 'noopener';
   doc.appendChild(cta);

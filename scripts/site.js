@@ -38,7 +38,7 @@
    exists; every [data-wa-list] button on the site follows it. The markup
    carries the plain-number fallback for JavaScript-off visitors. */
 (function () {
-  var WA_LIST = '';   /* e.g. 'https://chat.whatsapp.com/XXXXXXXXXXXXXXXXXXXXXX' */
+  var WA_LIST = 'https://chat.whatsapp.com/L1RkySHghFvJKTBEEFv1M5';
   if (!WA_LIST) return;
   document.querySelectorAll('[data-wa-list]').forEach(function (a) { a.href = WA_LIST; });
 })();
