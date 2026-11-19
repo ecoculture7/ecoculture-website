@@ -33,3 +33,12 @@
   var page = document.title.replace(/\s*[—-]\s*Ecoculture\s*$/, '').trim();
   wa.href = 'https://wa.me/918178030060?text=' + encodeURIComponent('Hi Ecoculture, I have a question about: ' + page);
 })();
+
+/* The WhatsApp first-access list. Put the Community invite link here when it
+   exists; every [data-wa-list] button on the site follows it. The markup
+   carries the plain-number fallback for JavaScript-off visitors. */
+(function () {
+  var WA_LIST = '';   /* e.g. 'https://chat.whatsapp.com/XXXXXXXXXXXXXXXXXXXXXX' */
+  if (!WA_LIST) return;
+  document.querySelectorAll('[data-wa-list]').forEach(function (a) { a.href = WA_LIST; });
+})();

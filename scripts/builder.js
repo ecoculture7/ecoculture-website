@@ -242,8 +242,10 @@
   ui.status.setAttribute('role', 'status');
   doc.appendChild(ui.status);
 
-  var cta = el('a', 'btn btn--primary bsum__cta', 'Reserve a December trial pack');
-  cta.href = '/index.html#reserve';
+  var cta = el('a', 'btn btn--primary bsum__cta', 'Get first access on WhatsApp');
+  cta.href = 'https://wa.me/918178030060?text=Hi%20Ecoculture%2C%20please%20add%20me%20to%20the%20first-access%20list%20for%20the%20harvest%20sale.';
+  cta.setAttribute('data-wa-list', '');
+  cta.target = '_blank'; cta.rel = 'noopener';
   doc.appendChild(cta);
   doc.appendChild(el('p', 'small muted bsum__fine', 'Membership is prepaid; payment opens when the gateway is live. Delivery is read on the list price, before the discount or the credit.'));
 

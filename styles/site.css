@@ -107,6 +107,7 @@ b, strong { font-weight: 600; color: var(--ink); }
 .announce b { color: var(--gold); font-weight: 600; }
 /* Below ~420px the third clause wraps to a second line. Drop it. */
 @media (max-width: 420px) { .announce .announce__extra { display: none; } }
+.announce a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ── Masthead ────────────────────────────────────────────────────────── */
 
@@ -1197,6 +1198,7 @@ main > section[id] { scroll-margin-top: calc(var(--masthead-h, 69px) + 56px); }
   padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
 }
 .consent [hidden] { display: none !important; }
+[data-pending][hidden] { display: none !important; }
 .consent__inner {
   position: relative; max-width: var(--maxw); margin: 0 auto;
   display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px 24px; align-items: center;
